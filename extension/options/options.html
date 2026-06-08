@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="options-container">
+    <div class="options-header">
+      <span class="logo">🍺</span>
+      <span class="title">Brew Finder 设置</span>
+    </div>
+
+    <div class="setting-row">
+      <div class="setting-info">
+        <div class="setting-label">Badge 徽标</div>
+        <div class="setting-desc">在插件图标上显示匹配数量</div>
+      </div>
+      <div class="toggle active" id="toggle-badge">
+        <div class="toggle-knob"></div>
+      </div>
+    </div>
+
+    <div class="setting-row">
+      <div class="setting-info">
+        <div class="setting-label">页面浮层</div>
+        <div class="setting-desc">在页面右下角显示安装提醒</div>
+      </div>
+      <div class="toggle active" id="toggle-overlay">
+        <div class="toggle-knob"></div>
+      </div>
+    </div>
+
+    <div class="setting-row">
+      <div class="setting-info">
+        <div class="setting-label">重置浮层关闭状态</div>
+        <div class="setting-desc">恢复浮层的"永久关闭"提示</div>
+      </div>
+      <button class="reset-btn" id="btn-reset-dismiss">重置</button>
+    </div>
+
+    <div class="metadata" id="metadata">
+      <div>加载中...</div>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
