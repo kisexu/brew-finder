@@ -4,7 +4,6 @@ import { getSettings, updateSetting } from '../utils/storage.js';
 
 let domainMap = {};
 let githubMap = {};
-let mapsReady = false;
 
 /**
  * Load mapping data from bundled JSON files.
@@ -17,7 +16,6 @@ async function loadMaps() {
     ]);
     domainMap = await domainRes.json();
     githubMap = await githubRes.json();
-    mapsReady = true;
     console.log(`Brew Finder: loaded ${Object.keys(domainMap).length} domains, ${Object.keys(githubMap).length} repos`);
   } catch (err) {
     console.error('Brew Finder: failed to load maps', err);
