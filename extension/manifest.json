@@ -3,7 +3,7 @@
   "name": "Brew Finder",
   "version": "1.0.0",
   "description": "Detect Homebrew packages for any website",
-  "permissions": ["activeTab", "storage"],
+  "permissions": ["activeTab", "storage", "tabs"],
   "host_permissions": [],
   "background": {
     "service_worker": "background/service-worker.js",

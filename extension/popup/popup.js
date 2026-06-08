@@ -6,7 +6,7 @@ const urlEl = document.getElementById('bf-current-url');
 function escapeHtml(str) {
   const div = document.createElement('div');
   div.textContent = str;
-  return div.innerHTML;
+  return div.innerHTML.replace(/"/g, '&quot;');
 }
 
 function renderMatches(matches, currentUrl) {
@@ -41,6 +41,9 @@ function renderMatches(matches, currentUrl) {
       navigator.clipboard.writeText(cmd).then(() => {
         btn.textContent = '✓';
         setTimeout(() => { btn.textContent = '📋'; }, 1500);
+      }).catch(() => {
+        btn.textContent = '✗';
+        setTimeout(() => { btn.textContent = '📋'; }, 1500);
       });
     });
   });
@@ -51,7 +54,11 @@ chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
   if (!tabs[0]) return;
   const tab = tabs[0];
 
-  urlEl.textContent = `当前页面：${new URL(tab.url).hostname}`;
+  try {
+    urlEl.textContent = `当前页面：${new URL(tab.url).hostname}`;
+  } catch {
+    urlEl.textContent = '当前页面：未知';
+  }
 
   chrome.runtime.sendMessage({ type: 'GET_CURRENT_MATCH' }, (response) => {
     if (chrome.runtime.lastError || !response) {

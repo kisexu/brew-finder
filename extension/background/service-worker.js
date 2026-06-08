@@ -21,6 +21,9 @@ async function loadMaps() {
     console.error('Brew Finder: failed to load maps', err);
     domainMap = {};
     githubMap = {};
+    // Show error badge on all tabs
+    chrome.action.setBadgeText({ text: '!' }).catch(() => {});
+    chrome.action.setBadgeBackgroundColor({ color: '#e94560' }).catch(() => {});
   }
 }
 
@@ -59,23 +62,25 @@ async function handleMatch(url, tabId) {
 // Listen for messages from content script
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'MATCH_URL') {
-    handleMatch(message.url, sender.tab.id).then(sendResponse);
+    handleMatch(message.url, sender.tab.id).then(sendResponse).catch(() => sendResponse({ matches: [] }));
     return true; // async response
   }
 
   if (message.type === 'OVERLAY_DISMISSED') {
+    const respond = () => sendResponse({ ok: true });
     if (message.permanent) {
-      updateSetting('overlayPermanentlyDismissed', true);
+      updateSetting('overlayPermanentlyDismissed', true).then(respond).catch(respond);
+    } else {
+      respond();
     }
-    sendResponse({ ok: true });
-    return false;
+    return true; // now async
   }
 
   if (message.type === 'GET_CURRENT_MATCH') {
     // Popup requesting current tab's match
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (tabs[0]) {
-        handleMatch(tabs[0].url, tabs[0].id).then(sendResponse);
+        handleMatch(tabs[0].url, tabs[0].id).then(sendResponse).catch(() => sendResponse({ matches: [] }));
       } else {
         sendResponse({ matches: [] });
       }
@@ -87,7 +92,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 // Re-match when tab URL changes
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === 'complete' && tab.url) {
-    handleMatch(tab.url, tabId);
+    handleMatch(tab.url, tabId).catch(console.error);
   }
 });
 
@@ -95,7 +100,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 chrome.tabs.onActivated.addListener(async ({ tabId }) => {
   const tab = await chrome.tabs.get(tabId);
   if (tab.url) {
-    handleMatch(tab.url, tabId);
+    handleMatch(tab.url, tabId).catch(console.error);
   }
 });
 
