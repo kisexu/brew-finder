@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +9,13 @@
   <div class="options-container">
     <div class="options-header">
       <span class="logo">🍺</span>
-      <span class="title">Brew Finder 设置</span>
+      <span class="title" data-i18n="optionsTitle">Brew Finder Settings</span>
     </div>
 
     <div class="setting-row">
       <div class="setting-info">
-        <div class="setting-label">Badge 徽标</div>
-        <div class="setting-desc">在插件图标上显示匹配数量</div>
+        <div class="setting-label" data-i18n="optionsBadgeLabel">Badge</div>
+        <div class="setting-desc" data-i18n="optionsBadgeDescription">Show the match count on the extension icon</div>
       </div>
       <div class="toggle active" id="toggle-badge">
         <div class="toggle-knob"></div>
@@ -24,8 +24,8 @@
 
     <div class="setting-row">
       <div class="setting-info">
-        <div class="setting-label">页面浮层</div>
-        <div class="setting-desc">在页面右下角显示安装提醒</div>
+        <div class="setting-label" data-i18n="optionsOverlayLabel">Page overlay</div>
+        <div class="setting-desc" data-i18n="optionsOverlayDescription">Show install reminders in the bottom-right corner</div>
       </div>
       <div class="toggle active" id="toggle-overlay">
         <div class="toggle-knob"></div>
@@ -34,17 +34,26 @@
 
     <div class="setting-row">
       <div class="setting-info">
-        <div class="setting-label">重置浮层关闭状态</div>
-        <div class="setting-desc">恢复浮层的"永久关闭"提示</div>
+        <div class="setting-label" data-i18n="optionsLanguageLabel">Language</div>
+        <div class="setting-desc" data-i18n="optionsLanguageDescription">Choose the extension display language</div>
       </div>
-      <button class="reset-btn" id="btn-reset-dismiss">重置</button>
+      <select class="language-select" id="language-select"></select>
+    </div>
+
+    <div class="setting-row">
+      <div class="setting-info">
+        <div class="setting-label" data-i18n="optionsResetDismissLabel">Reset overlay dismissal</div>
+        <div class="setting-desc" data-i18n="optionsResetDismissDescription">Restore the permanent overlay dismissal prompt</div>
+      </div>
+      <button class="reset-btn" id="btn-reset-dismiss" data-i18n="optionsResetButton">Reset</button>
     </div>
 
     <div class="metadata" id="metadata">
-      <div>加载中...</div>
+      <div data-i18n="optionsMetadataLoading">Loading...</div>
     </div>
   </div>
 
+  <script src="../utils/i18n.js"></script>
   <script src="options.js"></script>
 </body>
 </html>
