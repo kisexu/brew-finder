@@ -19,19 +19,19 @@
 
   const LANGUAGE_OPTIONS = [
     { value: AUTO_LOCALE, labelKey: 'optionsLanguageAuto' },
-    { value: 'en', label: 'English' },
-    { value: 'zh_CN', label: '简体中文' },
-    { value: 'zh_TW', label: '繁體中文' },
-    { value: 'ja', label: '日本語' },
-    { value: 'ko', label: '한국어' },
-    { value: 'fr', label: 'Français' },
-    { value: 'de', label: 'Deutsch' },
-    { value: 'es', label: 'Español' },
-    { value: 'pt_PT', label: 'Português' },
-    { value: 'it', label: 'Italiano' },
-    { value: 'ru', label: 'Русский' },
-    { value: 'ar', label: 'العربية' },
-    { value: 'hi', label: 'हिन्दी' },
+    { value: 'en', labelKey: 'languageNameEn' },
+    { value: 'zh_CN', labelKey: 'languageNameZhCn' },
+    { value: 'zh_TW', labelKey: 'languageNameZhTw' },
+    { value: 'ja', labelKey: 'languageNameJa' },
+    { value: 'ko', labelKey: 'languageNameKo' },
+    { value: 'fr', labelKey: 'languageNameFr' },
+    { value: 'de', labelKey: 'languageNameDe' },
+    { value: 'es', labelKey: 'languageNameEs' },
+    { value: 'pt_PT', labelKey: 'languageNamePtPt' },
+    { value: 'it', labelKey: 'languageNameIt' },
+    { value: 'ru', labelKey: 'languageNameRu' },
+    { value: 'ar', labelKey: 'languageNameAr' },
+    { value: 'hi', labelKey: 'languageNameHi' },
   ];
 
   const RTL_LOCALES = new Set(['ar']);
