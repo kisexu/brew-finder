@@ -1,0 +1,109 @@
+{
+  "extensionName": {
+    "message": "Brew Finder"
+  },
+  "extensionDescription": {
+    "message": "检测任意网站对应的 Homebrew 包"
+  },
+  "popupDetecting": {
+    "message": "正在检测..."
+  },
+  "popupNoMatch": {
+    "message": "当前网站未找到 Homebrew 包"
+  },
+  "popupCurrentPage": {
+    "message": "当前页面：$HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupUnknownPage": {
+    "message": "当前页面：未知"
+  },
+  "copyCommandTitle": {
+    "message": "复制安装命令"
+  },
+  "overlayCloseTitle": {
+    "message": "关闭"
+  },
+  "overlayInstallable": {
+    "message": "此软件可通过 Homebrew 安装："
+  },
+  "overlayDismissQuestion": {
+    "message": "是否永久关闭页面浮层？"
+  },
+  "overlayDismissOnce": {
+    "message": "仅本次"
+  },
+  "overlayDismissForever": {
+    "message": "永久关闭"
+  },
+  "optionsTitle": {
+    "message": "Brew Finder 设置"
+  },
+  "optionsBadgeLabel": {
+    "message": "Badge 徽标"
+  },
+  "optionsBadgeDescription": {
+    "message": "在插件图标上显示匹配数量"
+  },
+  "optionsOverlayLabel": {
+    "message": "页面浮层"
+  },
+  "optionsOverlayDescription": {
+    "message": "在页面右下角显示安装提醒"
+  },
+  "optionsLanguageLabel": {
+    "message": "语言"
+  },
+  "optionsLanguageDescription": {
+    "message": "选择扩展显示语言"
+  },
+  "optionsLanguageAuto": {
+    "message": "跟随浏览器"
+  },
+  "optionsResetDismissLabel": {
+    "message": "重置浮层关闭状态"
+  },
+  "optionsResetDismissDescription": {
+    "message": "恢复浮层的“永久关闭”提示"
+  },
+  "optionsResetButton": {
+    "message": "重置"
+  },
+  "optionsResetDone": {
+    "message": "已重置"
+  },
+  "optionsMetadataLoading": {
+    "message": "加载中..."
+  },
+  "optionsMetadataVersion": {
+    "message": "映射数据版本：$DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataPackageCount": {
+    "message": "覆盖包数量：$COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataDomainCount": {
+    "message": "覆盖域名数：$COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataError": {
+    "message": "无法加载元数据"
+  }
+}

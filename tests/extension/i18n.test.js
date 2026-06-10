@@ -148,3 +148,20 @@ describe('createI18n', () => {
     expect(i18n.t('popupNoMatch')).toBe('No Homebrew package found for this website');
   });
 });
+
+describe('locale message files', () => {
+  it('keeps every locale aligned with the English key set', async () => {
+    const { readFile } = await import('node:fs/promises');
+    const { resolve } = await import('node:path');
+    const root = resolve(import.meta.dirname, '../..');
+    const readMessages = async (locale) => JSON.parse(
+      await readFile(resolve(root, `extension/_locales/${locale}/messages.json`), 'utf8')
+    );
+    const englishKeys = Object.keys(await readMessages(DEFAULT_LOCALE)).sort();
+
+    for (const locale of SUPPORTED_LOCALES) {
+      const keys = Object.keys(await readMessages(locale)).sort();
+      expect(keys, `${locale} keys`).toEqual(englishKeys);
+    }
+  });
+});

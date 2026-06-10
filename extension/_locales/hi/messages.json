@@ -1,0 +1,109 @@
+{
+  "extensionName": {
+    "message": "Brew Finder"
+  },
+  "extensionDescription": {
+    "message": "किसी भी वेबसाइट के लिए Homebrew पैकेज पहचानें"
+  },
+  "popupDetecting": {
+    "message": "जाँच हो रही है..."
+  },
+  "popupNoMatch": {
+    "message": "इस वेबसाइट के लिए कोई Homebrew पैकेज नहीं मिला"
+  },
+  "popupCurrentPage": {
+    "message": "वर्तमान पृष्ठ: $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupUnknownPage": {
+    "message": "वर्तमान पृष्ठ: अज्ञात"
+  },
+  "copyCommandTitle": {
+    "message": "इंस्टॉल कमांड कॉपी करें"
+  },
+  "overlayCloseTitle": {
+    "message": "बंद करें"
+  },
+  "overlayInstallable": {
+    "message": "इस सॉफ्टवेयर को Homebrew से इंस्टॉल किया जा सकता है:"
+  },
+  "overlayDismissQuestion": {
+    "message": "क्या पेज ओवरले को स्थायी रूप से बंद करें?"
+  },
+  "overlayDismissOnce": {
+    "message": "केवल इस बार"
+  },
+  "overlayDismissForever": {
+    "message": "स्थायी रूप से बंद करें"
+  },
+  "optionsTitle": {
+    "message": "Brew Finder सेटिंग्स"
+  },
+  "optionsBadgeLabel": {
+    "message": "बैज"
+  },
+  "optionsBadgeDescription": {
+    "message": "एक्सटेंशन आइकन पर मिलानों की संख्या दिखाएँ"
+  },
+  "optionsOverlayLabel": {
+    "message": "पेज ओवरले"
+  },
+  "optionsOverlayDescription": {
+    "message": "नीचे-दाएँ कोने में इंस्टॉल रिमाइंडर दिखाएँ"
+  },
+  "optionsLanguageLabel": {
+    "message": "भाषा"
+  },
+  "optionsLanguageDescription": {
+    "message": "एक्सटेंशन की प्रदर्शन भाषा चुनें"
+  },
+  "optionsLanguageAuto": {
+    "message": "ब्राउज़र के अनुसार"
+  },
+  "optionsResetDismissLabel": {
+    "message": "ओवरले बंद स्थिति रीसेट करें"
+  },
+  "optionsResetDismissDescription": {
+    "message": "स्थायी रूप से बंद करने का संकेत वापस लाएँ"
+  },
+  "optionsResetButton": {
+    "message": "रीसेट"
+  },
+  "optionsResetDone": {
+    "message": "रीसेट हो गया"
+  },
+  "optionsMetadataLoading": {
+    "message": "लोड हो रहा है..."
+  },
+  "optionsMetadataVersion": {
+    "message": "मैप डेटा संस्करण: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataPackageCount": {
+    "message": "कवर किए गए पैकेज: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataDomainCount": {
+    "message": "कवर किए गए डोमेन: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataError": {
+    "message": "मेटाडेटा लोड नहीं हो सका"
+  }
+}

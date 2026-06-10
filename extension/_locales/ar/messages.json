@@ -1,0 +1,109 @@
+{
+  "extensionName": {
+    "message": "Brew Finder"
+  },
+  "extensionDescription": {
+    "message": "اكتشف حزم Homebrew لأي موقع ويب"
+  },
+  "popupDetecting": {
+    "message": "جارٍ الفحص..."
+  },
+  "popupNoMatch": {
+    "message": "لم يتم العثور على حزمة Homebrew لهذا الموقع"
+  },
+  "popupCurrentPage": {
+    "message": "الصفحة الحالية: $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupUnknownPage": {
+    "message": "الصفحة الحالية: غير معروفة"
+  },
+  "copyCommandTitle": {
+    "message": "انسخ أمر التثبيت"
+  },
+  "overlayCloseTitle": {
+    "message": "إغلاق"
+  },
+  "overlayInstallable": {
+    "message": "يمكن تثبيت هذا البرنامج عبر Homebrew:"
+  },
+  "overlayDismissQuestion": {
+    "message": "هل تريد إيقاف طبقة الصفحة نهائيًا؟"
+  },
+  "overlayDismissOnce": {
+    "message": "هذه المرة فقط"
+  },
+  "overlayDismissForever": {
+    "message": "إيقاف نهائيًا"
+  },
+  "optionsTitle": {
+    "message": "إعدادات Brew Finder"
+  },
+  "optionsBadgeLabel": {
+    "message": "الشارة"
+  },
+  "optionsBadgeDescription": {
+    "message": "أظهر عدد النتائج على أيقونة الإضافة"
+  },
+  "optionsOverlayLabel": {
+    "message": "طبقة الصفحة"
+  },
+  "optionsOverlayDescription": {
+    "message": "أظهر تذكيرات التثبيت في أسفل اليمين"
+  },
+  "optionsLanguageLabel": {
+    "message": "اللغة"
+  },
+  "optionsLanguageDescription": {
+    "message": "اختر لغة عرض الإضافة"
+  },
+  "optionsLanguageAuto": {
+    "message": "اتبع المتصفح"
+  },
+  "optionsResetDismissLabel": {
+    "message": "إعادة ضبط إخفاء الطبقة"
+  },
+  "optionsResetDismissDescription": {
+    "message": "استعد مطالبة الإيقاف الدائم"
+  },
+  "optionsResetButton": {
+    "message": "إعادة ضبط"
+  },
+  "optionsResetDone": {
+    "message": "تمت إعادة الضبط"
+  },
+  "optionsMetadataLoading": {
+    "message": "جارٍ التحميل..."
+  },
+  "optionsMetadataVersion": {
+    "message": "إصدار بيانات الخرائط: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataPackageCount": {
+    "message": "الحزم المشمولة: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataDomainCount": {
+    "message": "النطاقات المشمولة: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataError": {
+    "message": "تعذر تحميل البيانات الوصفية"
+  }
+}

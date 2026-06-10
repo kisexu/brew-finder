@@ -1,0 +1,109 @@
+{
+  "extensionName": {
+    "message": "Brew Finder"
+  },
+  "extensionDescription": {
+    "message": "Находит пакеты Homebrew для любого сайта"
+  },
+  "popupDetecting": {
+    "message": "Проверка..."
+  },
+  "popupNoMatch": {
+    "message": "Для этого сайта пакет Homebrew не найден"
+  },
+  "popupCurrentPage": {
+    "message": "Текущая страница: $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupUnknownPage": {
+    "message": "Текущая страница: неизвестна"
+  },
+  "copyCommandTitle": {
+    "message": "Скопировать команду установки"
+  },
+  "overlayCloseTitle": {
+    "message": "Закрыть"
+  },
+  "overlayInstallable": {
+    "message": "Это ПО можно установить через Homebrew:"
+  },
+  "overlayDismissQuestion": {
+    "message": "Отключить оверлей страницы навсегда?"
+  },
+  "overlayDismissOnce": {
+    "message": "Только сейчас"
+  },
+  "overlayDismissForever": {
+    "message": "Отключить навсегда"
+  },
+  "optionsTitle": {
+    "message": "Настройки Brew Finder"
+  },
+  "optionsBadgeLabel": {
+    "message": "Значок"
+  },
+  "optionsBadgeDescription": {
+    "message": "Показывать количество совпадений на значке расширения"
+  },
+  "optionsOverlayLabel": {
+    "message": "Оверлей страницы"
+  },
+  "optionsOverlayDescription": {
+    "message": "Показывать напоминания об установке в правом нижнем углу"
+  },
+  "optionsLanguageLabel": {
+    "message": "Язык"
+  },
+  "optionsLanguageDescription": {
+    "message": "Выберите язык интерфейса расширения"
+  },
+  "optionsLanguageAuto": {
+    "message": "Как в браузере"
+  },
+  "optionsResetDismissLabel": {
+    "message": "Сбросить скрытие оверлея"
+  },
+  "optionsResetDismissDescription": {
+    "message": "Восстановить запрос постоянного отключения"
+  },
+  "optionsResetButton": {
+    "message": "Сбросить"
+  },
+  "optionsResetDone": {
+    "message": "Сброшено"
+  },
+  "optionsMetadataLoading": {
+    "message": "Загрузка..."
+  },
+  "optionsMetadataVersion": {
+    "message": "Версия данных сопоставления: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataPackageCount": {
+    "message": "Пакетов покрыто: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataDomainCount": {
+    "message": "Доменов покрыто: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataError": {
+    "message": "Не удалось загрузить метаданные"
+  }
+}

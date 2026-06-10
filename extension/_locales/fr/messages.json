@@ -1,0 +1,109 @@
+{
+  "extensionName": {
+    "message": "Brew Finder"
+  },
+  "extensionDescription": {
+    "message": "Détecte les paquets Homebrew pour n'importe quel site web"
+  },
+  "popupDetecting": {
+    "message": "Vérification..."
+  },
+  "popupNoMatch": {
+    "message": "Aucun paquet Homebrew trouvé pour ce site"
+  },
+  "popupCurrentPage": {
+    "message": "Page actuelle : $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupUnknownPage": {
+    "message": "Page actuelle : inconnue"
+  },
+  "copyCommandTitle": {
+    "message": "Copier la commande d'installation"
+  },
+  "overlayCloseTitle": {
+    "message": "Fermer"
+  },
+  "overlayInstallable": {
+    "message": "Ce logiciel peut être installé avec Homebrew :"
+  },
+  "overlayDismissQuestion": {
+    "message": "Désactiver définitivement l'incrustation de page ?"
+  },
+  "overlayDismissOnce": {
+    "message": "Cette fois seulement"
+  },
+  "overlayDismissForever": {
+    "message": "Désactiver définitivement"
+  },
+  "optionsTitle": {
+    "message": "Paramètres de Brew Finder"
+  },
+  "optionsBadgeLabel": {
+    "message": "Badge"
+  },
+  "optionsBadgeDescription": {
+    "message": "Afficher le nombre de correspondances sur l'icône de l'extension"
+  },
+  "optionsOverlayLabel": {
+    "message": "Incrustation de page"
+  },
+  "optionsOverlayDescription": {
+    "message": "Afficher les rappels d'installation en bas à droite"
+  },
+  "optionsLanguageLabel": {
+    "message": "Langue"
+  },
+  "optionsLanguageDescription": {
+    "message": "Choisir la langue d'affichage de l'extension"
+  },
+  "optionsLanguageAuto": {
+    "message": "Suivre le navigateur"
+  },
+  "optionsResetDismissLabel": {
+    "message": "Réinitialiser le masquage de l'incrustation"
+  },
+  "optionsResetDismissDescription": {
+    "message": "Restaurer l'invite de désactivation définitive"
+  },
+  "optionsResetButton": {
+    "message": "Réinitialiser"
+  },
+  "optionsResetDone": {
+    "message": "Réinitialisé"
+  },
+  "optionsMetadataLoading": {
+    "message": "Chargement..."
+  },
+  "optionsMetadataVersion": {
+    "message": "Version des données de correspondance : $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataPackageCount": {
+    "message": "Paquets couverts : $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataDomainCount": {
+    "message": "Domaines couverts : $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataError": {
+    "message": "Impossible de charger les métadonnées"
+  }
+}

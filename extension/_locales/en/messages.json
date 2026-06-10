@@ -1,0 +1,109 @@
+{
+  "extensionName": {
+    "message": "Brew Finder"
+  },
+  "extensionDescription": {
+    "message": "Detect Homebrew packages for any website"
+  },
+  "popupDetecting": {
+    "message": "Checking..."
+  },
+  "popupNoMatch": {
+    "message": "No Homebrew package found for this website"
+  },
+  "popupCurrentPage": {
+    "message": "Current page: $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupUnknownPage": {
+    "message": "Current page: unknown"
+  },
+  "copyCommandTitle": {
+    "message": "Copy install command"
+  },
+  "overlayCloseTitle": {
+    "message": "Close"
+  },
+  "overlayInstallable": {
+    "message": "This software can be installed with Homebrew:"
+  },
+  "overlayDismissQuestion": {
+    "message": "Turn off the page overlay permanently?"
+  },
+  "overlayDismissOnce": {
+    "message": "Only this time"
+  },
+  "overlayDismissForever": {
+    "message": "Turn off permanently"
+  },
+  "optionsTitle": {
+    "message": "Brew Finder Settings"
+  },
+  "optionsBadgeLabel": {
+    "message": "Badge"
+  },
+  "optionsBadgeDescription": {
+    "message": "Show the match count on the extension icon"
+  },
+  "optionsOverlayLabel": {
+    "message": "Page overlay"
+  },
+  "optionsOverlayDescription": {
+    "message": "Show install reminders in the bottom-right corner"
+  },
+  "optionsLanguageLabel": {
+    "message": "Language"
+  },
+  "optionsLanguageDescription": {
+    "message": "Choose the extension display language"
+  },
+  "optionsLanguageAuto": {
+    "message": "Follow browser"
+  },
+  "optionsResetDismissLabel": {
+    "message": "Reset overlay dismissal"
+  },
+  "optionsResetDismissDescription": {
+    "message": "Restore the permanent overlay dismissal prompt"
+  },
+  "optionsResetButton": {
+    "message": "Reset"
+  },
+  "optionsResetDone": {
+    "message": "Reset done"
+  },
+  "optionsMetadataLoading": {
+    "message": "Loading..."
+  },
+  "optionsMetadataVersion": {
+    "message": "Map data version: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataPackageCount": {
+    "message": "Packages covered: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataDomainCount": {
+    "message": "Domains covered: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataError": {
+    "message": "Unable to load metadata"
+  }
+}

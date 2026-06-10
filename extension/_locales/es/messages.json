@@ -1,0 +1,109 @@
+{
+  "extensionName": {
+    "message": "Brew Finder"
+  },
+  "extensionDescription": {
+    "message": "Detecta paquetes de Homebrew para cualquier sitio web"
+  },
+  "popupDetecting": {
+    "message": "Comprobando..."
+  },
+  "popupNoMatch": {
+    "message": "No se encontró ningún paquete de Homebrew para este sitio"
+  },
+  "popupCurrentPage": {
+    "message": "Página actual: $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupUnknownPage": {
+    "message": "Página actual: desconocida"
+  },
+  "copyCommandTitle": {
+    "message": "Copiar comando de instalación"
+  },
+  "overlayCloseTitle": {
+    "message": "Cerrar"
+  },
+  "overlayInstallable": {
+    "message": "Este software se puede instalar con Homebrew:"
+  },
+  "overlayDismissQuestion": {
+    "message": "¿Desactivar permanentemente la superposición de página?"
+  },
+  "overlayDismissOnce": {
+    "message": "Solo esta vez"
+  },
+  "overlayDismissForever": {
+    "message": "Desactivar permanentemente"
+  },
+  "optionsTitle": {
+    "message": "Configuración de Brew Finder"
+  },
+  "optionsBadgeLabel": {
+    "message": "Insignia"
+  },
+  "optionsBadgeDescription": {
+    "message": "Muestra el número de coincidencias en el icono de la extensión"
+  },
+  "optionsOverlayLabel": {
+    "message": "Superposición de página"
+  },
+  "optionsOverlayDescription": {
+    "message": "Muestra recordatorios de instalación en la esquina inferior derecha"
+  },
+  "optionsLanguageLabel": {
+    "message": "Idioma"
+  },
+  "optionsLanguageDescription": {
+    "message": "Elige el idioma de la extensión"
+  },
+  "optionsLanguageAuto": {
+    "message": "Seguir navegador"
+  },
+  "optionsResetDismissLabel": {
+    "message": "Restablecer cierre de superposición"
+  },
+  "optionsResetDismissDescription": {
+    "message": "Restaura el aviso de desactivación permanente"
+  },
+  "optionsResetButton": {
+    "message": "Restablecer"
+  },
+  "optionsResetDone": {
+    "message": "Restablecido"
+  },
+  "optionsMetadataLoading": {
+    "message": "Cargando..."
+  },
+  "optionsMetadataVersion": {
+    "message": "Versión de datos de mapeo: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataPackageCount": {
+    "message": "Paquetes cubiertos: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataDomainCount": {
+    "message": "Dominios cubiertos: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataError": {
+    "message": "No se pudieron cargar los metadatos"
+  }
+}

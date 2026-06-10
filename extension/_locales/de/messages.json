@@ -1,0 +1,109 @@
+{
+  "extensionName": {
+    "message": "Brew Finder"
+  },
+  "extensionDescription": {
+    "message": "Erkennt Homebrew-Pakete für jede Website"
+  },
+  "popupDetecting": {
+    "message": "Wird geprüft..."
+  },
+  "popupNoMatch": {
+    "message": "Kein Homebrew-Paket für diese Website gefunden"
+  },
+  "popupCurrentPage": {
+    "message": "Aktuelle Seite: $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupUnknownPage": {
+    "message": "Aktuelle Seite: unbekannt"
+  },
+  "copyCommandTitle": {
+    "message": "Installationsbefehl kopieren"
+  },
+  "overlayCloseTitle": {
+    "message": "Schließen"
+  },
+  "overlayInstallable": {
+    "message": "Diese Software kann mit Homebrew installiert werden:"
+  },
+  "overlayDismissQuestion": {
+    "message": "Seiten-Overlay dauerhaft deaktivieren?"
+  },
+  "overlayDismissOnce": {
+    "message": "Nur dieses Mal"
+  },
+  "overlayDismissForever": {
+    "message": "Dauerhaft deaktivieren"
+  },
+  "optionsTitle": {
+    "message": "Brew Finder-Einstellungen"
+  },
+  "optionsBadgeLabel": {
+    "message": "Badge"
+  },
+  "optionsBadgeDescription": {
+    "message": "Trefferanzahl auf dem Erweiterungssymbol anzeigen"
+  },
+  "optionsOverlayLabel": {
+    "message": "Seiten-Overlay"
+  },
+  "optionsOverlayDescription": {
+    "message": "Installationshinweise unten rechts anzeigen"
+  },
+  "optionsLanguageLabel": {
+    "message": "Sprache"
+  },
+  "optionsLanguageDescription": {
+    "message": "Anzeigesprache der Erweiterung wählen"
+  },
+  "optionsLanguageAuto": {
+    "message": "Browser folgen"
+  },
+  "optionsResetDismissLabel": {
+    "message": "Overlay-Ausblendung zurücksetzen"
+  },
+  "optionsResetDismissDescription": {
+    "message": "Abfrage zum dauerhaften Deaktivieren wiederherstellen"
+  },
+  "optionsResetButton": {
+    "message": "Zurücksetzen"
+  },
+  "optionsResetDone": {
+    "message": "Zurückgesetzt"
+  },
+  "optionsMetadataLoading": {
+    "message": "Wird geladen..."
+  },
+  "optionsMetadataVersion": {
+    "message": "Kartendaten-Version: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataPackageCount": {
+    "message": "Abgedeckte Pakete: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataDomainCount": {
+    "message": "Abgedeckte Domains: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataError": {
+    "message": "Metadaten konnten nicht geladen werden"
+  }
+}
