@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,12 +11,13 @@
     <span class="bf-title">Brew Finder</span>
   </div>
   <div id="bf-content">
-    <div class="bf-empty">
-      <div class="bf-empty-icon">⏳</div>
-      <div>正在检测...</div>
+      <div class="bf-empty">
+        <div class="bf-empty-icon">⏳</div>
+      <div data-i18n="popupDetecting">Checking...</div>
     </div>
   </div>
   <div id="bf-current-url" class="bf-current-url"></div>
+  <script src="../utils/i18n.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

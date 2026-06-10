@@ -9,32 +9,34 @@ function escapeHtml(str) {
   return div.innerHTML.replace(/"/g, '&quot;');
 }
 
-function renderMatches(matches, currentUrl) {
+function renderMatches(matches, i18n) {
   if (!matches || matches.length === 0) {
     contentEl.innerHTML = `
       <div class="bf-empty">
         <div class="bf-empty-icon">🔍</div>
-        <div>当前网站未找到 Homebrew 包</div>
+        <div>${escapeHtml(i18n.t('popupNoMatch'))}</div>
       </div>
     `;
     return;
   }
 
-  contentEl.innerHTML = matches.map((m) => `
-    <div class="bf-package">
-      <div class="bf-package-header">
-        <span class="bf-package-name">${escapeHtml(m.name)}</span>
-        <span class="bf-type-badge ${m.type}">${escapeHtml(m.type)}</span>
+  contentEl.innerHTML = matches.map((m) => {
+    const command = `brew install ${m.name}`;
+    return `
+      <div class="bf-package">
+        <div class="bf-package-header">
+          <span class="bf-package-name">${escapeHtml(m.name)}</span>
+          <span class="bf-type-badge ${escapeHtml(m.type)}">${escapeHtml(m.type)}</span>
+        </div>
+        <div class="bf-package-desc">${escapeHtml(m.desc)}</div>
+        <div class="bf-command-row">
+          <code class="bf-command">brew install ${escapeHtml(m.name)}</code>
+          <button class="bf-copy" title="${escapeHtml(i18n.t('copyCommandTitle'))}" data-cmd="${escapeHtml(command)}">📋</button>
+        </div>
       </div>
-      <div class="bf-package-desc">${escapeHtml(m.desc)}</div>
-      <div class="bf-command-row">
-        <code class="bf-command">brew install ${escapeHtml(m.name)}</code>
-        <button class="bf-copy" data-cmd="brew install ${escapeHtml(m.name)}">📋</button>
-      </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 
-  // Add copy button listeners
   contentEl.querySelectorAll('.bf-copy').forEach((btn) => {
     btn.addEventListener('click', () => {
       const cmd = btn.dataset.cmd;
@@ -49,22 +51,28 @@ function renderMatches(matches, currentUrl) {
   });
 }
 
-// Get current tab info and request match
-chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-  if (!tabs[0]) return;
-  const tab = tabs[0];
+async function initPopup() {
+  const i18n = await BrewFinderI18n.createI18n();
+  i18n.localizeDocument(document);
 
-  try {
-    urlEl.textContent = `当前页面：${new URL(tab.url).hostname}`;
-  } catch {
-    urlEl.textContent = '当前页面：未知';
-  }
+  chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    if (!tabs[0]) return;
+    const tab = tabs[0];
 
-  chrome.runtime.sendMessage({ type: 'GET_CURRENT_MATCH' }, (response) => {
-    if (chrome.runtime.lastError || !response) {
-      renderMatches([], tab.url);
-      return;
+    try {
+      urlEl.textContent = i18n.t('popupCurrentPage', [new URL(tab.url).hostname]);
+    } catch {
+      urlEl.textContent = i18n.t('popupUnknownPage');
     }
-    renderMatches(response.matches, tab.url);
+
+    chrome.runtime.sendMessage({ type: 'GET_CURRENT_MATCH' }, (response) => {
+      if (chrome.runtime.lastError || !response) {
+        renderMatches([], i18n);
+        return;
+      }
+      renderMatches(response.matches, i18n);
+    });
   });
-});
+}
+
+initPopup();
