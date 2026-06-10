@@ -1,6 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 
-// Mock chrome.storage.local
 const storageData = {};
 const mockStorage = {
   get: vi.fn((keys, cb) => {
@@ -21,12 +20,11 @@ globalThis.chrome = {
   storage: { local: mockStorage },
 };
 
-// Import after mocking
 const { getSettings, updateSetting, SETTINGS_DEFAULTS } = await import('../../extension/utils/storage.js');
 
 beforeEach(() => {
   vi.clearAllMocks();
-  Object.keys(storageData).forEach(k => delete storageData[k]);
+  Object.keys(storageData).forEach((k) => delete storageData[k]);
 });
 
 describe('SETTINGS_DEFAULTS', () => {
@@ -34,6 +32,7 @@ describe('SETTINGS_DEFAULTS', () => {
     expect(SETTINGS_DEFAULTS.badgeEnabled).toBe(true);
     expect(SETTINGS_DEFAULTS.overlayEnabled).toBe(true);
     expect(SETTINGS_DEFAULTS.overlayPermanentlyDismissed).toBe(false);
+    expect(SETTINGS_DEFAULTS.languageOverride).toBe('auto');
   });
 });
 
@@ -43,19 +42,29 @@ describe('getSettings', () => {
     expect(settings.badgeEnabled).toBe(true);
     expect(settings.overlayEnabled).toBe(true);
     expect(settings.overlayPermanentlyDismissed).toBe(false);
+    expect(settings.languageOverride).toBe('auto');
   });
 
   it('merges stored values with defaults', async () => {
     storageData.badgeEnabled = false;
+    storageData.languageOverride = 'ja';
+
     const settings = await getSettings();
+
     expect(settings.badgeEnabled).toBe(false);
-    expect(settings.overlayEnabled).toBe(true); // default
+    expect(settings.overlayEnabled).toBe(true);
+    expect(settings.languageOverride).toBe('ja');
   });
 });
 
 describe('updateSetting', () => {
-  it('updates a single setting', async () => {
+  it('updates a single boolean setting', async () => {
     await updateSetting('badgeEnabled', false);
     expect(mockStorage.set).toHaveBeenCalledWith({ badgeEnabled: false }, expect.any(Function));
+  });
+
+  it('updates the language override setting', async () => {
+    await updateSetting('languageOverride', 'de');
+    expect(mockStorage.set).toHaveBeenCalledWith({ languageOverride: 'de' }, expect.any(Function));
   });
 });
