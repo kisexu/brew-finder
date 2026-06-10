@@ -1,117 +1,122 @@
 # 🍺 Brew Finder
 
-一款 Chrome 浏览器插件，自动检测当前访问的软件网站是否有对应的 Homebrew 包，并提醒你可以通过 `brew install` 安装。
+Languages: English | [简体中文](README.zh-CN.md)
 
-## 功能
+Brew Finder is a Chrome extension that detects whether the software website you are visiting has a matching Homebrew package and reminds you that it can be installed with `brew install`.
 
-- **Badge 徽标** — 检测到匹配时在插件图标上显示数量
-- **Popup 弹窗** — 点击图标查看包名、类型、简介，一键复制安装命令
-- **页面浮层** — 匹配时右下角浮层提醒，支持一键复制
-- **GitHub 匹配** — 访问 `github.com/user/repo` 也能识别对应 Homebrew 包
-- **设置页面** — 控制 Badge、浮层开关，重置浮层关闭状态
+## Features
 
-## 数据覆盖
+- **Badge** — Shows the match count on the extension icon when packages are found
+- **Popup** — Click the extension icon to view package names, types, descriptions, and one-click install command copying
+- **Page overlay** — Shows a bottom-right reminder when a package is matched, with one-click copying
+- **GitHub matching** — Recognizes Homebrew packages when visiting `github.com/user/repo`
+- **Options page** — Controls the badge, overlay, overlay dismissal reset, and display language
+- **Internationalized UI** — Follows the browser language by default and supports manual language override in Options
 
-| 类型 | 数量 |
-|------|------|
-| Formulae（命令行工具） | 8,409 |
-| Casks（GUI 应用） | 7,706 |
-| 覆盖域名 | 7,060 |
-| GitHub 仓库 | 4,234 |
+## Data Coverage
 
-## 项目结构
+| Type | Count |
+|------|------:|
+| Formulae (CLI tools) | 8,409 |
+| Casks (GUI apps) | 7,706 |
+| Covered domains | 7,060 |
+| GitHub repositories | 4,234 |
 
-```
+## Project Structure
+
+```text
 brew-finder/
-├── scripts/                    # 数据构建管道
-│   ├── build-maps.js           # 从 Homebrew API 生成域名映射
-│   ├── filters.js              # 域名过滤规则
-│   └── __tests__/              # 数据管道测试
-├── data/                       # 生成的映射数据
-│   ├── domain-map.json         # 域名 → 包名
-│   ├── github-map.json         # user/repo → 包名
-│   └── metadata.json           # 构建元信息
-├── extension/                  # Chrome 插件（Manifest V3）
+├── scripts/                    # Data build pipeline
+│   ├── build-maps.js           # Generate domain mappings from the Homebrew API
+│   ├── filters.js              # Domain filtering rules
+│   └── __tests__/              # Data pipeline tests
+├── data/                       # Generated mapping data
+│   ├── domain-map.json         # Domain -> package names
+│   ├── github-map.json         # user/repo -> package names
+│   └── metadata.json           # Build metadata
+├── extension/                  # Chrome extension (Manifest V3)
 │   ├── background/             # Service Worker
-│   ├── content/                # 页面内浮层
-│   ├── popup/                  # 弹窗 UI
-│   ├── options/                # 设置页面
-│   └── utils/                  # 匹配逻辑 + 存储封装
-├── tests/                      # 扩展逻辑测试
-└── docs/                       # 设计文档 + 实现计划
+│   ├── content/                # In-page overlay
+│   ├── popup/                  # Popup UI
+│   ├── options/                # Options page
+│   └── utils/                  # Matching, storage, and i18n helpers
+├── tests/                      # Extension logic tests
+└── docs/                       # Design docs and implementation plans
 ```
 
-## 快速开始
+## Quick Start
 
-### 环境要求
+### Requirements
 
-- Node.js >= 18（需要全局 `fetch`）
+- Node.js >= 18 (requires global `fetch`)
 - Google Chrome
 
-### 安装依赖
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 构建映射数据
+### Build Mapping Data
 
-从 Homebrew API 拉取全量数据，生成域名映射 JSON：
+Fetch the full Homebrew API data and generate mapping JSON files:
 
 ```bash
 npm run build:maps
 ```
 
-输出 `data/domain-map.json`、`data/github-map.json`、`data/metadata.json`。
+This outputs `data/domain-map.json`, `data/github-map.json`, and `data/metadata.json`.
 
-### 构建扩展
+### Build the Extension
 
-将映射数据复制到扩展目录：
+Copy mapping data into the extension directory:
 
 ```bash
 npm run build:extension
 ```
 
-或一步完成：
+Or run the full build:
 
 ```bash
 npm run build
 ```
 
-### 加载扩展
+### Load the Extension
 
-1. 打开 `chrome://extensions/`
-2. 开启「开发者模式」
-3. 点击「加载已解压的扩展程序」
-4. 选择 `extension/` 目录
+1. Open `chrome://extensions/`
+2. Enable Developer mode
+3. Click "Load unpacked"
+4. Select the `extension/` directory
 
-### 运行测试
+### Run Tests
 
 ```bash
 npm test
 ```
 
-开发模式：
+Watch mode:
 
 ```bash
 npm run test:watch
 ```
 
-## 使用
+## Usage
 
-安装扩展后，访问以下网站测试：
+After loading the extension, visit these websites to test matching:
 
-- `https://www.docker.com/` → 匹配 `docker`（formula）
-- `https://iterm2.com/` → 匹配 `iterm2`（cask）
-- `https://github.com/FFmpeg/FFmpeg` → 匹配 `ffmpeg`（formula）
+- `https://www.docker.com/` -> matches `docker` (formula)
+- `https://iterm2.com/` -> matches `iterm2` (cask)
+- `https://github.com/FFmpeg/FFmpeg` -> matches `ffmpeg` (formula)
 
-## 技术栈
+## Tech Stack
 
-- **数据管道：** Node.js + vitest
-- **Chrome 插件：** 原生 JS + HTML/CSS，Manifest V3，零依赖
-- **数据源：** [Homebrew Formulae API](https://formulae.brew.sh)
+- **Data pipeline:** Node.js + Vitest
+- **Chrome extension:** Vanilla JS + HTML/CSS, Manifest V3, zero runtime dependencies
+- **Data source:** [Homebrew Formulae API](https://formulae.brew.sh)
 
-## 文档
+## Documentation
 
-- [设计文档](docs/superpowers/specs/2026-06-08-brew-finder-design.md)
-- [实现计划](docs/superpowers/plans/2026-06-08-brew-finder.md)
+- [Original design](docs/superpowers/specs/2026-06-08-brew-finder-design.md)
+- [Original implementation plan](docs/superpowers/plans/2026-06-08-brew-finder.md)
+- [Internationalization design](docs/superpowers/specs/2026-06-10-brew-finder-i18n-design.md)
+- [Internationalization implementation plan](docs/superpowers/plans/2026-06-10-brew-finder-i18n.md)
