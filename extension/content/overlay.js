@@ -1,46 +1,49 @@
 // extension/content/overlay.js
 
-(function () {
+(async function () {
   const OVERLAY_ID = 'brew-finder-overlay';
 
-  // Don't inject on special pages
   if (location.protocol === 'chrome:' || location.protocol === 'about:' || location.protocol === 'file:') {
     return;
   }
+
+  const i18n = await BrewFinderI18n.createI18n();
 
   /**
    * Create and inject the overlay into the page.
    */
   function showOverlay(matches) {
-    // Remove existing overlay if any
     removeOverlay();
 
     const overlay = document.createElement('div');
     overlay.id = OVERLAY_ID;
+    overlay.dir = i18n.dir;
+    overlay.lang = i18n.locale.replace('_', '-');
 
-    // Build match cards
-    const matchCards = matches.map((m) => `
-      <div style="margin-bottom: 6px;">
-        <div class="bf-desc">${escapeHtml(m.desc)}</div>
-        <div class="bf-command-row">
-          <code class="bf-command">brew install ${escapeHtml(m.name)}</code>
-          <button class="bf-copy" data-cmd="brew install ${escapeHtml(m.name)}">📋</button>
+    const matchCards = matches.map((m) => {
+      const command = `brew install ${m.name}`;
+      return `
+        <div style="margin-bottom: 6px;">
+          <div class="bf-desc">${escapeHtml(m.desc)}</div>
+          <div class="bf-command-row">
+            <code class="bf-command" dir="ltr">brew install ${escapeHtml(m.name)}</code>
+            <button class="bf-copy" title="${escapeHtml(i18n.t('copyCommandTitle'))}" data-cmd="${escapeHtml(command)}">📋</button>
+          </div>
         </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
 
     overlay.innerHTML = `
       <div class="bf-header">
         <div class="bf-title">🍺 Brew Finder</div>
-        <button class="bf-close" title="关闭">✕</button>
+        <button class="bf-close" title="${escapeHtml(i18n.t('overlayCloseTitle'))}">✕</button>
       </div>
-      <div class="bf-body">此软件可通过 Homebrew 安装：</div>
+      <div class="bf-body">${escapeHtml(i18n.t('overlayInstallable'))}</div>
       ${matchCards}
     `;
 
     document.body.appendChild(overlay);
 
-    // Event listeners
     overlay.querySelector('.bf-close').addEventListener('click', handleClose);
     overlay.querySelectorAll('.bf-copy').forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -63,7 +66,6 @@
     const overlay = document.getElementById(OVERLAY_ID);
     if (!overlay) return;
 
-    // Check if already showing dismiss confirm
     if (overlay.querySelector('.bf-dismiss-confirm')) {
       removeOverlay();
       return;
@@ -72,10 +74,10 @@
     const confirm = document.createElement('div');
     confirm.className = 'bf-dismiss-confirm';
     confirm.innerHTML = `
-      <div>是否永久关闭页面浮层？</div>
+      <div>${escapeHtml(i18n.t('overlayDismissQuestion'))}</div>
       <div class="bf-dismiss-actions">
-        <button class="bf-dismiss-btn" id="bf-dismiss-once">仅本次</button>
-        <button class="bf-dismiss-btn permanent" id="bf-dismiss-forever">永久关闭</button>
+        <button class="bf-dismiss-btn" id="bf-dismiss-once">${escapeHtml(i18n.t('overlayDismissOnce'))}</button>
+        <button class="bf-dismiss-btn permanent" id="bf-dismiss-forever">${escapeHtml(i18n.t('overlayDismissForever'))}</button>
       </div>
     `;
     overlay.appendChild(confirm);
@@ -102,12 +104,10 @@
     return div.innerHTML.replace(/"/g, '&quot;');
   }
 
-  // Request match from service worker
   chrome.runtime.sendMessage({ type: 'MATCH_URL', url: location.href }, (response) => {
     if (chrome.runtime.lastError) return; // SW not ready
     if (!response || !response.matches || response.matches.length === 0) return;
 
-    // Check if overlay is enabled and not permanently dismissed
     chrome.storage.local.get(['overlayEnabled', 'overlayPermanentlyDismissed'], (settings) => {
       if (settings.overlayEnabled === false) return;
       if (settings.overlayPermanentlyDismissed === true) return;
