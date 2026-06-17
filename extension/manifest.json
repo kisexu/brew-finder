@@ -20,7 +20,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["_locales/*/messages.json"],
+      "resources": ["_locales/*/messages.json", "icons/icon-128.png"],
       "matches": ["http://*/*", "https://*/*"]
     }
   ],

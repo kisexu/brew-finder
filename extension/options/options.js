@@ -10,6 +10,7 @@ let currentI18n = null;
 
 function setToggle(el, active) {
   el.classList.toggle('active', active);
+  el.setAttribute('aria-pressed', String(active));
 }
 
 function initToggle(el, key) {
@@ -39,6 +40,29 @@ function escapeHtml(str) {
   return div.innerHTML.replace(/"/g, '&quot;');
 }
 
+function splitMetadataLine(text) {
+  const separatorIndex = text.search(/[:：]/);
+  if (separatorIndex === -1) {
+    return { label: text, value: '' };
+  }
+
+  return {
+    label: text.slice(0, separatorIndex),
+    value: text.slice(separatorIndex + 1).trim(),
+  };
+}
+
+function metadataCardHtml(text) {
+  const { label, value } = splitMetadataLine(text);
+
+  return `
+    <article class="status-card">
+      <div class="status-label">${escapeHtml(label)}</div>
+      <div class="status-value">${escapeHtml(value)}</div>
+    </article>
+  `;
+}
+
 function populateLanguageSelect(i18n, selectedValue) {
   languageSelect.innerHTML = BrewFinderI18n.LANGUAGE_OPTIONS.map((option) => {
     const label = option.labelKey ? i18n.t(option.labelKey) : option.label;
@@ -52,13 +76,15 @@ async function renderMetadata(i18n) {
     const res = await fetch(chrome.runtime.getURL('data/metadata.json'));
     const meta = await res.json();
     const locale = i18n.locale.replace('_', '-');
-    metadataEl.innerHTML = `
-      <div>${escapeHtml(i18n.t('optionsMetadataVersion', [meta.buildTime.split('T')[0]]))}</div>
-      <div>${escapeHtml(i18n.t('optionsMetadataPackageCount', [(meta.formulaCount + meta.caskCount).toLocaleString(locale)]))}</div>
-      <div>${escapeHtml(i18n.t('optionsMetadataDomainCount', [meta.domainCount.toLocaleString(locale)]))}</div>
-    `;
+    const cards = [
+      i18n.t('optionsMetadataVersion', [meta.buildTime.split('T')[0]]),
+      i18n.t('optionsMetadataPackageCount', [(meta.formulaCount + meta.caskCount).toLocaleString(locale)]),
+      i18n.t('optionsMetadataDomainCount', [meta.domainCount.toLocaleString(locale)]),
+    ];
+
+    metadataEl.innerHTML = cards.map(metadataCardHtml).join('');
   } catch {
-    metadataEl.innerHTML = `<div>${escapeHtml(i18n.t('optionsMetadataError'))}</div>`;
+    metadataEl.innerHTML = metadataCardHtml(i18n.t('optionsMetadataError'));
   }
 }
 

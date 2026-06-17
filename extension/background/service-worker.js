@@ -42,7 +42,7 @@ async function updateBadge(tabId, matchCount) {
 
   if (matchCount > 0) {
     chrome.action.setBadgeText({ tabId, text: String(matchCount) });
-    chrome.action.setBadgeBackgroundColor({ tabId, color: '#e94560' });
+    chrome.action.setBadgeBackgroundColor({ tabId, color: '#000000' });
   } else {
     chrome.action.setBadgeText({ tabId, text: '' });
   }

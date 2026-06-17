@@ -6,17 +6,41 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <div class="bf-header">
-    <span class="bf-logo">🍺</span>
-    <span class="bf-title">Brew Finder</span>
-  </div>
-  <div id="bf-content">
-      <div class="bf-empty">
-        <div class="bf-empty-icon">⏳</div>
-      <div data-i18n="popupDetecting">Checking...</div>
+  <main class="bf-shell">
+    <header class="bf-header">
+      <div class="bf-title">
+        <img class="bf-app-icon" src="../icons/icon-128.png" alt="" aria-hidden="true">
+        <span>Brew Finder</span>
+      </div>
+      <button
+        id="bf-settings-button"
+        class="bf-settings"
+        type="button"
+        title="Brew Finder Settings"
+        aria-label="Brew Finder Settings"
+        data-i18n-title="optionsTitle"
+        data-i18n-aria-label="optionsTitle"
+      >
+        <svg class="bf-settings-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true">
+          <path d="M9.7 4.3 10.4 2h3.2l.7 2.3 1.5.6 2.1-1.1 2.3 2.3-1.1 2.1.6 1.5 2.3.7v3.2l-2.3.7-.6 1.5 1.1 2.1-2.3 2.3-2.1-1.1-1.5.6-.7 2.3h-3.2l-.7-2.3-1.5-.6-2.1 1.1-2.3-2.3 1.1-2.1-.6-1.5-2.3-.7v-3.2l2.3-.7.6-1.5-1.1-2.1 2.3-2.3 2.1 1.1 1.5-.6Z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </button>
+    </header>
+
+    <div class="bf-install-note">
+      <span data-i18n="overlayInstallable">This software can be installed with Homebrew:</span>
     </div>
-  </div>
-  <div id="bf-current-url" class="bf-current-url"></div>
+
+    <div id="bf-content" class="bf-match-list">
+      <div class="bf-empty">
+        <div data-i18n="popupDetecting">Checking...</div>
+      </div>
+    </div>
+
+    <div id="bf-current-url" class="bf-current-url"></div>
+  </main>
+
   <script src="../utils/i18n.js"></script>
   <script src="popup.js"></script>
 </body>

@@ -1,120 +1,404 @@
 /* extension/content/overlay.css */
 
+#brew-finder-overlay,
+#brew-finder-overlay *,
+#brew-finder-toggle,
+#brew-finder-toggle * {
+  box-sizing: border-box;
+}
+
 #brew-finder-overlay {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  right: 24px;
+  bottom: 24px;
   z-index: 2147483647;
-  background: #1a1a2e;
-  border: 1px solid #333;
-  border-radius: 12px;
-  padding: 14px 18px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  max-width: 300px;
-  min-width: 260px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: min(380px, calc(100vw - 48px));
+  max-height: calc(100vh - 48px);
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  box-shadow:
+    0 2px 8px rgba(17, 24, 39, 0.18),
+    0 18px 46px rgba(17, 24, 39, 0.30);
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 13px;
-  color: #e0e0e0;
   line-height: 1.4;
+  transform-origin: bottom right;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+#brew-finder-overlay.bf-is-collapsed {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(16px) scale(0.95);
+}
+
+#brew-finder-overlay.bf-hidden,
+#brew-finder-toggle.bf-hidden {
+  display: none;
 }
 
 #brew-finder-overlay .bf-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  justify-content: space-between;
+  min-height: 43px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 #brew-finder-overlay .bf-title {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-weight: bold;
-  font-size: 13px;
+  gap: 8px;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+#brew-finder-overlay .bf-app-icon,
+#brew-finder-toggle .bf-toggle-icon {
+  display: block;
+  flex: 0 0 auto;
+  object-fit: cover;
+}
+
+#brew-finder-overlay .bf-app-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
 }
 
 #brew-finder-overlay .bf-close {
-  background: none;
-  border: none;
-  color: #888;
-  cursor: pointer;
-  font-size: 16px;
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin: 0;
   padding: 0;
-  line-height: 1;
+  background: transparent;
+  border: 0;
+  border-radius: 4px;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
-#brew-finder-overlay .bf-close:hover {
-  color: #fff;
+#brew-finder-overlay .bf-close:hover,
+#brew-finder-overlay .bf-close:focus-visible {
+  background: #f3f4f6;
+  color: #000000;
+  outline: none;
 }
 
-#brew-finder-overlay .bf-desc {
-  font-size: 12px;
-  color: #aaa;
-  margin-bottom: 8px;
+#brew-finder-overlay .bf-install-note {
+  padding: 12px 16px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+#brew-finder-overlay .bf-match-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  background: #ffffff;
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+#brew-finder-overlay .bf-match-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+#brew-finder-overlay .bf-match-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#brew-finder-overlay .bf-match-list::-webkit-scrollbar-thumb {
+  background: #e5e7eb;
+}
+
+#brew-finder-overlay .bf-match-list:hover::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+}
+
+#brew-finder-overlay .bf-match-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 160ms ease;
+}
+
+#brew-finder-overlay .bf-match-item:last-child {
+  border-bottom: 0;
+}
+
+#brew-finder-overlay .bf-match-item:hover {
+  background: #f9fafb;
+}
+
+#brew-finder-overlay .bf-name-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+#brew-finder-overlay .bf-name {
+  display: inline-block;
+  min-width: 0;
+  overflow: hidden;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#brew-finder-overlay .bf-token-badge {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-height: 18px;
+  padding: 2px 6px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  color: #4b5563;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 12px;
 }
 
 #brew-finder-overlay .bf-command-row {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  min-width: 0;
 }
 
 #brew-finder-overlay .bf-command {
-  background: #0d0d1a;
-  padding: 4px 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 8px 12px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
   border-radius: 4px;
-  font-size: 11px;
-  font-family: monospace;
-  flex: 1;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: #000000;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 12px;
+  line-height: 16px;
+  scrollbar-width: none;
   white-space: nowrap;
 }
 
+#brew-finder-overlay .bf-command::-webkit-scrollbar {
+  display: none;
+}
+
 #brew-finder-overlay .bf-copy {
-  background: #e94560;
-  border: none;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 11px;
-  cursor: pointer;
-}
-
-#brew-finder-overlay .bf-copy:hover {
-  background: #d63851;
-}
-
-/* Dismiss confirmation */
-#brew-finder-overlay .bf-dismiss-confirm {
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid #333;
-  font-size: 11px;
-  color: #aaa;
-}
-
-#brew-finder-overlay .bf-dismiss-actions {
+  appearance: none;
   display: flex;
-  gap: 8px;
-  margin-top: 6px;
-}
-
-#brew-finder-overlay .bf-dismiss-btn {
-  background: #333;
-  border: none;
-  color: #ccc;
-  padding: 4px 10px;
+  flex: 0 0 34px;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
   border-radius: 4px;
-  font-size: 11px;
+  color: #4b5563;
   cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
 }
 
-#brew-finder-overlay .bf-dismiss-btn:hover {
-  background: #444;
+#brew-finder-overlay .bf-copy:hover,
+#brew-finder-overlay .bf-copy:focus-visible,
+#brew-finder-overlay .bf-copy.bf-is-copied {
+  background: #000000;
+  border-color: #000000;
+  color: #ffffff;
+  outline: none;
 }
 
-#brew-finder-overlay .bf-dismiss-btn.permanent {
-  background: #e94560;
-  color: white;
+#brew-finder-overlay .bf-copy.bf-copy-error {
+  border-color: #991b1b;
+  color: #991b1b;
+}
+
+#brew-finder-overlay .bf-icon-check {
+  display: none;
+}
+
+#brew-finder-overlay .bf-copy.bf-is-copied .bf-icon-copy {
+  display: none;
+}
+
+#brew-finder-overlay .bf-copy.bf-is-copied .bf-icon-check {
+  display: block;
+}
+
+#brew-finder-toggle {
+  appearance: none;
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  box-shadow:
+    0 2px 8px rgba(17, 24, 39, 0.16),
+    0 12px 24px rgba(17, 24, 39, 0.24);
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+#brew-finder-toggle:hover,
+#brew-finder-toggle:focus-visible {
+  background: #f9fafb;
+  outline: none;
+  transform: scale(1.05);
+}
+
+#brew-finder-toggle:active {
+  transform: scale(0.95);
+}
+
+#brew-finder-toggle .bf-toggle-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+}
+
+@media (max-width: 430px) {
+  #brew-finder-overlay {
+    right: 12px;
+    bottom: 12px;
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 24px);
+  }
+
+  #brew-finder-toggle {
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #brew-finder-overlay {
+    background: #171717;
+    border-color: #3f3f46;
+    box-shadow:
+      0 2px 8px rgba(0, 0, 0, 0.45),
+      0 18px 46px rgba(0, 0, 0, 0.55);
+    color: #f5f5f5;
+  }
+
+  #brew-finder-overlay .bf-header,
+  #brew-finder-overlay .bf-match-item {
+    background: #171717;
+  }
+
+  #brew-finder-overlay .bf-header,
+  #brew-finder-overlay .bf-install-note {
+    border-color: #2f2f35;
+  }
+
+  #brew-finder-overlay .bf-title,
+  #brew-finder-overlay .bf-name,
+  #brew-finder-overlay .bf-install-note,
+  #brew-finder-overlay .bf-command {
+    color: #f5f5f5;
+  }
+
+  #brew-finder-overlay .bf-close,
+  #brew-finder-overlay .bf-copy,
+  #brew-finder-toggle {
+    color: #d4d4d8;
+  }
+
+  #brew-finder-overlay .bf-close:hover,
+  #brew-finder-overlay .bf-close:focus-visible,
+  #brew-finder-overlay .bf-match-item:hover,
+  #brew-finder-toggle:hover,
+  #brew-finder-toggle:focus-visible {
+    background: #262626;
+    color: #ffffff;
+  }
+
+  #brew-finder-overlay .bf-install-note,
+  #brew-finder-overlay .bf-command,
+  #brew-finder-overlay .bf-token-badge {
+    background: #202020;
+  }
+
+  #brew-finder-overlay .bf-match-list {
+    background: #171717;
+    scrollbar-color: #52525b transparent;
+  }
+
+  #brew-finder-overlay .bf-match-list::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+  }
+
+  #brew-finder-overlay .bf-match-list:hover::-webkit-scrollbar-thumb {
+    background: #52525b;
+  }
+
+  #brew-finder-overlay .bf-match-item {
+    border-color: #262626;
+  }
+
+  #brew-finder-overlay .bf-command,
+  #brew-finder-overlay .bf-token-badge {
+    border-color: #3f3f46;
+  }
+
+  #brew-finder-overlay .bf-token-badge {
+    color: #d4d4d8;
+  }
+
+  #brew-finder-overlay .bf-copy,
+  #brew-finder-toggle {
+    background: #171717;
+    border-color: #3f3f46;
+  }
+
+  #brew-finder-overlay .bf-copy:hover,
+  #brew-finder-overlay .bf-copy:focus-visible,
+  #brew-finder-overlay .bf-copy.bf-is-copied {
+    background: #f5f5f5;
+    border-color: #f5f5f5;
+    color: #111111;
+  }
+
+  #brew-finder-overlay .bf-copy.bf-copy-error {
+    border-color: #fca5a5;
+    color: #fca5a5;
+  }
 }
