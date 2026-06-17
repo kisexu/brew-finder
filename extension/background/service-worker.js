@@ -1,5 +1,5 @@
 // extension/background/service-worker.js
-import { matchUrl, matchUrlForOverlay } from '../utils/matcher.js';
+import { matchUrlForOverlay, matchUrlForPopup } from '../utils/matcher.js';
 import { getSettings, updateSetting } from '../utils/storage.js';
 
 let domainMap = {};
@@ -49,21 +49,26 @@ async function updateBadge(tabId, matchCount) {
 }
 
 /**
- * Handle a match request from content script or tab update.
+ * Handle badge matching from tab updates.
  * Awaits map initialization to prevent empty results on early requests.
  */
-async function handleMatch(url, tabId) {
+async function handleBadgeMatch(url, tabId) {
   await initPromise;
-  const result = matchUrl(url, domainMap, githubMap);
+  const result = matchUrlForPopup(url, domainMap, githubMap);
   await updateBadge(tabId, result.matches.length);
   return result;
 }
 
 async function handleOverlayMatch(url, tabId) {
   await initPromise;
-  const result = matchUrl(url, domainMap, githubMap);
+  const result = matchUrlForPopup(url, domainMap, githubMap);
   await updateBadge(tabId, result.matches.length);
   return matchUrlForOverlay(url, domainMap, githubMap);
+}
+
+async function handlePopupMatch(url) {
+  await initPromise;
+  return matchUrlForPopup(url, domainMap, githubMap);
 }
 
 // Listen for messages from content script
@@ -89,7 +94,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     // Popup requesting current tab's match
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (tabs[0]) {
-        handleMatch(tabs[0].url, tabs[0].id).then(sendResponse).catch(() => sendResponse({ matches: [] }));
+        handlePopupMatch(tabs[0].url).then(sendResponse).catch(() => sendResponse({ matches: [] }));
       } else {
         sendResponse({ matches: [] });
       }
@@ -101,7 +106,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 // Re-match when tab URL changes
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   if (changeInfo.status === 'complete' && tab.url) {
-    handleMatch(tab.url, tabId).catch(console.error);
+    handleBadgeMatch(tab.url, tabId).catch(console.error);
   }
 });
 
@@ -109,7 +114,7 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 chrome.tabs.onActivated.addListener(async ({ tabId }) => {
   const tab = await chrome.tabs.get(tabId);
   if (tab.url) {
-    handleMatch(tab.url, tabId).catch(console.error);
+    handleBadgeMatch(tab.url, tabId).catch(console.error);
   }
 });
 

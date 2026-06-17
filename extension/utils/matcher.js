@@ -3,6 +3,24 @@ const GITHUB_SPECIAL_PATHS = new Set([
   'topics', 'trending', 'settings', 'notifications',
   'login', 'signup', 'explore', 'marketplace',
 ]);
+const POPUP_ROOT_DOMAIN_LIMIT = 20;
+const OVERLAY_INLINE_LIMIT = 3;
+const MULTI_PART_PUBLIC_SUFFIXES = new Set([
+  'co.uk', 'org.uk', 'ac.uk', 'gov.uk',
+  'com.au', 'net.au', 'org.au', 'edu.au',
+  'co.jp', 'ne.jp', 'or.jp', 'ac.jp',
+  'com.cn', 'net.cn', 'org.cn', 'edu.cn',
+  'com.br', 'com.mx', 'com.tr', 'com.tw',
+]);
+const HOSTED_PRIVATE_SUFFIXES = new Set([
+  'github.io', 'gitlab.io', 'codeberg.page',
+  'pages.dev', 'workers.dev',
+  'vercel.app', 'netlify.app', 'herokuapp.com',
+  'appspot.com', 'firebaseapp.com', 'web.app',
+  'readthedocs.io', 'sourceforge.io',
+  'blogspot.com', 'wordpress.com', 'tumblr.com',
+  'glitch.me', 'surge.sh', 'neocities.org',
+]);
 
 /**
  * Match a URL against domain and github maps.
@@ -18,9 +36,38 @@ export function matchUrl(url, domainMap, githubMap) {
 }
 
 /**
+ * Match a URL for the extension popup.
+ * Non-GitHub pages match every package whose homepage shares the same root domain.
+ */
+export function matchUrlForPopup(url, domainMap, githubMap) {
+  const parsed = parseUrl(url);
+  if (!parsed) {
+    return { matches: [] };
+  }
+
+  if (parsed.hostname === GITHUB_HOST) {
+    return matchParsedUrl(parsed, domainMap, githubMap);
+  }
+
+  const exactResult = matchParsedUrl(parsed, domainMap, githubMap);
+  const matches = rootDomainMatches(parsed.hostname, domainMap);
+  if (matches.length > 0 && matches.length <= POPUP_ROOT_DOMAIN_LIMIT) {
+    return { matches };
+  }
+
+  if (exactResult.matches.length > POPUP_ROOT_DOMAIN_LIMIT) {
+    return {
+      matches: exactResult.matches.filter((match) => homepageMatchesUrl(match.homepage, parsed)),
+    };
+  }
+
+  return exactResult;
+}
+
+/**
  * Match a URL for the page overlay.
- * Large exact-domain buckets are narrowed to entries whose homepage subdomain/path
- * contains the current page, while regular domain matching stays unchanged.
+ * Root-domain candidates are shown when concise, then narrowed by homepage
+ * subdomain/path once there are more than three candidates.
  */
 export function matchUrlForOverlay(url, domainMap, githubMap) {
   const parsed = parseUrl(url);
@@ -28,13 +75,28 @@ export function matchUrlForOverlay(url, domainMap, githubMap) {
     return { matches: [] };
   }
 
-  const result = matchParsedUrl(parsed, domainMap, githubMap);
-  if (parsed.hostname === GITHUB_HOST || !shouldUsePreciseOverlayMatch(result.matches)) {
-    return result;
+  if (parsed.hostname === GITHUB_HOST) {
+    return matchParsedUrl(parsed, domainMap, githubMap);
+  }
+
+  const rootMatches = rootDomainMatches(parsed.hostname, domainMap);
+  if (rootMatches.length > 0 && rootMatches.length <= OVERLAY_INLINE_LIMIT) {
+    return { matches: rootMatches };
+  }
+
+  const exactResult = matchParsedUrl(parsed, domainMap, githubMap);
+  if (exactResult.matches.length > 0) {
+    if (exactResult.matches.length <= OVERLAY_INLINE_LIMIT) {
+      return exactResult;
+    }
+
+    return {
+      matches: exactResult.matches.filter((match) => homepageMatchesUrl(match.homepage, parsed)),
+    };
   }
 
   return {
-    matches: result.matches.filter((match) => homepageMatchesUrl(match.homepage, parsed)),
+    matches: [],
   };
 }
 
@@ -77,22 +139,33 @@ function matchParsedUrl(parsed, domainMap, githubMap) {
   return { matches };
 }
 
-function shouldUsePreciseOverlayMatch(matches) {
-  if (!Array.isArray(matches) || matches.length <= 3) {
-    return false;
+function rootDomainMatches(hostname, domainMap) {
+  const rootDomain = rootDomainForHostname(hostname);
+  if (!rootDomain) {
+    return [];
   }
 
-  const scopes = matches
-    .map((match) => homepageScope(match.homepage))
-    .filter(Boolean);
-  const hostnames = new Set(scopes.map((scope) => scope.hostname));
-  const specificScopes = new Set(
-    scopes
-      .filter((scope) => scope.path !== '/')
-      .map((scope) => `${scope.hostname}${scope.path}`)
-  );
+  const matches = [];
+  const seen = new Set();
 
-  return hostnames.size > 1 || specificScopes.size > 1;
+  Object.values(domainMap || {}).forEach((domainMatches) => {
+    domainMatches.forEach((match) => {
+      const scope = homepageScope(match.homepage);
+      if (!scope || rootDomainForHostname(scope.hostname) !== rootDomain) {
+        return;
+      }
+
+      const key = `${match.type}:${match.name}:${match.homepage || ''}`;
+      if (seen.has(key)) {
+        return;
+      }
+
+      seen.add(key);
+      matches.push(match);
+    });
+  });
+
+  return matches;
 }
 
 function homepageScope(homepage) {
@@ -118,6 +191,28 @@ function homepageMatchesUrl(homepage, currentUrl) {
   }
 
   return pathIsWithinScope(currentUrl.pathname, scope.path);
+}
+
+function rootDomainForHostname(hostname) {
+  if (!hostname || typeof hostname !== 'string') {
+    return '';
+  }
+
+  const labels = hostname.toLowerCase().replace(/\.$/, '').split('.').filter(Boolean);
+  if (labels.length <= 2) {
+    return labels.join('.');
+  }
+
+  const lastTwo = labels.slice(-2).join('.');
+  if (HOSTED_PRIVATE_SUFFIXES.has(lastTwo)) {
+    return labels.slice(-3).join('.');
+  }
+
+  if (MULTI_PART_PUBLIC_SUFFIXES.has(lastTwo)) {
+    return labels.slice(-3).join('.');
+  }
+
+  return lastTwo;
 }
 
 function pathIsWithinScope(pathname, scopePath) {

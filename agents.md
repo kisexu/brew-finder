@@ -27,7 +27,7 @@ Both live in one repo. The extension bundles the mapping data at `extension/data
 |------|---------|
 | `extension/manifest.json` | MV3 manifest — permissions, content scripts, background |
 | `extension/background/service-worker.js` | Core: loads maps, matches URLs, updates badge |
-| `extension/utils/matcher.js` | Pure `matchUrl(url, domainMap, githubMap)` function |
+| `extension/utils/matcher.js` | Pure URL matching functions for badge, popup, and overlay |
 | `extension/utils/storage.js` | `chrome.storage.local` wrapper with defaults |
 | `extension/content/overlay.js` | Content script: injects page overlay |
 | `extension/content/overlay.css` | Overlay styles |
@@ -52,7 +52,7 @@ Homebrew API → build-maps.js → data/*.json → (copy) → extension/data/*.j
                                                       ↓
                                               service-worker.js (loads on startup)
                                                       ↓
-                                              matchUrl() in matcher.js
+                                              matcher.js display rules
                                                       ↓
                                               Badge + Popup + Overlay
 ```
@@ -70,10 +70,21 @@ Content script and popup communicate with the service worker via `chrome.runtime
 
 ### Matching Logic
 
-- **GitHub URLs** (`github.com/user/repo/...`): extract `user/repo`, look up in `github-map.json`
-- **Other URLs**: use `hostname` directly, look up in `domain-map.json`
-- Special GitHub paths (`/topics/`, `/trending`, etc.) are skipped
-- No domain normalization — `www.docker.com` ≠ `docker.com` (maps use homepage's original domain)
+`extension/utils/matcher.js` exposes three display-oriented matchers:
+
+- `matchUrl(url, domainMap, githubMap)` is the original exact matcher. GitHub URLs (`github.com/user/repo/...`) extract `user/repo` and look up `github-map.json`; other URLs use `hostname` directly against `domain-map.json`.
+- `matchUrlForPopup(url, domainMap, githubMap)` powers the extension icon popup and badge count. Non-GitHub pages first gather packages whose `homepage` shares the same root domain. If the root-domain fanout is `1..20`, show all of those packages. If the root-domain fanout is larger than 20, fall back to the current hostname; if the current hostname itself has more than 20 packages, narrow by homepage path.
+- `matchUrlForOverlay(url, domainMap, githubMap)` powers the page overlay. Non-GitHub pages first gather same-root-domain packages; if there are `1..3`, show them. If the root-domain fanout is larger than 3, fall back to the current hostname; if the hostname has `1..3` packages, show them; if the hostname has more than 3, narrow by homepage path.
+
+Important display-rule notes:
+
+- GitHub always uses the original repository rule. Special paths (`/topics/`, `/trending`, etc.) are skipped.
+- Popup and badge intentionally use the same bounded root-domain rule so the badge count matches what the popup opens with.
+- The overlay is more conservative than the popup to avoid noisy page injections.
+- Example: `cursor.com`, `www.cursor.com`, and `docs.cursor.com` show both `cursor` and `cursor-cli` in the popup/badge; the overlay also shows both because the root-domain fanout is only 2.
+- Example: `www.google.com` does not expand all `google.com` packages because the root-domain fanout is huge. The popup/badge fall back to the current hostname's 7 packages, while the overlay narrows by path (`/drive/` shows `google-drive`; the root page shows no overlay).
+- Root-domain detection handles common multi-part public suffixes (`example.co.uk`) and treats hosted private suffixes (`github.io`, `vercel.app`, etc.) as separate site roots to avoid merging unrelated projects.
+- Install commands are generated via `BrewFinderCommand.installCommandFor()`. Packages from `homebrew/cask` are shown as `brew install --cask <token>`.
 
 ## Development Workflow
 
@@ -84,7 +95,7 @@ npm test           # one-shot
 npm run test:watch # watch mode
 ```
 
-All 34 tests must pass before committing.
+All tests must pass before committing.
 
 ### Building
 
