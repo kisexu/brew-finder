@@ -32,7 +32,10 @@
     "message": "このソフトウェアは Homebrew でインストールできます："
   },
   "overlayDismissQuestion": {
-    "message": "ページオーバーレイを永久にオフにしますか？"
+    "message": "ページオーバーレイを閉じますか？"
+  },
+  "overlayDismissDescription": {
+    "message": "このページの読み込み中だけ閉じるか、ページオーバーレイを永久にオフにするかを選択できます。後で拡張機能の設定ページから再度オンにできます。"
   },
   "overlayDismissOnce": {
     "message": "今回のみ"
@@ -102,18 +105,6 @@
   },
   "languageNameHi": {
     "message": "हिन्दी"
-  },
-  "optionsResetDismissLabel": {
-    "message": "オーバーレイ非表示状態をリセット"
-  },
-  "optionsResetDismissDescription": {
-    "message": "オーバーレイの永久オフ確認を復元します"
-  },
-  "optionsResetButton": {
-    "message": "リセット"
-  },
-  "optionsResetDone": {
-    "message": "リセット済み"
   },
   "optionsMetadataLoading": {
     "message": "読み込み中..."

@@ -32,7 +32,10 @@
     "message": "This software can be installed with Homebrew:"
   },
   "overlayDismissQuestion": {
-    "message": "Turn off the page overlay permanently?"
+    "message": "Close the page overlay?"
+  },
+  "overlayDismissDescription": {
+    "message": "Choose whether to close it only for this page load or turn it off permanently. You can turn it back on later from the extension settings page."
   },
   "overlayDismissOnce": {
     "message": "Only this time"
@@ -102,18 +105,6 @@
   },
   "languageNameHi": {
     "message": "हिन्दी"
-  },
-  "optionsResetDismissLabel": {
-    "message": "Reset overlay dismissal"
-  },
-  "optionsResetDismissDescription": {
-    "message": "Restore the permanent overlay dismissal prompt"
-  },
-  "optionsResetButton": {
-    "message": "Reset"
-  },
-  "optionsResetDone": {
-    "message": "Reset done"
   },
   "optionsMetadataLoading": {
     "message": "Loading..."

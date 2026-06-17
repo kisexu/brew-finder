@@ -32,7 +32,10 @@
     "message": "Это ПО можно установить через Homebrew:"
   },
   "overlayDismissQuestion": {
-    "message": "Отключить оверлей страницы навсегда?"
+    "message": "Закрыть оверлей страницы?"
+  },
+  "overlayDismissDescription": {
+    "message": "Выберите, закрыть его только до перезагрузки страницы или отключить навсегда. Позже его можно снова включить на странице настроек расширения."
   },
   "overlayDismissOnce": {
     "message": "Только сейчас"
@@ -102,18 +105,6 @@
   },
   "languageNameHi": {
     "message": "हिन्दी"
-  },
-  "optionsResetDismissLabel": {
-    "message": "Сбросить скрытие оверлея"
-  },
-  "optionsResetDismissDescription": {
-    "message": "Восстановить запрос постоянного отключения"
-  },
-  "optionsResetButton": {
-    "message": "Сбросить"
-  },
-  "optionsResetDone": {
-    "message": "Сброшено"
   },
   "optionsMetadataLoading": {
     "message": "Загрузка..."

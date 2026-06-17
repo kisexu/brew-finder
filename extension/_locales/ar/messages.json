@@ -32,7 +32,10 @@
     "message": "يمكن تثبيت هذا البرنامج عبر Homebrew:"
   },
   "overlayDismissQuestion": {
-    "message": "هل تريد إيقاف طبقة الصفحة نهائيًا؟"
+    "message": "هل تريد إغلاق طبقة الصفحة؟"
+  },
+  "overlayDismissDescription": {
+    "message": "اختر إغلاقها لهذه الصفحة فقط أو إيقاف طبقة الصفحة نهائيًا. يمكنك تشغيلها مرة أخرى لاحقًا من صفحة إعدادات الإضافة."
   },
   "overlayDismissOnce": {
     "message": "هذه المرة فقط"
@@ -102,18 +105,6 @@
   },
   "languageNameHi": {
     "message": "हिन्दी"
-  },
-  "optionsResetDismissLabel": {
-    "message": "إعادة ضبط إخفاء الطبقة"
-  },
-  "optionsResetDismissDescription": {
-    "message": "استعد مطالبة الإيقاف الدائم"
-  },
-  "optionsResetButton": {
-    "message": "إعادة ضبط"
-  },
-  "optionsResetDone": {
-    "message": "تمت إعادة الضبط"
   },
   "optionsMetadataLoading": {
     "message": "جارٍ التحميل..."

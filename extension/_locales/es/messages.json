@@ -32,7 +32,10 @@
     "message": "Este software se puede instalar con Homebrew:"
   },
   "overlayDismissQuestion": {
-    "message": "¿Desactivar permanentemente la superposición de página?"
+    "message": "¿Cerrar la superposición de página?"
+  },
+  "overlayDismissDescription": {
+    "message": "Elige si quieres cerrarla solo durante esta carga de página o desactivarla permanentemente. Puedes volver a activarla más tarde desde la página de configuración de la extensión."
   },
   "overlayDismissOnce": {
     "message": "Solo esta vez"
@@ -102,18 +105,6 @@
   },
   "languageNameHi": {
     "message": "हिन्दी"
-  },
-  "optionsResetDismissLabel": {
-    "message": "Restablecer cierre de superposición"
-  },
-  "optionsResetDismissDescription": {
-    "message": "Restaura el aviso de desactivación permanente"
-  },
-  "optionsResetButton": {
-    "message": "Restablecer"
-  },
-  "optionsResetDone": {
-    "message": "Restablecido"
   },
   "optionsMetadataLoading": {
     "message": "Cargando..."

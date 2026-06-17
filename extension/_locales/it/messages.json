@@ -32,7 +32,10 @@
     "message": "Questo software può essere installato con Homebrew:"
   },
   "overlayDismissQuestion": {
-    "message": "Disattivare definitivamente il riquadro nella pagina?"
+    "message": "Chiudere il riquadro nella pagina?"
+  },
+  "overlayDismissDescription": {
+    "message": "Scegli se chiuderlo solo per questo caricamento della pagina o disattivarlo definitivamente. Puoi riattivarlo in seguito dalla pagina delle impostazioni dell'estensione."
   },
   "overlayDismissOnce": {
     "message": "Solo questa volta"
@@ -102,18 +105,6 @@
   },
   "languageNameHi": {
     "message": "हिन्दी"
-  },
-  "optionsResetDismissLabel": {
-    "message": "Reimposta chiusura del riquadro"
-  },
-  "optionsResetDismissDescription": {
-    "message": "Ripristina la richiesta di disattivazione definitiva"
-  },
-  "optionsResetButton": {
-    "message": "Reimposta"
-  },
-  "optionsResetDone": {
-    "message": "Reimpostato"
   },
   "optionsMetadataLoading": {
     "message": "Caricamento..."

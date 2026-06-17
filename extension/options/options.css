@@ -285,7 +285,6 @@ body::before {
 }
 
 .toggle:focus-visible,
-.reset-btn:focus-visible,
 .language-select:focus-visible {
   outline: 2px solid #111827;
   outline-offset: 2px;
@@ -335,29 +334,6 @@ body::before {
 
 .language-select:hover {
   background: #f3f4f6;
-}
-
-.reset-btn {
-  appearance: none;
-  flex: 0 0 auto;
-  min-height: 38px;
-  padding: 8px 20px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
-  color: #374151;
-  cursor: pointer;
-  font: inherit;
-  font-size: 14px;
-  font-weight: 500;
-  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
-}
-
-.reset-btn:hover {
-  background: #f9fafb;
-  border-color: #d1d5db;
-  color: #111827;
 }
 
 .resources-section h2 {
@@ -520,8 +496,7 @@ body::before {
   }
 
   .select-wrap,
-  .language-select,
-  .reset-btn {
+  .language-select {
     width: 100%;
   }
 
@@ -554,8 +529,7 @@ body::before {
   .settings-shell,
   .preference-card,
   .resource-card,
-  .language-select,
-  .reset-btn {
+  .language-select {
     border-color: #3f3f46;
   }
 
@@ -629,14 +603,12 @@ body::before {
   }
 
   .language-select,
-  .reset-btn,
   .resource-icon {
     background: #202020;
     color: #d4d4d8;
   }
 
-  .language-select:hover,
-  .reset-btn:hover {
+  .language-select:hover {
     background: #262626;
   }
 
@@ -654,7 +626,6 @@ body::before {
   }
 
   .toggle:focus-visible,
-  .reset-btn:focus-visible,
   .language-select:focus-visible {
     outline-color: #f5f5f5;
   }

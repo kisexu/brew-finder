@@ -32,7 +32,10 @@
     "message": "इस सॉफ्टवेयर को Homebrew से इंस्टॉल किया जा सकता है:"
   },
   "overlayDismissQuestion": {
-    "message": "क्या पेज ओवरले को स्थायी रूप से बंद करें?"
+    "message": "पेज ओवरले बंद करें?"
+  },
+  "overlayDismissDescription": {
+    "message": "आप इसे केवल इस पेज लोड के लिए बंद कर सकते हैं या पेज ओवरले को स्थायी रूप से बंद कर सकते हैं। बाद में एक्सटेंशन सेटिंग पेज से इसे फिर से चालू किया जा सकता है।"
   },
   "overlayDismissOnce": {
     "message": "केवल इस बार"
@@ -102,18 +105,6 @@
   },
   "languageNameHi": {
     "message": "हिन्दी"
-  },
-  "optionsResetDismissLabel": {
-    "message": "ओवरले बंद स्थिति रीसेट करें"
-  },
-  "optionsResetDismissDescription": {
-    "message": "स्थायी रूप से बंद करने का संकेत वापस लाएँ"
-  },
-  "optionsResetButton": {
-    "message": "रीसेट"
-  },
-  "optionsResetDone": {
-    "message": "रीसेट हो गया"
   },
   "optionsMetadataLoading": {
     "message": "लोड हो रहा है..."

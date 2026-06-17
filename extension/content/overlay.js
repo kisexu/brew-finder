@@ -2,7 +2,6 @@
 
 (async function () {
   const OVERLAY_ID = 'brew-finder-overlay';
-  const TOGGLE_ID = 'brew-finder-toggle';
 
   if (location.protocol === 'chrome:' || location.protocol === 'about:' || location.protocol === 'file:') {
     return;
@@ -121,42 +120,54 @@
       <div class="bf-match-list">
         ${matches.map(matchRowHtml).join('')}
       </div>
+      <div class="bf-dismiss-dialog bf-hidden" role="dialog" aria-modal="true" aria-labelledby="bf-dismiss-title" aria-describedby="bf-dismiss-description">
+        <div class="bf-dismiss-panel">
+          <h2 id="bf-dismiss-title">${escapeHtml(i18n.t('overlayDismissQuestion'))}</h2>
+          <p id="bf-dismiss-description">${escapeHtml(i18n.t('overlayDismissDescription'))}</p>
+          <div class="bf-dismiss-actions">
+            <button class="bf-dismiss-action bf-dismiss-once" type="button">${escapeHtml(i18n.t('overlayDismissOnce'))}</button>
+            <button class="bf-dismiss-action bf-dismiss-forever" type="button">${escapeHtml(i18n.t('overlayDismissForever'))}</button>
+          </div>
+        </div>
+      </div>
     `;
 
-    const toggle = document.createElement('button');
-    toggle.id = TOGGLE_ID;
-    toggle.type = 'button';
-    toggle.className = 'bf-hidden';
-    toggle.setAttribute('aria-label', 'Open Brew Finder');
-    toggle.innerHTML = appIconHtml('bf-toggle-icon');
-
-    document.body.append(overlay, toggle);
+    document.body.append(overlay);
 
     overlay.querySelector('.bf-close').addEventListener('click', () => {
-      minimizeOverlay(overlay, toggle);
+      handleCloseClick(overlay);
     });
-    toggle.addEventListener('click', () => {
-      restoreOverlay(overlay, toggle);
+    overlay.querySelector('.bf-dismiss-once').addEventListener('click', () => {
+      dismissOverlay({ behavior: 'once' });
+    });
+    overlay.querySelector('.bf-dismiss-forever').addEventListener('click', () => {
+      dismissOverlay({ permanent: true });
     });
     wireCopyButtons(overlay);
   }
 
-  function minimizeOverlay(overlay, toggle) {
-    overlay.classList.add('bf-is-collapsed');
+  function handleCloseClick(overlay) {
+    chrome.storage.local.get(['overlayDismissBehavior'], (settings) => {
+      if (settings.overlayDismissBehavior === 'once') {
+        dismissOverlay();
+        return;
+      }
 
-    setTimeout(() => {
-      overlay.classList.add('bf-hidden');
-      toggle.classList.remove('bf-hidden');
-    }, 180);
+      showDismissDialog(overlay);
+    });
   }
 
-  function restoreOverlay(overlay, toggle) {
-    toggle.classList.add('bf-hidden');
-    overlay.classList.remove('bf-hidden');
+  function showDismissDialog(overlay) {
+    const dialog = overlay.querySelector('.bf-dismiss-dialog');
+    dialog.classList.remove('bf-hidden');
+    overlay.querySelector('.bf-dismiss-once').focus();
+  }
 
-    requestAnimationFrame(() => {
-      overlay.classList.remove('bf-is-collapsed');
+  function dismissOverlay(options = {}) {
+    chrome.runtime.sendMessage({ type: 'OVERLAY_DISMISSED', ...options }, () => {
+      void chrome.runtime.lastError;
     });
+    removeOverlay();
   }
 
   function wireCopyButtons(root) {
@@ -182,7 +193,6 @@
 
   function removeOverlay() {
     document.getElementById(OVERLAY_ID)?.remove();
-    document.getElementById(TOGGLE_ID)?.remove();
   }
 
   function escapeHtml(str) {
@@ -195,9 +205,8 @@
     if (chrome.runtime.lastError) return; // SW not ready
     if (!response || !response.matches || response.matches.length === 0) return;
 
-    chrome.storage.local.get(['overlayEnabled', 'overlayPermanentlyDismissed'], (settings) => {
+    chrome.storage.local.get(['overlayEnabled'], (settings) => {
       if (settings.overlayEnabled === false) return;
-      if (settings.overlayPermanentlyDismissed === true) return;
       showOverlay(response.matches);
     });
   });

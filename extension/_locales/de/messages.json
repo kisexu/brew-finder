@@ -32,7 +32,10 @@
     "message": "Diese Software kann mit Homebrew installiert werden:"
   },
   "overlayDismissQuestion": {
-    "message": "Seiten-Overlay dauerhaft deaktivieren?"
+    "message": "Seiten-Overlay schließen?"
+  },
+  "overlayDismissDescription": {
+    "message": "Wählen Sie, ob es nur für diesen Seitenaufruf geschlossen oder dauerhaft deaktiviert werden soll. Sie können es später in den Erweiterungseinstellungen wieder aktivieren."
   },
   "overlayDismissOnce": {
     "message": "Nur dieses Mal"
@@ -102,18 +105,6 @@
   },
   "languageNameHi": {
     "message": "हिन्दी"
-  },
-  "optionsResetDismissLabel": {
-    "message": "Overlay-Ausblendung zurücksetzen"
-  },
-  "optionsResetDismissDescription": {
-    "message": "Abfrage zum dauerhaften Deaktivieren wiederherstellen"
-  },
-  "optionsResetButton": {
-    "message": "Zurücksetzen"
-  },
-  "optionsResetDone": {
-    "message": "Zurückgesetzt"
   },
   "optionsMetadataLoading": {
     "message": "Wird geladen..."

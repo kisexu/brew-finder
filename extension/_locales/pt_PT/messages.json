@@ -32,7 +32,10 @@
     "message": "Este software pode ser instalado com Homebrew:"
   },
   "overlayDismissQuestion": {
-    "message": "Desativar permanentemente a sobreposição da página?"
+    "message": "Fechar a sobreposição da página?"
+  },
+  "overlayDismissDescription": {
+    "message": "Escolha se pretende fechá-la apenas neste carregamento da página ou desativá-la permanentemente. Pode voltar a ativá-la mais tarde na página de definições da extensão."
   },
   "overlayDismissOnce": {
     "message": "Só desta vez"
@@ -102,18 +105,6 @@
   },
   "languageNameHi": {
     "message": "हिन्दी"
-  },
-  "optionsResetDismissLabel": {
-    "message": "Repor dispensa da sobreposição"
-  },
-  "optionsResetDismissDescription": {
-    "message": "Restaurar o aviso de desativação permanente"
-  },
-  "optionsResetButton": {
-    "message": "Repor"
-  },
-  "optionsResetDone": {
-    "message": "Reposto"
   },
   "optionsMetadataLoading": {
     "message": "A carregar..."

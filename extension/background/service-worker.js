@@ -69,7 +69,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'OVERLAY_DISMISSED') {
     const respond = () => sendResponse({ ok: true });
     if (message.permanent) {
-      updateSetting('overlayPermanentlyDismissed', true).then(respond).catch(respond);
+      updateSetting('overlayEnabled', false).then(respond).catch(respond);
+    } else if (message.behavior === 'once') {
+      updateSetting('overlayDismissBehavior', 'once').then(respond).catch(respond);
     } else {
       respond();
     }

@@ -31,7 +31,7 @@ describe('SETTINGS_DEFAULTS', () => {
   it('has expected default values', () => {
     expect(SETTINGS_DEFAULTS.badgeEnabled).toBe(true);
     expect(SETTINGS_DEFAULTS.overlayEnabled).toBe(true);
-    expect(SETTINGS_DEFAULTS.overlayPermanentlyDismissed).toBe(false);
+    expect(SETTINGS_DEFAULTS.overlayDismissBehavior).toBe('ask');
     expect(SETTINGS_DEFAULTS.languageOverride).toBe('auto');
   });
 });
@@ -41,7 +41,7 @@ describe('getSettings', () => {
     const settings = await getSettings();
     expect(settings.badgeEnabled).toBe(true);
     expect(settings.overlayEnabled).toBe(true);
-    expect(settings.overlayPermanentlyDismissed).toBe(false);
+    expect(settings.overlayDismissBehavior).toBe('ask');
     expect(settings.languageOverride).toBe('auto');
   });
 

@@ -2,7 +2,6 @@
 
 const toggleBadge = document.getElementById('toggle-badge');
 const toggleOverlay = document.getElementById('toggle-overlay');
-const btnResetDismiss = document.getElementById('btn-reset-dismiss');
 const languageSelect = document.getElementById('language-select');
 const metadataEl = document.getElementById('metadata');
 
@@ -99,7 +98,6 @@ async function initOptions() {
   const result = await getStorage([
     'badgeEnabled',
     'overlayEnabled',
-    'overlayPermanentlyDismissed',
     'languageOverride',
   ]);
   const selectedLanguage = BrewFinderI18n.normalizeLocale(result.languageOverride);
@@ -110,12 +108,6 @@ async function initOptions() {
   initToggle(toggleOverlay, 'overlayEnabled');
 
   await renderLocalizedOptions(selectedLanguage);
-
-  btnResetDismiss.addEventListener('click', () => {
-    chrome.storage.local.set({ overlayPermanentlyDismissed: false });
-    btnResetDismiss.textContent = currentI18n.t('optionsResetDone');
-    setTimeout(() => { btnResetDismiss.textContent = currentI18n.t('optionsResetButton'); }, 1500);
-  });
 
   languageSelect.addEventListener('change', async () => {
     const nextLanguage = BrewFinderI18n.normalizeLocale(languageSelect.value);

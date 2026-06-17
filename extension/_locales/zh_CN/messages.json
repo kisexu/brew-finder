@@ -32,10 +32,13 @@
     "message": "此软件可通过 Homebrew 安装："
   },
   "overlayDismissQuestion": {
-    "message": "是否永久关闭页面浮层？"
+    "message": "关闭页面浮层？"
+  },
+  "overlayDismissDescription": {
+    "message": "你可以选择仅本次关闭，或永久关闭页面浮层。之后可在扩展设置页面重新打开。"
   },
   "overlayDismissOnce": {
-    "message": "仅本次"
+    "message": "仅本次关闭"
   },
   "overlayDismissForever": {
     "message": "永久关闭"
@@ -102,18 +105,6 @@
   },
   "languageNameHi": {
     "message": "हिन्दी"
-  },
-  "optionsResetDismissLabel": {
-    "message": "重置浮层关闭状态"
-  },
-  "optionsResetDismissDescription": {
-    "message": "恢复浮层的“永久关闭”提示"
-  },
-  "optionsResetButton": {
-    "message": "重置"
-  },
-  "optionsResetDone": {
-    "message": "已重置"
   },
   "optionsMetadataLoading": {
     "message": "加载中..."

@@ -1,7 +1,7 @@
 export const SETTINGS_DEFAULTS = {
   badgeEnabled: true,
   overlayEnabled: true,
-  overlayPermanentlyDismissed: false,
+  overlayDismissBehavior: 'ask',
   languageOverride: 'auto',
 };
 

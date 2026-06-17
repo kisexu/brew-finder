@@ -32,7 +32,10 @@
     "message": "Ce logiciel peut être installé avec Homebrew :"
   },
   "overlayDismissQuestion": {
-    "message": "Désactiver définitivement l'incrustation de page ?"
+    "message": "Fermer l'incrustation de page ?"
+  },
+  "overlayDismissDescription": {
+    "message": "Choisissez de la fermer uniquement pour ce chargement de page ou de la désactiver définitivement. Vous pourrez la réactiver plus tard depuis les paramètres de l'extension."
   },
   "overlayDismissOnce": {
     "message": "Cette fois seulement"
@@ -102,18 +105,6 @@
   },
   "languageNameHi": {
     "message": "हिन्दी"
-  },
-  "optionsResetDismissLabel": {
-    "message": "Réinitialiser le masquage de l'incrustation"
-  },
-  "optionsResetDismissDescription": {
-    "message": "Restaurer l'invite de désactivation définitive"
-  },
-  "optionsResetButton": {
-    "message": "Réinitialiser"
-  },
-  "optionsResetDone": {
-    "message": "Réinitialisé"
   },
   "optionsMetadataLoading": {
     "message": "Chargement..."
