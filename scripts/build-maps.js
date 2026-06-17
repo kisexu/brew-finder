@@ -53,6 +53,8 @@ export function buildPackageEntry(item, type) {
       name: item.name,
       type: 'formula',
       desc: item.desc || '',
+      homepage: item.homepage || '',
+      tap: item.tap || '',
     };
   }
   // cask
@@ -60,6 +62,8 @@ export function buildPackageEntry(item, type) {
     name: item.token,
     type: 'cask',
     desc: item.desc || '',
+    homepage: item.homepage || '',
+    tap: item.tap || '',
   };
 }
 

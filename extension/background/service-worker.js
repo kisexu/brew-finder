@@ -1,5 +1,5 @@
 // extension/background/service-worker.js
-import { matchUrl } from '../utils/matcher.js';
+import { matchUrl, matchUrlForOverlay } from '../utils/matcher.js';
 import { getSettings, updateSetting } from '../utils/storage.js';
 
 let domainMap = {};
@@ -59,10 +59,17 @@ async function handleMatch(url, tabId) {
   return result;
 }
 
+async function handleOverlayMatch(url, tabId) {
+  await initPromise;
+  const result = matchUrl(url, domainMap, githubMap);
+  await updateBadge(tabId, result.matches.length);
+  return matchUrlForOverlay(url, domainMap, githubMap);
+}
+
 // Listen for messages from content script
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'MATCH_URL') {
-    handleMatch(message.url, sender.tab.id).then(sendResponse).catch(() => sendResponse({ matches: [] }));
+    handleOverlayMatch(message.url, sender.tab.id).then(sendResponse).catch(() => sendResponse({ matches: [] }));
     return true; // async response
   }
 

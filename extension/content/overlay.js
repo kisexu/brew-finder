@@ -79,7 +79,7 @@
 
   function matchRowHtml(match) {
     const token = match.token || match.name || '';
-    const command = `brew install ${token}`;
+    const command = BrewFinderCommand.installCommandFor(match);
 
     return `
       <article class="bf-match-item">

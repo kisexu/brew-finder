@@ -48,11 +48,15 @@ describe('buildPackageEntry', () => {
     const formula = {
       name: 'docker',
       desc: 'Pack, ship and run any application as a lightweight container',
+      homepage: 'https://www.docker.com/',
+      tap: 'homebrew/core',
     };
     expect(buildPackageEntry(formula, 'formula')).toEqual({
       name: 'docker',
       type: 'formula',
       desc: 'Pack, ship and run any application as a lightweight container',
+      homepage: 'https://www.docker.com/',
+      tap: 'homebrew/core',
     });
   });
 
@@ -61,11 +65,15 @@ describe('buildPackageEntry', () => {
       token: 'iterm2',
       name: ['iTerm2'],
       desc: 'Terminal emulator',
+      homepage: 'https://iterm2.com/',
+      tap: 'homebrew/cask',
     };
     expect(buildPackageEntry(cask, 'cask')).toEqual({
       name: 'iterm2',
       type: 'cask',
       desc: 'Terminal emulator',
+      homepage: 'https://iterm2.com/',
+      tap: 'homebrew/cask',
     });
   });
 });
@@ -73,23 +81,23 @@ describe('buildPackageEntry', () => {
 describe('buildMaps', () => {
   it('processes formulae and casks into domain maps', async () => {
     const formulae = [
-      { name: 'docker', desc: 'Container runtime', homepage: 'https://www.docker.com/' },
-      { name: 'ffmpeg', desc: 'Media framework', homepage: 'https://ffmpeg.org/' },
+      { name: 'docker', desc: 'Container runtime', homepage: 'https://www.docker.com/', tap: 'homebrew/core' },
+      { name: 'ffmpeg', desc: 'Media framework', homepage: 'https://ffmpeg.org/', tap: 'homebrew/core' },
     ];
     const casks = [
-      { token: 'iterm2', name: ['iTerm2'], desc: 'Terminal', homepage: 'https://iterm2.com/' },
+      { token: 'iterm2', name: ['iTerm2'], desc: 'Terminal', homepage: 'https://iterm2.com/', tap: 'homebrew/cask' },
     ];
 
     const result = await buildMaps(formulae, casks);
 
     expect(result.domainMap['www.docker.com']).toEqual([
-      { name: 'docker', type: 'formula', desc: 'Container runtime' },
+      { name: 'docker', type: 'formula', desc: 'Container runtime', homepage: 'https://www.docker.com/', tap: 'homebrew/core' },
     ]);
     expect(result.domainMap['ffmpeg.org']).toEqual([
-      { name: 'ffmpeg', type: 'formula', desc: 'Media framework' },
+      { name: 'ffmpeg', type: 'formula', desc: 'Media framework', homepage: 'https://ffmpeg.org/', tap: 'homebrew/core' },
     ]);
     expect(result.domainMap['iterm2.com']).toEqual([
-      { name: 'iterm2', type: 'cask', desc: 'Terminal' },
+      { name: 'iterm2', type: 'cask', desc: 'Terminal', homepage: 'https://iterm2.com/', tap: 'homebrew/cask' },
     ]);
     expect(result.githubMap).toEqual({});
     expect(result.metadata.formulaCount).toBe(2);
@@ -106,7 +114,7 @@ describe('buildMaps', () => {
     const result = await buildMaps(formulae, casks);
 
     expect(result.githubMap['docker/cli']).toEqual([
-      { name: 'docker', type: 'formula', desc: 'Container runtime' },
+      { name: 'docker', type: 'formula', desc: 'Container runtime', homepage: 'https://github.com/docker/cli', tap: '' },
     ]);
     expect(result.domainMap['github.com']).toBeUndefined();
   });
