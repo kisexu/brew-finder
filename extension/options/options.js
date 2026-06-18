@@ -2,22 +2,29 @@
 
 const toggleBadge = document.getElementById('toggle-badge');
 const toggleOverlay = document.getElementById('toggle-overlay');
+const overlayDescription = document.getElementById('overlay-description');
+const resetOverlaySites = document.getElementById('reset-overlay-sites');
 const languageSelect = document.getElementById('language-select');
 const metadataEl = document.getElementById('metadata');
+const appVersion = document.getElementById('app-version');
 
 let currentI18n = null;
+let overlayEnabled = true;
+let overlayDismissedDomains = [];
 
 function setToggle(el, active) {
   el.classList.toggle('active', active);
   el.setAttribute('aria-pressed', String(active));
 }
 
-function initToggle(el, key) {
+function initToggle(el, key, onChange) {
   el.addEventListener('click', () => {
     const isActive = el.classList.contains('active');
     const newValue = !isActive;
     setToggle(el, newValue);
-    chrome.storage.local.set({ [key]: newValue });
+    chrome.storage.local.set({ [key]: newValue }, () => {
+      if (onChange) onChange(newValue);
+    });
   });
 }
 
@@ -62,6 +69,34 @@ function metadataCardHtml(text) {
   `;
 }
 
+function renderAppVersion() {
+  const version = chrome.runtime?.getManifest?.().version || '';
+  appVersion.textContent = version ? `v${version}` : '';
+  appVersion.hidden = !version;
+}
+
+function normalizeDismissedDomains(value) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  return [...new Set(value.filter((domain) => typeof domain === 'string' && domain.trim()))];
+}
+
+function renderOverlayPreference() {
+  if (!currentI18n) {
+    return;
+  }
+
+  const isEnabled = overlayEnabled !== false;
+  setToggle(toggleOverlay, isEnabled);
+  overlayDescription.textContent = currentI18n.t(
+    isEnabled ? 'optionsOverlayActiveDescription' : 'optionsOverlayDescription'
+  );
+  resetOverlaySites.hidden = !isEnabled;
+  resetOverlaySites.disabled = overlayDismissedDomains.length === 0;
+}
+
 function populateLanguageSelect(i18n, selectedValue) {
   languageSelect.innerHTML = BrewFinderI18n.LANGUAGE_OPTIONS.map((option) => {
     const label = option.labelKey ? i18n.t(option.labelKey) : option.label;
@@ -95,24 +130,40 @@ async function renderLocalizedOptions(selectedValue) {
 }
 
 async function initOptions() {
+  renderAppVersion();
+
   const result = await getStorage([
     'badgeEnabled',
     'overlayEnabled',
+    'overlayDismissedDomains',
     'languageOverride',
   ]);
   const selectedLanguage = BrewFinderI18n.normalizeLocale(result.languageOverride);
 
+  overlayEnabled = result.overlayEnabled !== false;
+  overlayDismissedDomains = normalizeDismissedDomains(result.overlayDismissedDomains);
+
   setToggle(toggleBadge, result.badgeEnabled !== false);
-  setToggle(toggleOverlay, result.overlayEnabled !== false);
   initToggle(toggleBadge, 'badgeEnabled');
-  initToggle(toggleOverlay, 'overlayEnabled');
+  initToggle(toggleOverlay, 'overlayEnabled', (newValue) => {
+    overlayEnabled = newValue;
+    renderOverlayPreference();
+  });
+
+  resetOverlaySites.addEventListener('click', async () => {
+    overlayDismissedDomains = [];
+    await setStorage({ overlayDismissedDomains: [] });
+    renderOverlayPreference();
+  });
 
   await renderLocalizedOptions(selectedLanguage);
+  renderOverlayPreference();
 
   languageSelect.addEventListener('change', async () => {
     const nextLanguage = BrewFinderI18n.normalizeLocale(languageSelect.value);
     await setStorage({ languageOverride: nextLanguage });
     await renderLocalizedOptions(nextLanguage);
+    renderOverlayPreference();
   });
 }
 

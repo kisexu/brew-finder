@@ -1,6 +1,6 @@
 {
   "name": "brew-finder",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "description": "Chrome extension that detects Homebrew packages for any website",

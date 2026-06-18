@@ -1,6 +1,6 @@
 // extension/background/service-worker.js
-import { matchUrlForOverlay, matchUrlForPopup } from '../utils/matcher.js';
-import { getSettings, updateSetting } from '../utils/storage.js';
+import { matchUrlForOverlay, matchUrlForPopup, rootDomainForHostname } from '../utils/matcher.js';
+import { addOverlayDismissedDomain, getSettings, updateSetting } from '../utils/storage.js';
 
 let domainMap = {};
 let githubMap = {};
@@ -63,12 +63,50 @@ async function handleOverlayMatch(url, tabId) {
   await initPromise;
   const result = matchUrlForPopup(url, domainMap, githubMap);
   await updateBadge(tabId, result.matches.length);
+
+  const settings = await getSettings();
+  if (!settings.overlayEnabled) {
+    return { matches: [] };
+  }
+
+  const rootDomain = rootDomainForUrl(url);
+  if (rootDomain && settings.overlayDismissedDomains.includes(rootDomain)) {
+    return { matches: [] };
+  }
+
   return matchUrlForOverlay(url, domainMap, githubMap);
 }
 
 async function handlePopupMatch(url) {
   await initPromise;
   return matchUrlForPopup(url, domainMap, githubMap);
+}
+
+async function handleOverlayDismissed(message, sender) {
+  if (message.permanent || message.scope === 'all') {
+    await updateSetting('overlayEnabled', false);
+    return { ok: true };
+  }
+
+  if (message.scope === 'domain') {
+    const rootDomain = rootDomainForUrl(message.url || sender.tab?.url);
+    await addOverlayDismissedDomain(rootDomain);
+    return { ok: true, rootDomain };
+  }
+
+  return { ok: true };
+}
+
+function rootDomainForUrl(url) {
+  if (!url || typeof url !== 'string') {
+    return '';
+  }
+
+  try {
+    return rootDomainForHostname(new URL(url).hostname);
+  } catch {
+    return '';
+  }
 }
 
 // Listen for messages from content script
@@ -79,14 +117,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   }
 
   if (message.type === 'OVERLAY_DISMISSED') {
-    const respond = () => sendResponse({ ok: true });
-    if (message.permanent) {
-      updateSetting('overlayEnabled', false).then(respond).catch(respond);
-    } else if (message.behavior === 'once') {
-      updateSetting('overlayDismissBehavior', 'once').then(respond).catch(respond);
-    } else {
-      respond();
-    }
+    handleOverlayDismissed(message, sender).then(sendResponse).catch(() => sendResponse({ ok: false }));
     return true; // now async
   }
 

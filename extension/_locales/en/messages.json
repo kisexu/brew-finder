@@ -35,13 +35,19 @@
     "message": "Close the page overlay?"
   },
   "overlayDismissDescription": {
-    "message": "Choose whether to close it only for this page load or turn it off permanently. You can turn it back on later from the extension settings page."
+    "message": "You can change this from Settings."
   },
   "overlayDismissOnce": {
     "message": "Only this time"
   },
   "overlayDismissForever": {
     "message": "Turn off permanently"
+  },
+  "overlayDismissSite": {
+    "message": "Close reminders for this site"
+  },
+  "overlayDismissAll": {
+    "message": "Close all reminders"
   },
   "optionsTitle": {
     "message": "Brew Finder Settings"
@@ -57,6 +63,12 @@
   },
   "optionsOverlayDescription": {
     "message": "Show install reminders in the bottom-right corner"
+  },
+  "optionsOverlayActiveDescription": {
+    "message": "Sites closed from the overlay will no longer show it"
+  },
+  "optionsOverlayResetSites": {
+    "message": "Reset site settings"
   },
   "optionsLanguageLabel": {
     "message": "Language"

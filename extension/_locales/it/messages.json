@@ -35,13 +35,19 @@
     "message": "Chiudere il riquadro nella pagina?"
   },
   "overlayDismissDescription": {
-    "message": "Scegli se chiuderlo solo per questo caricamento della pagina o disattivarlo definitivamente. Puoi riattivarlo in seguito dalla pagina delle impostazioni dell'estensione."
+    "message": "Puoi modificarlo nelle impostazioni."
   },
   "overlayDismissOnce": {
     "message": "Solo questa volta"
   },
   "overlayDismissForever": {
     "message": "Disattiva definitivamente"
+  },
+  "overlayDismissSite": {
+    "message": "Chiudi avvisi per questo sito"
+  },
+  "overlayDismissAll": {
+    "message": "Chiudi tutti gli avvisi"
   },
   "optionsTitle": {
     "message": "Impostazioni di Brew Finder"
@@ -57,6 +63,12 @@
   },
   "optionsOverlayDescription": {
     "message": "Mostra promemoria di installazione in basso a destra"
+  },
+  "optionsOverlayActiveDescription": {
+    "message": "I siti chiusi dal riquadro non lo mostreranno più"
+  },
+  "optionsOverlayResetSites": {
+    "message": "Reimposta siti"
   },
   "optionsLanguageLabel": {
     "message": "Lingua"

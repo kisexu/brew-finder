@@ -35,13 +35,19 @@
     "message": "هل تريد إغلاق طبقة الصفحة؟"
   },
   "overlayDismissDescription": {
-    "message": "اختر إغلاقها لهذه الصفحة فقط أو إيقاف طبقة الصفحة نهائيًا. يمكنك تشغيلها مرة أخرى لاحقًا من صفحة إعدادات الإضافة."
+    "message": "يمكن تغيير ذلك من صفحة الإعدادات."
   },
   "overlayDismissOnce": {
     "message": "هذه المرة فقط"
   },
   "overlayDismissForever": {
     "message": "إيقاف نهائيًا"
+  },
+  "overlayDismissSite": {
+    "message": "إغلاق تنبيهات هذا الموقع"
+  },
+  "overlayDismissAll": {
+    "message": "إغلاق كل التنبيهات"
   },
   "optionsTitle": {
     "message": "إعدادات Brew Finder"
@@ -57,6 +63,12 @@
   },
   "optionsOverlayDescription": {
     "message": "أظهر تذكيرات التثبيت في أسفل اليمين"
+  },
+  "optionsOverlayActiveDescription": {
+    "message": "لن تظهر الطبقة في المواقع التي أغلقتها"
+  },
+  "optionsOverlayResetSites": {
+    "message": "إعادة ضبط المواقع"
   },
   "optionsLanguageLabel": {
     "message": "اللغة"

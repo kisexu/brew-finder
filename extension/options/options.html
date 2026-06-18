@@ -36,6 +36,7 @@
         </svg>
         <span>made by</span>
         <a href="https://hua.me" target="_blank" rel="noopener noreferrer">Kise</a>
+        <span class="app-version" id="app-version" aria-label="Version"></span>
       </footer>
     </aside>
 
@@ -58,11 +59,27 @@
             <article class="preference-card">
               <div class="preference-copy">
                 <h3 data-i18n="optionsOverlayLabel">Page overlay</h3>
-                <p data-i18n="optionsOverlayDescription">Show install reminders in the bottom-right corner</p>
+                <p id="overlay-description" data-i18n="optionsOverlayDescription">Show install reminders in the bottom-right corner</p>
               </div>
-              <button class="toggle active" id="toggle-overlay" type="button" aria-pressed="true">
-                <span class="toggle-knob"></span>
-              </button>
+              <div class="preference-actions">
+                <button
+                  class="reset-sites-button"
+                  id="reset-overlay-sites"
+                  type="button"
+                  data-i18n-title="optionsOverlayResetSites"
+                  data-i18n-aria-label="optionsOverlayResetSites"
+                  hidden
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                    <path d="M3 12a9 9 0 1 0 3-6.7"></path>
+                    <path d="M3 3v6h6"></path>
+                  </svg>
+                  <span data-i18n="optionsOverlayResetSites">Reset site settings</span>
+                </button>
+                <button class="toggle active" id="toggle-overlay" type="button" aria-pressed="true">
+                  <span class="toggle-knob"></span>
+                </button>
+              </div>
             </article>
 
             <article class="preference-card preference-card-center">

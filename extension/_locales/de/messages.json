@@ -35,13 +35,19 @@
     "message": "Seiten-Overlay schließen?"
   },
   "overlayDismissDescription": {
-    "message": "Wählen Sie, ob es nur für diesen Seitenaufruf geschlossen oder dauerhaft deaktiviert werden soll. Sie können es später in den Erweiterungseinstellungen wieder aktivieren."
+    "message": "In den Einstellungen änderbar."
   },
   "overlayDismissOnce": {
     "message": "Nur dieses Mal"
   },
   "overlayDismissForever": {
     "message": "Dauerhaft deaktivieren"
+  },
+  "overlayDismissSite": {
+    "message": "Hinweise für diese Site schließen"
+  },
+  "overlayDismissAll": {
+    "message": "Alle Hinweise schließen"
   },
   "optionsTitle": {
     "message": "Brew Finder-Einstellungen"
@@ -57,6 +63,12 @@
   },
   "optionsOverlayDescription": {
     "message": "Installationshinweise unten rechts anzeigen"
+  },
+  "optionsOverlayActiveDescription": {
+    "message": "Sites, die über das Overlay geschlossen wurden, zeigen es nicht mehr an"
+  },
+  "optionsOverlayResetSites": {
+    "message": "Site-Einstellungen zurücksetzen"
   },
   "optionsLanguageLabel": {
     "message": "Sprache"

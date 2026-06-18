@@ -35,13 +35,19 @@
     "message": "Fermer l'incrustation de page ?"
   },
   "overlayDismissDescription": {
-    "message": "Choisissez de la fermer uniquement pour ce chargement de page ou de la désactiver définitivement. Vous pourrez la réactiver plus tard depuis les paramètres de l'extension."
+    "message": "Modifiable depuis les paramètres."
   },
   "overlayDismissOnce": {
     "message": "Cette fois seulement"
   },
   "overlayDismissForever": {
     "message": "Désactiver définitivement"
+  },
+  "overlayDismissSite": {
+    "message": "Fermer pour ce site"
+  },
+  "overlayDismissAll": {
+    "message": "Fermer tous les rappels"
   },
   "optionsTitle": {
     "message": "Paramètres de Brew Finder"
@@ -57,6 +63,12 @@
   },
   "optionsOverlayDescription": {
     "message": "Afficher les rappels d'installation en bas à droite"
+  },
+  "optionsOverlayActiveDescription": {
+    "message": "Les sites fermés depuis l'incrustation ne l'afficheront plus"
+  },
+  "optionsOverlayResetSites": {
+    "message": "Réinitialiser les sites"
   },
   "optionsLanguageLabel": {
     "message": "Langue"

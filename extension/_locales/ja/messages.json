@@ -35,13 +35,19 @@
     "message": "ページオーバーレイを閉じますか？"
   },
   "overlayDismissDescription": {
-    "message": "このページの読み込み中だけ閉じるか、ページオーバーレイを永久にオフにするかを選択できます。後で拡張機能の設定ページから再度オンにできます。"
+    "message": "設定ページで変更できます"
   },
   "overlayDismissOnce": {
     "message": "今回のみ"
   },
   "overlayDismissForever": {
     "message": "永久にオフ"
+  },
+  "overlayDismissSite": {
+    "message": "このサイトの通知を閉じる"
+  },
+  "overlayDismissAll": {
+    "message": "すべての通知を閉じる"
   },
   "optionsTitle": {
     "message": "Brew Finder 設定"
@@ -57,6 +63,12 @@
   },
   "optionsOverlayDescription": {
     "message": "ページ右下にインストール通知を表示します"
+  },
+  "optionsOverlayActiveDescription": {
+    "message": "閉じたサイトでは今後表示されません"
+  },
+  "optionsOverlayResetSites": {
+    "message": "サイト設定をリセット"
   },
   "optionsLanguageLabel": {
     "message": "言語"

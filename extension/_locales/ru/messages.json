@@ -35,13 +35,19 @@
     "message": "Закрыть оверлей страницы?"
   },
   "overlayDismissDescription": {
-    "message": "Выберите, закрыть его только до перезагрузки страницы или отключить навсегда. Позже его можно снова включить на странице настроек расширения."
+    "message": "Можно изменить в настройках."
   },
   "overlayDismissOnce": {
     "message": "Только сейчас"
   },
   "overlayDismissForever": {
     "message": "Отключить навсегда"
+  },
+  "overlayDismissSite": {
+    "message": "Закрыть для этого сайта"
+  },
+  "overlayDismissAll": {
+    "message": "Закрыть все напоминания"
   },
   "optionsTitle": {
     "message": "Настройки Brew Finder"
@@ -57,6 +63,12 @@
   },
   "optionsOverlayDescription": {
     "message": "Показывать напоминания об установке в правом нижнем углу"
+  },
+  "optionsOverlayActiveDescription": {
+    "message": "Сайты, закрытые из оверлея, больше не будут его показывать"
+  },
+  "optionsOverlayResetSites": {
+    "message": "Сбросить сайты"
   },
   "optionsLanguageLabel": {
     "message": "Язык"

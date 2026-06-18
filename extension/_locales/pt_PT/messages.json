@@ -35,13 +35,19 @@
     "message": "Fechar a sobreposição da página?"
   },
   "overlayDismissDescription": {
-    "message": "Escolha se pretende fechá-la apenas neste carregamento da página ou desativá-la permanentemente. Pode voltar a ativá-la mais tarde na página de definições da extensão."
+    "message": "Pode alterar isto nas definições."
   },
   "overlayDismissOnce": {
     "message": "Só desta vez"
   },
   "overlayDismissForever": {
     "message": "Desativar permanentemente"
+  },
+  "overlayDismissSite": {
+    "message": "Fechar avisos deste site"
+  },
+  "overlayDismissAll": {
+    "message": "Fechar todos os avisos"
   },
   "optionsTitle": {
     "message": "Definições do Brew Finder"
@@ -57,6 +63,12 @@
   },
   "optionsOverlayDescription": {
     "message": "Mostrar lembretes de instalação no canto inferior direito"
+  },
+  "optionsOverlayActiveDescription": {
+    "message": "Os sites fechados na sobreposição deixarão de a mostrar"
+  },
+  "optionsOverlayResetSites": {
+    "message": "Repor sites"
   },
   "optionsLanguageLabel": {
     "message": "Idioma"

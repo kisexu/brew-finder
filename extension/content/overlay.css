@@ -312,7 +312,7 @@
   outline: none;
 }
 
-#brew-finder-overlay .bf-dismiss-forever {
+#brew-finder-overlay .bf-dismiss-site {
   background: #000000;
   border-color: #000000;
   color: #ffffff;
@@ -439,7 +439,7 @@
     color: #f5f5f5;
   }
 
-  #brew-finder-overlay .bf-dismiss-forever {
+  #brew-finder-overlay .bf-dismiss-site {
     background: #f5f5f5;
     border-color: #f5f5f5;
     color: #111111;

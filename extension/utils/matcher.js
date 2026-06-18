@@ -193,7 +193,7 @@ function homepageMatchesUrl(homepage, currentUrl) {
   return pathIsWithinScope(currentUrl.pathname, scope.path);
 }
 
-function rootDomainForHostname(hostname) {
+export function rootDomainForHostname(hostname) {
   if (!hostname || typeof hostname !== 'string') {
     return '';
   }

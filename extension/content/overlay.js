@@ -125,8 +125,8 @@
           <h2 id="bf-dismiss-title">${escapeHtml(i18n.t('overlayDismissQuestion'))}</h2>
           <p id="bf-dismiss-description">${escapeHtml(i18n.t('overlayDismissDescription'))}</p>
           <div class="bf-dismiss-actions">
-            <button class="bf-dismiss-action bf-dismiss-once" type="button">${escapeHtml(i18n.t('overlayDismissOnce'))}</button>
-            <button class="bf-dismiss-action bf-dismiss-forever" type="button">${escapeHtml(i18n.t('overlayDismissForever'))}</button>
+            <button class="bf-dismiss-action bf-dismiss-site" type="button">${escapeHtml(i18n.t('overlayDismissSite'))}</button>
+            <button class="bf-dismiss-action bf-dismiss-all" type="button">${escapeHtml(i18n.t('overlayDismissAll'))}</button>
           </div>
         </div>
       </div>
@@ -137,19 +137,19 @@
     overlay.querySelector('.bf-close').addEventListener('click', () => {
       handleCloseClick(overlay);
     });
-    overlay.querySelector('.bf-dismiss-once').addEventListener('click', () => {
-      dismissOverlay({ behavior: 'once' });
+    overlay.querySelector('.bf-dismiss-site').addEventListener('click', () => {
+      dismissOverlay({ scope: 'domain', url: location.href });
     });
-    overlay.querySelector('.bf-dismiss-forever').addEventListener('click', () => {
-      dismissOverlay({ permanent: true });
+    overlay.querySelector('.bf-dismiss-all').addEventListener('click', () => {
+      dismissOverlay({ scope: 'all' });
     });
     wireCopyButtons(overlay);
   }
 
   function handleCloseClick(overlay) {
     chrome.storage.local.get(['overlayDismissBehavior'], (settings) => {
-      if (settings.overlayDismissBehavior === 'once') {
-        dismissOverlay();
+      if (settings.overlayDismissBehavior === 'site') {
+        dismissOverlay({ scope: 'domain', url: location.href });
         return;
       }
 
@@ -160,7 +160,7 @@
   function showDismissDialog(overlay) {
     const dialog = overlay.querySelector('.bf-dismiss-dialog');
     dialog.classList.remove('bf-hidden');
-    overlay.querySelector('.bf-dismiss-once').focus();
+    overlay.querySelector('.bf-dismiss-site').focus();
   }
 
   function dismissOverlay(options = {}) {

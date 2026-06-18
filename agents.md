@@ -28,7 +28,7 @@ Both live in one repo. The extension bundles the mapping data at `extension/data
 | `extension/manifest.json` | MV3 manifest — permissions, content scripts, background |
 | `extension/background/service-worker.js` | Core: loads maps, matches URLs, updates badge |
 | `extension/utils/matcher.js` | Pure URL matching functions for badge, popup, and overlay |
-| `extension/utils/storage.js` | `chrome.storage.local` wrapper with defaults |
+| `extension/utils/storage.js` | `chrome.storage.local` wrapper with defaults and overlay dismissal helpers |
 | `extension/content/overlay.js` | Content script: injects page overlay |
 | `extension/content/overlay.css` | Overlay styles |
 | `extension/popup/` | Popup UI (click extension icon) |
@@ -65,7 +65,7 @@ Content script and popup communicate with the service worker via `chrome.runtime
 |---------|-----------|---------|
 | `MATCH_URL` | CS → SW | Request match for current page URL |
 | `MATCH_RESULT` | SW → CS | Return matches array |
-| `OVERLAY_DISMISSED` | CS → SW | User closed overlay (permanent flag) |
+| `OVERLAY_DISMISSED` | CS → SW | User closed overlay for all sites or current root domain |
 | `GET_CURRENT_MATCH` | Popup → SW | Request match for active tab |
 
 ### Matching Logic
@@ -85,6 +85,15 @@ Important display-rule notes:
 - Example: `www.google.com` does not expand all `google.com` packages because the root-domain fanout is huge. The popup/badge fall back to the current hostname's 7 packages, while the overlay narrows by path (`/drive/` shows `google-drive`; the root page shows no overlay).
 - Root-domain detection handles common multi-part public suffixes (`example.co.uk`) and treats hosted private suffixes (`github.io`, `vercel.app`, etc.) as separate site roots to avoid merging unrelated projects.
 - Install commands are generated via `BrewFinderCommand.installCommandFor()`. Packages from `homebrew/cask` are shown as `brew install --cask <token>`.
+
+### Overlay Dismissal State
+
+Page overlay dismissal state is persisted in `chrome.storage.local`:
+
+- `overlayEnabled: false` means the user selected “关闭所有提醒”; no page overlay should appear on any site, and the settings page shows “页面浮层” as off.
+- `overlayDismissBehavior: 'ask'` means the first close click asks the user to choose between “关闭本站提醒” and “关闭所有提醒”.
+- `overlayDismissBehavior: 'site'` means later close clicks directly record the current root domain.
+- `overlayDismissedDomains` stores root domains where the overlay should no longer appear. This memory must survive extension updates and can be cleared from the settings page reset button.
 
 ## Development Workflow
 
@@ -116,9 +125,10 @@ npm run build            # both
 - Visit `https://www.docker.com/` — badge shows "1", popup shows docker
 - Visit `https://github.com/FFmpeg/FFmpeg` — badge shows "1", popup shows ffmpeg
 - Visit `https://example.com/` — no badge, popup shows "未找到"
-- Click overlay ✕ → "仅本次" closes overlay, reload shows it again
-- Click overlay ✕ → "永久关闭" persists, reload doesn't show overlay
+- First overlay close click → choose "关闭本站提醒"; same root domain no longer shows the overlay after reload, while other sites still can
+- First overlay close click → choose "关闭所有提醒"; settings shows "页面浮层" off, and overlays stop on all sites
 - Settings toggles work for badge and overlay
+- When overlay is enabled, settings shows "已经点击关闭的站点不再显示" and the reset button clears remembered site dismissals
 
 ## Conventions
 

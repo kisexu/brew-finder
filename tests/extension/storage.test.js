@@ -20,7 +20,13 @@ globalThis.chrome = {
   storage: { local: mockStorage },
 };
 
-const { getSettings, updateSetting, SETTINGS_DEFAULTS } = await import('../../extension/utils/storage.js');
+const {
+  addOverlayDismissedDomain,
+  getSettings,
+  resetOverlayDismissedDomains,
+  updateSetting,
+  SETTINGS_DEFAULTS,
+} = await import('../../extension/utils/storage.js');
 
 beforeEach(() => {
   vi.clearAllMocks();
@@ -32,6 +38,7 @@ describe('SETTINGS_DEFAULTS', () => {
     expect(SETTINGS_DEFAULTS.badgeEnabled).toBe(true);
     expect(SETTINGS_DEFAULTS.overlayEnabled).toBe(true);
     expect(SETTINGS_DEFAULTS.overlayDismissBehavior).toBe('ask');
+    expect(SETTINGS_DEFAULTS.overlayDismissedDomains).toEqual([]);
     expect(SETTINGS_DEFAULTS.languageOverride).toBe('auto');
   });
 });
@@ -42,6 +49,7 @@ describe('getSettings', () => {
     expect(settings.badgeEnabled).toBe(true);
     expect(settings.overlayEnabled).toBe(true);
     expect(settings.overlayDismissBehavior).toBe('ask');
+    expect(settings.overlayDismissedDomains).toEqual([]);
     expect(settings.languageOverride).toBe('auto');
   });
 
@@ -55,6 +63,16 @@ describe('getSettings', () => {
     expect(settings.overlayEnabled).toBe(true);
     expect(settings.languageOverride).toBe('ja');
   });
+
+  it('normalizes dismissed domains and retired overlay behavior values', async () => {
+    storageData.overlayDismissBehavior = 'once';
+    storageData.overlayDismissedDomains = ['Example.COM', '', 'example.com', 42];
+
+    const settings = await getSettings();
+
+    expect(settings.overlayDismissBehavior).toBe('ask');
+    expect(settings.overlayDismissedDomains).toEqual(['example.com']);
+  });
 });
 
 describe('updateSetting', () => {
@@ -66,5 +84,32 @@ describe('updateSetting', () => {
   it('updates the language override setting', async () => {
     await updateSetting('languageOverride', 'de');
     expect(mockStorage.set).toHaveBeenCalledWith({ languageOverride: 'de' }, expect.any(Function));
+  });
+});
+
+describe('overlay dismissed domains', () => {
+  it('remembers a root domain and switches future close clicks to site mode', async () => {
+    storageData.overlayDismissedDomains = ['example.com'];
+
+    await addOverlayDismissedDomain('Cursor.COM');
+
+    expect(storageData.overlayDismissBehavior).toBe('site');
+    expect(storageData.overlayDismissedDomains).toEqual(['example.com', 'cursor.com']);
+  });
+
+  it('does not duplicate remembered domains', async () => {
+    storageData.overlayDismissedDomains = ['cursor.com'];
+
+    await addOverlayDismissedDomain('cursor.com');
+
+    expect(storageData.overlayDismissedDomains).toEqual(['cursor.com']);
+  });
+
+  it('resets remembered domains', async () => {
+    storageData.overlayDismissedDomains = ['cursor.com'];
+
+    await resetOverlayDismissedDomains();
+
+    expect(storageData.overlayDismissedDomains).toEqual([]);
   });
 });

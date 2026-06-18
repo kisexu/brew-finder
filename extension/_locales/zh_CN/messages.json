@@ -35,13 +35,19 @@
     "message": "关闭页面浮层？"
   },
   "overlayDismissDescription": {
-    "message": "你可以选择仅本次关闭，或永久关闭页面浮层。之后可在扩展设置页面重新打开。"
+    "message": "可在设置页面修改"
   },
   "overlayDismissOnce": {
     "message": "仅本次关闭"
   },
   "overlayDismissForever": {
     "message": "永久关闭"
+  },
+  "overlayDismissSite": {
+    "message": "关闭本站提醒"
+  },
+  "overlayDismissAll": {
+    "message": "关闭所有提醒"
   },
   "optionsTitle": {
     "message": "Brew Finder 设置"
@@ -57,6 +63,12 @@
   },
   "optionsOverlayDescription": {
     "message": "在页面右下角显示安装提醒"
+  },
+  "optionsOverlayActiveDescription": {
+    "message": "已经点击关闭的站点不再显示"
+  },
+  "optionsOverlayResetSites": {
+    "message": "重置站点设置"
   },
   "optionsLanguageLabel": {
     "message": "语言"

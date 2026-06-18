@@ -35,13 +35,19 @@
     "message": "पेज ओवरले बंद करें?"
   },
   "overlayDismissDescription": {
-    "message": "आप इसे केवल इस पेज लोड के लिए बंद कर सकते हैं या पेज ओवरले को स्थायी रूप से बंद कर सकते हैं। बाद में एक्सटेंशन सेटिंग पेज से इसे फिर से चालू किया जा सकता है।"
+    "message": "इसे सेटिंग पेज में बदला जा सकता है।"
   },
   "overlayDismissOnce": {
     "message": "केवल इस बार"
   },
   "overlayDismissForever": {
     "message": "स्थायी रूप से बंद करें"
+  },
+  "overlayDismissSite": {
+    "message": "इस साइट के रिमाइंडर बंद करें"
+  },
+  "overlayDismissAll": {
+    "message": "सभी रिमाइंडर बंद करें"
   },
   "optionsTitle": {
     "message": "Brew Finder सेटिंग्स"
@@ -57,6 +63,12 @@
   },
   "optionsOverlayDescription": {
     "message": "नीचे-दाएँ कोने में इंस्टॉल रिमाइंडर दिखाएँ"
+  },
+  "optionsOverlayActiveDescription": {
+    "message": "ओवरले से बंद की गई साइटों पर यह फिर नहीं दिखेगा"
+  },
+  "optionsOverlayResetSites": {
+    "message": "साइट सेटिंग रीसेट करें"
   },
   "optionsLanguageLabel": {
     "message": "भाषा"
