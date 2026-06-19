@@ -1,5 +1,7 @@
 # 🍺 Brew Finder
 
+![banner](docs/assets/1400x560.jpg)
+
 语言：简体中文 | [English](README.md)
 
 一款 Chrome 浏览器插件，自动检测当前访问的软件网站是否有对应的 Homebrew 包，并快捷复制 `brew install` 安装命令。

@@ -1,5 +1,7 @@
 # 🍺 Brew Finder
 
+![banner](docs/assets/1400x560.jpg)
+
 Languages: English | [简体中文](README.zh-CN.md)
 
 A Chrome extension that automatically detects whether the software website you are visiting has a matching Homebrew package and lets you quickly copy the `brew install` command.
