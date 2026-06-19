@@ -1,0 +1,112 @@
+{
+  "languageName": "Español",
+  "dir": "ltr",
+  "meta": {
+    "title": "Brew Finder - Encuentra paquetes de Homebrew desde los sitios que visitas",
+    "description": "Brew Finder es una extensión de Chrome centrada en la privacidad que detecta formulae y casks de Homebrew mientras navegas."
+  },
+  "languageLabel": "Idioma",
+  "buttons": {
+    "chrome": {
+      "label": "Añadir a Chrome",
+      "icon": "chrome"
+    },
+    "github": {
+      "label": "Ver en GitHub",
+      "icon": "github"
+    }
+  },
+  "hero": {
+    "title": "Brew Finder",
+    "subtitle": "Descubre más fácilmente los paquetes que necesitas",
+    "demoLabel": "Vista previa del popup de paquetes de Brew Finder",
+    "demoNote": "Este software se puede instalar con Homebrew:"
+  },
+  "visuals": {
+    "badgeFound": "2 paquetes de Homebrew encontrados",
+    "badgeHint": "Se muestra en la insignia de la extensión",
+    "packageFound": "Paquetes de Homebrew encontrados",
+    "githubPackage": "Paquete de Homebrew",
+    "viewAll": "Ver todo (2)"
+  },
+  "toast": {
+    "copySuccess": "Comando de instalación copiado",
+    "copyFailure": "No se pudo copiar"
+  },
+  "featuresLabel": "Funciones de Brew Finder",
+  "features": [
+    {
+      "title": "Detección automática",
+      "body": "Brew Finder revisa sitios relevantes y te ayuda a descubrir rápidamente paquetes de Homebrew instalables.",
+      "icon": "search",
+      "visual": "detection"
+    },
+    {
+      "title": "Información y copia con un clic",
+      "body": "Consulta detalles del paquete y copia los comandos de instalación para formulae y casks.",
+      "icon": "doc",
+      "visual": "packages"
+    },
+    {
+      "title": "Amigable con sitios grandes",
+      "body": "Diseñado para dominios como Google.com con muchos paquetes relacionados, ayudando al descubrimiento sin interrumpir.",
+      "icon": "globe",
+      "visual": "large-site"
+    },
+    {
+      "title": "Coincidencia con GitHub",
+      "body": "Al visitar github.com/user/repo puede identificar el paquete de Homebrew correspondiente.",
+      "icon": "github",
+      "visual": "github"
+    }
+  ],
+  "privacy": {
+    "title": "Privacidad y seguridad absolutas",
+    "body": "Sin acceso a la red. Los datos de paquetes se incluyen localmente y nunca salen de tu dispositivo."
+  },
+  "footer": {
+    "tagline": "Descubre más fácilmente los paquetes que necesitas",
+    "copyright": "© 2026 Brew Finder. All rights reserved.",
+    "groups": [
+      {
+        "title": "Producto",
+        "links": [
+          {
+            "label": "Chrome Web Store",
+            "href": "https://chromewebstore.google.com/"
+          },
+          {
+            "label": "GitHub",
+            "href": "https://github.com/kisexu/brew-finder"
+          }
+        ]
+      },
+      {
+        "title": "Soporte",
+        "links": [
+          {
+            "label": "Incidencias",
+            "href": "https://github.com/kisexu/brew-finder/issues"
+          },
+          {
+            "label": "Solicitudes de funciones",
+            "href": "https://github.com/kisexu/brew-finder/issues/new"
+          }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          {
+            "label": "Política de privacidad",
+            "href": "https://github.com/kisexu/brew-finder"
+          },
+          {
+            "label": "Licencia (MIT)",
+            "href": "https://github.com/kisexu/brew-finder/blob/main/LICENSE"
+          }
+        ]
+      }
+    ]
+  }
+}

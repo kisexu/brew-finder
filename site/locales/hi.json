@@ -1,0 +1,112 @@
+{
+  "languageName": "हिन्दी",
+  "dir": "ltr",
+  "meta": {
+    "title": "Brew Finder - देखी जाने वाली वेबसाइटों से Homebrew पैकेज खोजें",
+    "description": "Brew Finder एक privacy-first Chrome extension है जो ब्राउज़ करते समय मिलते-जुलते Homebrew formulae और casks पहचानता है।"
+  },
+  "languageLabel": "भाषा",
+  "buttons": {
+    "chrome": {
+      "label": "Chrome में जोड़ें",
+      "icon": "chrome"
+    },
+    "github": {
+      "label": "GitHub पर देखें",
+      "icon": "github"
+    }
+  },
+  "hero": {
+    "title": "Brew Finder",
+    "subtitle": "ज़रूरी पैकेज अधिक आसानी से खोजें",
+    "demoLabel": "Brew Finder पैकेज popup preview",
+    "demoNote": "यह software Homebrew से install किया जा सकता है:"
+  },
+  "visuals": {
+    "badgeFound": "2 Homebrew पैकेज मिले",
+    "badgeHint": "extension badge पर दिखाया गया",
+    "packageFound": "Homebrew पैकेज मिले",
+    "githubPackage": "Homebrew पैकेज",
+    "viewAll": "सभी देखें (2)"
+  },
+  "toast": {
+    "copySuccess": "Install command copy हो गया",
+    "copyFailure": "Copy failed"
+  },
+  "featuresLabel": "Brew Finder सुविधाएँ",
+  "features": [
+    {
+      "title": "Automatic Detection",
+      "body": "Brew Finder संबंधित websites जांचता है और install किए जा सकने वाले Homebrew packages जल्दी खोजने में मदद करता है।",
+      "icon": "search",
+      "visual": "detection"
+    },
+    {
+      "title": "Package Info और One-Click Copy",
+      "body": "Package details देखें और formula तथा cask packages के install commands copy करें।",
+      "icon": "doc",
+      "visual": "packages"
+    },
+    {
+      "title": "Large-Site Friendly",
+      "body": "Google.com जैसे domains के लिए बनाया गया है जिनसे कई packages जुड़े होते हैं, ताकि interruption कम रहे।",
+      "icon": "globe",
+      "visual": "large-site"
+    },
+    {
+      "title": "GitHub Matching",
+      "body": "github.com/user/repo पर जाने से संबंधित Homebrew package पहचाना जा सकता है।",
+      "icon": "github",
+      "visual": "github"
+    }
+  ],
+  "privacy": {
+    "title": "पूरी Privacy और Security",
+    "body": "कोई network access नहीं। Package data local रूप से bundled है और आपके device से बाहर नहीं जाता।"
+  },
+  "footer": {
+    "tagline": "ज़रूरी पैकेज अधिक आसानी से खोजें",
+    "copyright": "© 2026 Brew Finder. All rights reserved.",
+    "groups": [
+      {
+        "title": "Product",
+        "links": [
+          {
+            "label": "Chrome Web Store",
+            "href": "https://chromewebstore.google.com/"
+          },
+          {
+            "label": "GitHub",
+            "href": "https://github.com/kisexu/brew-finder"
+          }
+        ]
+      },
+      {
+        "title": "Support",
+        "links": [
+          {
+            "label": "Issues",
+            "href": "https://github.com/kisexu/brew-finder/issues"
+          },
+          {
+            "label": "Feature Requests",
+            "href": "https://github.com/kisexu/brew-finder/issues/new"
+          }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          {
+            "label": "Privacy Policy",
+            "href": "https://github.com/kisexu/brew-finder"
+          },
+          {
+            "label": "License (MIT)",
+            "href": "https://github.com/kisexu/brew-finder/blob/main/LICENSE"
+          }
+        ]
+      }
+    ]
+  }
+}

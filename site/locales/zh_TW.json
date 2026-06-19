@@ -1,0 +1,112 @@
+{
+  "languageName": "繁體中文",
+  "dir": "ltr",
+  "meta": {
+    "title": "Brew Finder - 從造訪的網站發現 Homebrew 套件",
+    "description": "Brew Finder 是重視隱私的 Chrome 擴充功能，可在瀏覽網頁時發現相符的 Homebrew formula 與 cask。"
+  },
+  "languageLabel": "語言",
+  "buttons": {
+    "chrome": {
+      "label": "加入 Chrome",
+      "icon": "chrome"
+    },
+    "github": {
+      "label": "在 GitHub 查看",
+      "icon": "github"
+    }
+  },
+  "hero": {
+    "title": "Brew Finder",
+    "subtitle": "更輕鬆發現你需要的套件",
+    "demoLabel": "Brew Finder 套件提示預覽",
+    "demoNote": "這個軟體可以透過 Homebrew 安裝："
+  },
+  "visuals": {
+    "badgeFound": "發現 2 個 Homebrew 套件",
+    "badgeHint": "顯示在擴充功能徽章上",
+    "packageFound": "發現 Homebrew 套件",
+    "githubPackage": "Homebrew 套件",
+    "viewAll": "查看全部 (2)"
+  },
+  "toast": {
+    "copySuccess": "安裝指令已複製",
+    "copyFailure": "複製失敗"
+  },
+  "featuresLabel": "Brew Finder 功能",
+  "features": [
+    {
+      "title": "自動偵測",
+      "body": "Brew Finder 會檢查相關網站，協助你快速發現可安裝的 Homebrew 套件。",
+      "icon": "search",
+      "visual": "detection"
+    },
+    {
+      "title": "套件資訊與一鍵複製",
+      "body": "查看套件詳細資訊，並複製 formula 與 cask 套件的安裝指令。",
+      "icon": "doc",
+      "visual": "packages"
+    },
+    {
+      "title": "適合大型網站",
+      "body": "專為 Google.com 這類關聯大量套件的網域設計，在降低干擾的同時協助探索。",
+      "icon": "globe",
+      "visual": "large-site"
+    },
+    {
+      "title": "GitHub 匹配",
+      "body": "造訪 github.com/user/repo 時，可識別對應的 Homebrew 套件。",
+      "icon": "github",
+      "visual": "github"
+    }
+  ],
+  "privacy": {
+    "title": "絕對隱私與安全",
+    "body": "不需要網路存取。套件資料內建於本機，永遠不會離開你的裝置。"
+  },
+  "footer": {
+    "tagline": "更輕鬆發現你需要的套件",
+    "copyright": "© 2026 Brew Finder. All rights reserved.",
+    "groups": [
+      {
+        "title": "產品",
+        "links": [
+          {
+            "label": "Chrome 線上應用程式商店",
+            "href": "https://chromewebstore.google.com/"
+          },
+          {
+            "label": "GitHub",
+            "href": "https://github.com/kisexu/brew-finder"
+          }
+        ]
+      },
+      {
+        "title": "支援",
+        "links": [
+          {
+            "label": "問題",
+            "href": "https://github.com/kisexu/brew-finder/issues"
+          },
+          {
+            "label": "功能建議",
+            "href": "https://github.com/kisexu/brew-finder/issues/new"
+          }
+        ]
+      },
+      {
+        "title": "法律",
+        "links": [
+          {
+            "label": "隱私權政策",
+            "href": "https://github.com/kisexu/brew-finder"
+          },
+          {
+            "label": "授權條款 (MIT)",
+            "href": "https://github.com/kisexu/brew-finder/blob/main/LICENSE"
+          }
+        ]
+      }
+    ]
+  }
+}
