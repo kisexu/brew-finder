@@ -1,0 +1,112 @@
+{
+  "languageName": "한국어",
+  "dir": "ltr",
+  "meta": {
+    "title": "Brew Finder - 방문 중인 사이트에서 Homebrew 패키지 찾기",
+    "description": "Brew Finder는 탐색 중에 일치하는 Homebrew formula와 cask를 찾아주는 개인정보 보호 중심 Chrome 확장 프로그램입니다."
+  },
+  "languageLabel": "언어",
+  "buttons": {
+    "chrome": {
+      "label": "Chrome에 추가",
+      "icon": "chrome"
+    },
+    "github": {
+      "label": "GitHub에서 보기",
+      "icon": "github"
+    }
+  },
+  "hero": {
+    "title": "Brew Finder",
+    "subtitle": "필요한 패키지를 더 쉽게 발견하세요",
+    "demoLabel": "Brew Finder 패키지 팝업 미리보기",
+    "demoNote": "이 소프트웨어는 Homebrew로 설치할 수 있습니다:"
+  },
+  "visuals": {
+    "badgeFound": "Homebrew 패키지 2개 발견",
+    "badgeHint": "확장 프로그램 배지에 표시",
+    "packageFound": "Homebrew 패키지 발견",
+    "githubPackage": "Homebrew 패키지",
+    "viewAll": "모두 보기 (2)"
+  },
+  "toast": {
+    "copySuccess": "설치 명령을 복사했습니다",
+    "copyFailure": "복사 실패"
+  },
+  "featuresLabel": "Brew Finder 기능",
+  "features": [
+    {
+      "title": "자동 감지",
+      "body": "Brew Finder는 관련 웹사이트를 확인하고 설치 가능한 Homebrew 패키지를 빠르게 찾도록 도와줍니다.",
+      "icon": "search",
+      "visual": "detection"
+    },
+    {
+      "title": "패키지 정보와 원클릭 복사",
+      "body": "패키지 세부 정보를 보고 formula와 cask 설치 명령을 복사하세요.",
+      "icon": "doc",
+      "visual": "packages"
+    },
+    {
+      "title": "대형 사이트 친화적",
+      "body": "Google.com처럼 관련 패키지가 많은 도메인에서도 방해를 줄이며 탐색을 돕도록 설계되었습니다.",
+      "icon": "globe",
+      "visual": "large-site"
+    },
+    {
+      "title": "GitHub 매칭",
+      "body": "github.com/user/repo 방문 시 해당 Homebrew 패키지를 식별할 수 있습니다.",
+      "icon": "github",
+      "visual": "github"
+    }
+  ],
+  "privacy": {
+    "title": "완전한 개인정보 보호와 보안",
+    "body": "네트워크 접근이 없습니다. 패키지 데이터는 로컬에 포함되며 기기를 벗어나지 않습니다."
+  },
+  "footer": {
+    "tagline": "필요한 패키지를 더 쉽게 발견하세요",
+    "copyright": "© 2026 Brew Finder. All rights reserved.",
+    "groups": [
+      {
+        "title": "제품",
+        "links": [
+          {
+            "label": "Chrome 웹 스토어",
+            "href": "https://chromewebstore.google.com/"
+          },
+          {
+            "label": "GitHub",
+            "href": "https://github.com/kisexu/brew-finder"
+          }
+        ]
+      },
+      {
+        "title": "지원",
+        "links": [
+          {
+            "label": "이슈",
+            "href": "https://github.com/kisexu/brew-finder/issues"
+          },
+          {
+            "label": "기능 요청",
+            "href": "https://github.com/kisexu/brew-finder/issues/new"
+          }
+        ]
+      },
+      {
+        "title": "법적 고지",
+        "links": [
+          {
+            "label": "개인정보 처리방침",
+            "href": "https://github.com/kisexu/brew-finder"
+          },
+          {
+            "label": "라이선스 (MIT)",
+            "href": "https://github.com/kisexu/brew-finder/blob/main/LICENSE"
+          }
+        ]
+      }
+    ]
+  }
+}

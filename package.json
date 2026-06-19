@@ -1,0 +1,18 @@
+{
+  "name": "brew-finder",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Chrome extension that detects Homebrew packages for any website",
+  "scripts": {
+    "build:maps": "node scripts/build-maps.js",
+    "build:extension": "mkdir -p extension/data && cp data/*.json extension/data/",
+    "build:site": "node scripts/build-site.js",
+    "build": "npm run build:maps && npm run build:extension",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^3.1.0"
+  }
+}

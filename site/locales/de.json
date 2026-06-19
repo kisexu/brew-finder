@@ -1,0 +1,112 @@
+{
+  "languageName": "Deutsch",
+  "dir": "ltr",
+  "meta": {
+    "title": "Brew Finder - Homebrew-Pakete auf besuchten Websites finden",
+    "description": "Brew Finder ist eine datenschutzfreundliche Chrome-Erweiterung, die beim Surfen passende Homebrew-Formulae und Casks erkennt."
+  },
+  "languageLabel": "Sprache",
+  "buttons": {
+    "chrome": {
+      "label": "Zu Chrome hinzufügen",
+      "icon": "chrome"
+    },
+    "github": {
+      "label": "Auf GitHub ansehen",
+      "icon": "github"
+    }
+  },
+  "hero": {
+    "title": "Brew Finder",
+    "subtitle": "Finde die Pakete, die du brauchst, einfacher",
+    "demoLabel": "Vorschau des Brew Finder Paket-Popups",
+    "demoNote": "Diese Software kann mit Homebrew installiert werden:"
+  },
+  "visuals": {
+    "badgeFound": "2 Homebrew-Pakete gefunden",
+    "badgeHint": "Auf dem Erweiterungs-Badge angezeigt",
+    "packageFound": "Homebrew-Pakete gefunden",
+    "githubPackage": "Homebrew-Paket",
+    "viewAll": "Alle anzeigen (2)"
+  },
+  "toast": {
+    "copySuccess": "Installationsbefehl kopiert",
+    "copyFailure": "Kopieren fehlgeschlagen"
+  },
+  "featuresLabel": "Brew Finder Funktionen",
+  "features": [
+    {
+      "title": "Automatische Erkennung",
+      "body": "Brew Finder prüft relevante Websites und hilft dir, installierbare Homebrew-Pakete schnell zu finden.",
+      "icon": "search",
+      "visual": "detection"
+    },
+    {
+      "title": "Paketinfos und Kopieren mit einem Klick",
+      "body": "Sieh dir Paketdetails an und kopiere Installationsbefehle für Formula- und Cask-Pakete.",
+      "icon": "doc",
+      "visual": "packages"
+    },
+    {
+      "title": "Für große Websites geeignet",
+      "body": "Für Domains wie Google.com mit vielen verwandten Paketen entwickelt, damit Entdeckung möglich bleibt, ohne zu stören.",
+      "icon": "globe",
+      "visual": "large-site"
+    },
+    {
+      "title": "GitHub-Abgleich",
+      "body": "Beim Besuch von github.com/user/repo kann das passende Homebrew-Paket erkannt werden.",
+      "icon": "github",
+      "visual": "github"
+    }
+  ],
+  "privacy": {
+    "title": "Absolute Privatsphäre und Sicherheit",
+    "body": "Kein Netzwerkzugriff. Paketdaten werden lokal gebündelt und verlassen dein Gerät nie."
+  },
+  "footer": {
+    "tagline": "Finde die Pakete, die du brauchst, einfacher",
+    "copyright": "© 2026 Brew Finder. All rights reserved.",
+    "groups": [
+      {
+        "title": "Produkt",
+        "links": [
+          {
+            "label": "Chrome Web Store",
+            "href": "https://chromewebstore.google.com/"
+          },
+          {
+            "label": "GitHub",
+            "href": "https://github.com/kisexu/brew-finder"
+          }
+        ]
+      },
+      {
+        "title": "Support",
+        "links": [
+          {
+            "label": "Issues",
+            "href": "https://github.com/kisexu/brew-finder/issues"
+          },
+          {
+            "label": "Feature-Wünsche",
+            "href": "https://github.com/kisexu/brew-finder/issues/new"
+          }
+        ]
+      },
+      {
+        "title": "Rechtliches",
+        "links": [
+          {
+            "label": "Datenschutz",
+            "href": "https://github.com/kisexu/brew-finder"
+          },
+          {
+            "label": "Lizenz (MIT)",
+            "href": "https://github.com/kisexu/brew-finder/blob/main/LICENSE"
+          }
+        ]
+      }
+    ]
+  }
+}

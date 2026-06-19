@@ -1,0 +1,151 @@
+{
+  "extensionName": {
+    "message": "Brew Finder"
+  },
+  "extensionDescription": {
+    "message": "Deteta pacotes Homebrew para qualquer site"
+  },
+  "popupDetecting": {
+    "message": "A verificar..."
+  },
+  "popupNoMatch": {
+    "message": "Nenhum pacote Homebrew encontrado para este site"
+  },
+  "popupCurrentPage": {
+    "message": "Página atual: $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupUnknownPage": {
+    "message": "Página atual: desconhecida"
+  },
+  "copyCommandTitle": {
+    "message": "Copiar comando de instalação"
+  },
+  "overlayCloseTitle": {
+    "message": "Fechar"
+  },
+  "overlayInstallable": {
+    "message": "Este software pode ser instalado com Homebrew:"
+  },
+  "overlayDismissQuestion": {
+    "message": "Fechar a sobreposição da página?"
+  },
+  "overlayDismissDescription": {
+    "message": "Pode alterar isto nas definições."
+  },
+  "overlayDismissOnce": {
+    "message": "Só desta vez"
+  },
+  "overlayDismissForever": {
+    "message": "Desativar permanentemente"
+  },
+  "overlayDismissSite": {
+    "message": "Fechar avisos deste site"
+  },
+  "overlayDismissAll": {
+    "message": "Fechar todos os avisos"
+  },
+  "optionsTitle": {
+    "message": "Definições do Brew Finder"
+  },
+  "optionsBadgeLabel": {
+    "message": "Emblema"
+  },
+  "optionsBadgeDescription": {
+    "message": "Mostrar o número de correspondências no ícone da extensão"
+  },
+  "optionsOverlayLabel": {
+    "message": "Sobreposição da página"
+  },
+  "optionsOverlayDescription": {
+    "message": "Mostrar lembretes de instalação no canto inferior direito"
+  },
+  "optionsOverlayActiveDescription": {
+    "message": "Os sites fechados na sobreposição deixarão de a mostrar"
+  },
+  "optionsOverlayResetSites": {
+    "message": "Repor sites"
+  },
+  "optionsLanguageLabel": {
+    "message": "Idioma"
+  },
+  "optionsLanguageDescription": {
+    "message": "Escolha o idioma da extensão"
+  },
+  "optionsLanguageAuto": {
+    "message": "Seguir o navegador"
+  },
+  "languageNameEn": {
+    "message": "English"
+  },
+  "languageNameZhCn": {
+    "message": "简体中文"
+  },
+  "languageNameZhTw": {
+    "message": "繁體中文"
+  },
+  "languageNameJa": {
+    "message": "日本語"
+  },
+  "languageNameKo": {
+    "message": "한국어"
+  },
+  "languageNameFr": {
+    "message": "Français"
+  },
+  "languageNameDe": {
+    "message": "Deutsch"
+  },
+  "languageNameEs": {
+    "message": "Español"
+  },
+  "languageNamePtPt": {
+    "message": "Português"
+  },
+  "languageNameIt": {
+    "message": "Italiano"
+  },
+  "languageNameRu": {
+    "message": "Русский"
+  },
+  "languageNameAr": {
+    "message": "العربية"
+  },
+  "languageNameHi": {
+    "message": "हिन्दी"
+  },
+  "optionsMetadataLoading": {
+    "message": "A carregar..."
+  },
+  "optionsMetadataVersion": {
+    "message": "Versão dos dados de mapeamento: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataPackageCount": {
+    "message": "Pacotes abrangidos: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataDomainCount": {
+    "message": "Domínios abrangidos: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataError": {
+    "message": "Não foi possível carregar os metadados"
+  }
+}

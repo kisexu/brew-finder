@@ -1,0 +1,112 @@
+{
+  "languageName": "العربية",
+  "dir": "rtl",
+  "meta": {
+    "title": "Brew Finder - اعثر على حزم Homebrew من المواقع التي تزورها",
+    "description": "Brew Finder إضافة Chrome تركز على الخصوصية وتكتشف formulae و casks الخاصة بـ Homebrew أثناء التصفح."
+  },
+  "languageLabel": "اللغة",
+  "buttons": {
+    "chrome": {
+      "label": "إضافة إلى Chrome",
+      "icon": "chrome"
+    },
+    "github": {
+      "label": "عرض على GitHub",
+      "icon": "github"
+    }
+  },
+  "hero": {
+    "title": "Brew Finder",
+    "subtitle": "اكتشف الحزم التي تحتاجها بسهولة أكبر",
+    "demoLabel": "معاينة نافذة حزم Brew Finder",
+    "demoNote": "يمكن تثبيت هذا البرنامج باستخدام Homebrew:"
+  },
+  "visuals": {
+    "badgeFound": "تم العثور على حزمتين من Homebrew",
+    "badgeHint": "تظهر على شارة الإضافة",
+    "packageFound": "تم العثور على حزم Homebrew",
+    "githubPackage": "حزمة Homebrew",
+    "viewAll": "عرض الكل (2)"
+  },
+  "toast": {
+    "copySuccess": "تم نسخ أمر التثبيت",
+    "copyFailure": "فشل النسخ"
+  },
+  "featuresLabel": "ميزات Brew Finder",
+  "features": [
+    {
+      "title": "اكتشاف تلقائي",
+      "body": "يفحص Brew Finder المواقع ذات الصلة ويساعدك على اكتشاف حزم Homebrew القابلة للتثبيت بسرعة.",
+      "icon": "search",
+      "visual": "detection"
+    },
+    {
+      "title": "معلومات الحزمة والنسخ بنقرة واحدة",
+      "body": "اعرض تفاصيل الحزمة وانسخ أوامر التثبيت الخاصة بـ formula و cask.",
+      "icon": "doc",
+      "visual": "packages"
+    },
+    {
+      "title": "مناسب للمواقع الكبيرة",
+      "body": "مصمم للنطاقات مثل Google.com التي ترتبط بالعديد من الحزم، لتسهيل الاكتشاف مع تقليل الإزعاج.",
+      "icon": "globe",
+      "visual": "large-site"
+    },
+    {
+      "title": "مطابقة GitHub",
+      "body": "عند زيارة github.com/user/repo يمكن التعرف على حزمة Homebrew المقابلة.",
+      "icon": "github",
+      "visual": "github"
+    }
+  ],
+  "privacy": {
+    "title": "خصوصية وأمان كاملان",
+    "body": "لا يوجد وصول إلى الشبكة. بيانات الحزم مدمجة محليًا ولا تغادر جهازك أبدًا."
+  },
+  "footer": {
+    "tagline": "اكتشف الحزم التي تحتاجها بسهولة أكبر",
+    "copyright": "© 2026 Brew Finder. All rights reserved.",
+    "groups": [
+      {
+        "title": "المنتج",
+        "links": [
+          {
+            "label": "Chrome Web Store",
+            "href": "https://chromewebstore.google.com/"
+          },
+          {
+            "label": "GitHub",
+            "href": "https://github.com/kisexu/brew-finder"
+          }
+        ]
+      },
+      {
+        "title": "الدعم",
+        "links": [
+          {
+            "label": "المشكلات",
+            "href": "https://github.com/kisexu/brew-finder/issues"
+          },
+          {
+            "label": "طلبات الميزات",
+            "href": "https://github.com/kisexu/brew-finder/issues/new"
+          }
+        ]
+      },
+      {
+        "title": "قانوني",
+        "links": [
+          {
+            "label": "سياسة الخصوصية",
+            "href": "https://github.com/kisexu/brew-finder"
+          },
+          {
+            "label": "الترخيص (MIT)",
+            "href": "https://github.com/kisexu/brew-finder/blob/main/LICENSE"
+          }
+        ]
+      }
+    ]
+  }
+}

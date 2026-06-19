@@ -1,0 +1,151 @@
+{
+  "extensionName": {
+    "message": "Brew Finder"
+  },
+  "extensionDescription": {
+    "message": "اكتشف حزم Homebrew لأي موقع ويب"
+  },
+  "popupDetecting": {
+    "message": "جارٍ الفحص..."
+  },
+  "popupNoMatch": {
+    "message": "لم يتم العثور على حزمة Homebrew لهذا الموقع"
+  },
+  "popupCurrentPage": {
+    "message": "الصفحة الحالية: $HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupUnknownPage": {
+    "message": "الصفحة الحالية: غير معروفة"
+  },
+  "copyCommandTitle": {
+    "message": "انسخ أمر التثبيت"
+  },
+  "overlayCloseTitle": {
+    "message": "إغلاق"
+  },
+  "overlayInstallable": {
+    "message": "يمكن تثبيت هذا البرنامج عبر Homebrew:"
+  },
+  "overlayDismissQuestion": {
+    "message": "هل تريد إغلاق طبقة الصفحة؟"
+  },
+  "overlayDismissDescription": {
+    "message": "يمكن تغيير ذلك من صفحة الإعدادات."
+  },
+  "overlayDismissOnce": {
+    "message": "هذه المرة فقط"
+  },
+  "overlayDismissForever": {
+    "message": "إيقاف نهائيًا"
+  },
+  "overlayDismissSite": {
+    "message": "إغلاق تنبيهات هذا الموقع"
+  },
+  "overlayDismissAll": {
+    "message": "إغلاق كل التنبيهات"
+  },
+  "optionsTitle": {
+    "message": "إعدادات Brew Finder"
+  },
+  "optionsBadgeLabel": {
+    "message": "الشارة"
+  },
+  "optionsBadgeDescription": {
+    "message": "أظهر عدد النتائج على أيقونة الإضافة"
+  },
+  "optionsOverlayLabel": {
+    "message": "طبقة الصفحة"
+  },
+  "optionsOverlayDescription": {
+    "message": "أظهر تذكيرات التثبيت في أسفل اليمين"
+  },
+  "optionsOverlayActiveDescription": {
+    "message": "لن تظهر الطبقة في المواقع التي أغلقتها"
+  },
+  "optionsOverlayResetSites": {
+    "message": "إعادة ضبط المواقع"
+  },
+  "optionsLanguageLabel": {
+    "message": "اللغة"
+  },
+  "optionsLanguageDescription": {
+    "message": "اختر لغة عرض الإضافة"
+  },
+  "optionsLanguageAuto": {
+    "message": "اتبع المتصفح"
+  },
+  "languageNameEn": {
+    "message": "English"
+  },
+  "languageNameZhCn": {
+    "message": "简体中文"
+  },
+  "languageNameZhTw": {
+    "message": "繁體中文"
+  },
+  "languageNameJa": {
+    "message": "日本語"
+  },
+  "languageNameKo": {
+    "message": "한국어"
+  },
+  "languageNameFr": {
+    "message": "Français"
+  },
+  "languageNameDe": {
+    "message": "Deutsch"
+  },
+  "languageNameEs": {
+    "message": "Español"
+  },
+  "languageNamePtPt": {
+    "message": "Português"
+  },
+  "languageNameIt": {
+    "message": "Italiano"
+  },
+  "languageNameRu": {
+    "message": "Русский"
+  },
+  "languageNameAr": {
+    "message": "العربية"
+  },
+  "languageNameHi": {
+    "message": "हिन्दी"
+  },
+  "optionsMetadataLoading": {
+    "message": "جارٍ التحميل..."
+  },
+  "optionsMetadataVersion": {
+    "message": "إصدار بيانات الخرائط: $DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataPackageCount": {
+    "message": "الحزم المشمولة: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataDomainCount": {
+    "message": "النطاقات المشمولة: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataError": {
+    "message": "تعذر تحميل البيانات الوصفية"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "languageName": "日本語",
+  "dir": "ltr",
+  "meta": {
+    "title": "Brew Finder - 訪問中のサイトから Homebrew パッケージを見つける",
+    "description": "Brew Finder は、閲覧中に一致する Homebrew formula と cask を検出する、プライバシー重視の Chrome 拡張機能です。"
+  },
+  "languageLabel": "言語",
+  "buttons": {
+    "chrome": {
+      "label": "Chrome に追加",
+      "icon": "chrome"
+    },
+    "github": {
+      "label": "GitHub で見る",
+      "icon": "github"
+    }
+  },
+  "hero": {
+    "title": "Brew Finder",
+    "subtitle": "必要なパッケージをもっと簡単に見つける",
+    "demoLabel": "Brew Finder パッケージポップアップのプレビュー",
+    "demoNote": "このソフトウェアは Homebrew でインストールできます:"
+  },
+  "visuals": {
+    "badgeFound": "2 個の Homebrew パッケージを検出",
+    "badgeHint": "拡張機能のバッジに表示",
+    "packageFound": "Homebrew パッケージを検出",
+    "githubPackage": "Homebrew パッケージ",
+    "viewAll": "すべて表示 (2)"
+  },
+  "toast": {
+    "copySuccess": "インストールコマンドをコピーしました",
+    "copyFailure": "コピーに失敗しました"
+  },
+  "featuresLabel": "Brew Finder の機能",
+  "features": [
+    {
+      "title": "自動検出",
+      "body": "Brew Finder は関連する Web サイトを確認し、インストール可能な Homebrew パッケージをすばやく見つけます。",
+      "icon": "search",
+      "visual": "detection"
+    },
+    {
+      "title": "パッケージ情報とワンクリックコピー",
+      "body": "パッケージ詳細を確認し、formula と cask のインストールコマンドをコピーできます。",
+      "icon": "doc",
+      "visual": "packages"
+    },
+    {
+      "title": "大規模サイトに対応",
+      "body": "Google.com のように多くの関連パッケージを持つドメインでも、邪魔を抑えながら発見を支援します。",
+      "icon": "globe",
+      "visual": "large-site"
+    },
+    {
+      "title": "GitHub マッチング",
+      "body": "github.com/user/repo にアクセスすると、対応する Homebrew パッケージを識別できます。",
+      "icon": "github",
+      "visual": "github"
+    }
+  ],
+  "privacy": {
+    "title": "徹底したプライバシーと安全性",
+    "body": "ネットワークアクセスは不要です。パッケージデータはローカルに同梱され、端末の外へ出ません。"
+  },
+  "footer": {
+    "tagline": "必要なパッケージをもっと簡単に見つける",
+    "copyright": "© 2026 Brew Finder. All rights reserved.",
+    "groups": [
+      {
+        "title": "製品",
+        "links": [
+          {
+            "label": "Chrome ウェブストア",
+            "href": "https://chromewebstore.google.com/"
+          },
+          {
+            "label": "GitHub",
+            "href": "https://github.com/kisexu/brew-finder"
+          }
+        ]
+      },
+      {
+        "title": "サポート",
+        "links": [
+          {
+            "label": "Issues",
+            "href": "https://github.com/kisexu/brew-finder/issues"
+          },
+          {
+            "label": "機能リクエスト",
+            "href": "https://github.com/kisexu/brew-finder/issues/new"
+          }
+        ]
+      },
+      {
+        "title": "法務",
+        "links": [
+          {
+            "label": "プライバシーポリシー",
+            "href": "https://github.com/kisexu/brew-finder"
+          },
+          {
+            "label": "ライセンス (MIT)",
+            "href": "https://github.com/kisexu/brew-finder/blob/main/LICENSE"
+          }
+        ]
+      }
+    ]
+  }
+}

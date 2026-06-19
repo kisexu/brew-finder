@@ -1,0 +1,112 @@
+{
+  "languageName": "Русский",
+  "dir": "ltr",
+  "meta": {
+    "title": "Brew Finder - Находите пакеты Homebrew на посещаемых сайтах",
+    "description": "Brew Finder — ориентированное на приватность расширение Chrome, которое во время просмотра находит подходящие Homebrew formulae и casks."
+  },
+  "languageLabel": "Язык",
+  "buttons": {
+    "chrome": {
+      "label": "Добавить в Chrome",
+      "icon": "chrome"
+    },
+    "github": {
+      "label": "Открыть на GitHub",
+      "icon": "github"
+    }
+  },
+  "hero": {
+    "title": "Brew Finder",
+    "subtitle": "Проще находите нужные пакеты",
+    "demoLabel": "Предпросмотр всплывающего окна пакетов Brew Finder",
+    "demoNote": "Это ПО можно установить через Homebrew:"
+  },
+  "visuals": {
+    "badgeFound": "Найдено 2 пакета Homebrew",
+    "badgeHint": "Показано на значке расширения",
+    "packageFound": "Пакеты Homebrew найдены",
+    "githubPackage": "Пакет Homebrew",
+    "viewAll": "Показать все (2)"
+  },
+  "toast": {
+    "copySuccess": "Команда установки скопирована",
+    "copyFailure": "Не удалось скопировать"
+  },
+  "featuresLabel": "Возможности Brew Finder",
+  "features": [
+    {
+      "title": "Автоматическое обнаружение",
+      "body": "Brew Finder проверяет подходящие сайты и помогает быстро находить устанавливаемые пакеты Homebrew.",
+      "icon": "search",
+      "visual": "detection"
+    },
+    {
+      "title": "Информация о пакете и копирование",
+      "body": "Смотрите сведения о пакете и копируйте команды установки для formula и cask.",
+      "icon": "doc",
+      "visual": "packages"
+    },
+    {
+      "title": "Подходит для крупных сайтов",
+      "body": "Разработано для доменов вроде Google.com с множеством связанных пакетов, помогая находить нужное без лишних помех.",
+      "icon": "globe",
+      "visual": "large-site"
+    },
+    {
+      "title": "Сопоставление GitHub",
+      "body": "При посещении github.com/user/repo можно определить соответствующий пакет Homebrew.",
+      "icon": "github",
+      "visual": "github"
+    }
+  ],
+  "privacy": {
+    "title": "Полная приватность и безопасность",
+    "body": "Нет сетевого доступа. Данные пакетов встроены локально и никогда не покидают ваше устройство."
+  },
+  "footer": {
+    "tagline": "Проще находите нужные пакеты",
+    "copyright": "© 2026 Brew Finder. All rights reserved.",
+    "groups": [
+      {
+        "title": "Продукт",
+        "links": [
+          {
+            "label": "Chrome Web Store",
+            "href": "https://chromewebstore.google.com/"
+          },
+          {
+            "label": "GitHub",
+            "href": "https://github.com/kisexu/brew-finder"
+          }
+        ]
+      },
+      {
+        "title": "Поддержка",
+        "links": [
+          {
+            "label": "Issues",
+            "href": "https://github.com/kisexu/brew-finder/issues"
+          },
+          {
+            "label": "Запросы функций",
+            "href": "https://github.com/kisexu/brew-finder/issues/new"
+          }
+        ]
+      },
+      {
+        "title": "Правовая информация",
+        "links": [
+          {
+            "label": "Политика приватности",
+            "href": "https://github.com/kisexu/brew-finder"
+          },
+          {
+            "label": "Лицензия (MIT)",
+            "href": "https://github.com/kisexu/brew-finder/blob/main/LICENSE"
+          }
+        ]
+      }
+    ]
+  }
+}

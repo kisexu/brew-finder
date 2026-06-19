@@ -1,0 +1,112 @@
+{
+  "languageName": "Português",
+  "dir": "ltr",
+  "meta": {
+    "title": "Brew Finder - Encontre pacotes Homebrew nos sites que visita",
+    "description": "Brew Finder é uma extensão Chrome focada na privacidade que deteta formulae e casks Homebrew enquanto navega."
+  },
+  "languageLabel": "Idioma",
+  "buttons": {
+    "chrome": {
+      "label": "Adicionar ao Chrome",
+      "icon": "chrome"
+    },
+    "github": {
+      "label": "Ver no GitHub",
+      "icon": "github"
+    }
+  },
+  "hero": {
+    "title": "Brew Finder",
+    "subtitle": "Descubra mais facilmente os pacotes de que precisa",
+    "demoLabel": "Pré-visualização do popup de pacotes Brew Finder",
+    "demoNote": "Este software pode ser instalado com Homebrew:"
+  },
+  "visuals": {
+    "badgeFound": "2 pacotes Homebrew encontrados",
+    "badgeHint": "Mostrado no emblema da extensão",
+    "packageFound": "Pacotes Homebrew encontrados",
+    "githubPackage": "Pacote Homebrew",
+    "viewAll": "Ver tudo (2)"
+  },
+  "toast": {
+    "copySuccess": "Comando de instalação copiado",
+    "copyFailure": "Falha ao copiar"
+  },
+  "featuresLabel": "Funcionalidades do Brew Finder",
+  "features": [
+    {
+      "title": "Deteção automática",
+      "body": "O Brew Finder verifica sites relevantes e ajuda-o a descobrir rapidamente pacotes Homebrew instaláveis.",
+      "icon": "search",
+      "visual": "detection"
+    },
+    {
+      "title": "Informação e cópia com um clique",
+      "body": "Veja detalhes do pacote e copie comandos de instalação para formulae e casks.",
+      "icon": "doc",
+      "visual": "packages"
+    },
+    {
+      "title": "Preparado para sites grandes",
+      "body": "Desenhado para domínios como Google.com com muitos pacotes relacionados, ajudando a descoberta sem interromper.",
+      "icon": "globe",
+      "visual": "large-site"
+    },
+    {
+      "title": "Correspondência GitHub",
+      "body": "Ao visitar github.com/user/repo, pode identificar o pacote Homebrew correspondente.",
+      "icon": "github",
+      "visual": "github"
+    }
+  ],
+  "privacy": {
+    "title": "Privacidade e segurança absolutas",
+    "body": "Sem acesso à rede. Os dados dos pacotes são incluídos localmente e nunca saem do seu dispositivo."
+  },
+  "footer": {
+    "tagline": "Descubra mais facilmente os pacotes de que precisa",
+    "copyright": "© 2026 Brew Finder. All rights reserved.",
+    "groups": [
+      {
+        "title": "Produto",
+        "links": [
+          {
+            "label": "Chrome Web Store",
+            "href": "https://chromewebstore.google.com/"
+          },
+          {
+            "label": "GitHub",
+            "href": "https://github.com/kisexu/brew-finder"
+          }
+        ]
+      },
+      {
+        "title": "Suporte",
+        "links": [
+          {
+            "label": "Problemas",
+            "href": "https://github.com/kisexu/brew-finder/issues"
+          },
+          {
+            "label": "Pedidos de funcionalidades",
+            "href": "https://github.com/kisexu/brew-finder/issues/new"
+          }
+        ]
+      },
+      {
+        "title": "Legal",
+        "links": [
+          {
+            "label": "Política de privacidade",
+            "href": "https://github.com/kisexu/brew-finder"
+          },
+          {
+            "label": "Licença (MIT)",
+            "href": "https://github.com/kisexu/brew-finder/blob/main/LICENSE"
+          }
+        ]
+      }
+    ]
+  }
+}

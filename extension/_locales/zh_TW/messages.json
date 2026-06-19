@@ -1,0 +1,151 @@
+{
+  "extensionName": {
+    "message": "Brew Finder"
+  },
+  "extensionDescription": {
+    "message": "偵測任意網站對應的 Homebrew 套件"
+  },
+  "popupDetecting": {
+    "message": "正在偵測..."
+  },
+  "popupNoMatch": {
+    "message": "目前網站找不到 Homebrew 套件"
+  },
+  "popupCurrentPage": {
+    "message": "目前頁面：$HOST$",
+    "placeholders": {
+      "host": {
+        "content": "$1"
+      }
+    }
+  },
+  "popupUnknownPage": {
+    "message": "目前頁面：未知"
+  },
+  "copyCommandTitle": {
+    "message": "複製安裝指令"
+  },
+  "overlayCloseTitle": {
+    "message": "關閉"
+  },
+  "overlayInstallable": {
+    "message": "此軟體可透過 Homebrew 安裝："
+  },
+  "overlayDismissQuestion": {
+    "message": "關閉頁面浮層？"
+  },
+  "overlayDismissDescription": {
+    "message": "可在設定頁面修改"
+  },
+  "overlayDismissOnce": {
+    "message": "僅本次關閉"
+  },
+  "overlayDismissForever": {
+    "message": "永久關閉"
+  },
+  "overlayDismissSite": {
+    "message": "關閉本站提醒"
+  },
+  "overlayDismissAll": {
+    "message": "關閉所有提醒"
+  },
+  "optionsTitle": {
+    "message": "Brew Finder 設定"
+  },
+  "optionsBadgeLabel": {
+    "message": "Badge 徽章"
+  },
+  "optionsBadgeDescription": {
+    "message": "在擴充功能圖示上顯示符合數量"
+  },
+  "optionsOverlayLabel": {
+    "message": "頁面浮層"
+  },
+  "optionsOverlayDescription": {
+    "message": "在頁面右下角顯示安裝提醒"
+  },
+  "optionsOverlayActiveDescription": {
+    "message": "已點擊關閉的站點不再顯示"
+  },
+  "optionsOverlayResetSites": {
+    "message": "重設站點設定"
+  },
+  "optionsLanguageLabel": {
+    "message": "語言"
+  },
+  "optionsLanguageDescription": {
+    "message": "選擇擴充功能顯示語言"
+  },
+  "optionsLanguageAuto": {
+    "message": "跟隨瀏覽器"
+  },
+  "languageNameEn": {
+    "message": "English"
+  },
+  "languageNameZhCn": {
+    "message": "简体中文"
+  },
+  "languageNameZhTw": {
+    "message": "繁體中文"
+  },
+  "languageNameJa": {
+    "message": "日本語"
+  },
+  "languageNameKo": {
+    "message": "한국어"
+  },
+  "languageNameFr": {
+    "message": "Français"
+  },
+  "languageNameDe": {
+    "message": "Deutsch"
+  },
+  "languageNameEs": {
+    "message": "Español"
+  },
+  "languageNamePtPt": {
+    "message": "Português"
+  },
+  "languageNameIt": {
+    "message": "Italiano"
+  },
+  "languageNameRu": {
+    "message": "Русский"
+  },
+  "languageNameAr": {
+    "message": "العربية"
+  },
+  "languageNameHi": {
+    "message": "हिन्दी"
+  },
+  "optionsMetadataLoading": {
+    "message": "載入中..."
+  },
+  "optionsMetadataVersion": {
+    "message": "映射資料版本：$DATE$",
+    "placeholders": {
+      "date": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataPackageCount": {
+    "message": "涵蓋套件數：$COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataDomainCount": {
+    "message": "涵蓋網域數：$COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "optionsMetadataError": {
+    "message": "無法載入中繼資料"
+  }
+}
