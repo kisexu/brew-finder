@@ -9,7 +9,7 @@ const distDir = path.join(rootDir, "dist");
 const localeDir = path.join(siteDir, "locales");
 
 const repoUrl = "https://github.com/kisexu/brew-finder";
-const chromeUrl = "https://chromewebstore.google.com/";
+const chromeUrl = "https://chromewebstore.google.com/detail/brew-finder/kjcbapmmfbemenipkkbiblaifanjljbo";
 const localeOrder = ["en", "zh_CN", "zh_TW", "ja", "ko", "de", "es", "fr", "it", "pt_PT", "ru", "hi", "ar"];
 
 function escapeHtml(value) {
@@ -227,6 +227,15 @@ function renderPage(locale, data, languages) {
     <link rel="icon" href="assets/icon-32.png" sizes="32x32">
     <link rel="apple-touch-icon" href="assets/icon-128.png">
     <link rel="stylesheet" href="styles.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FV9RM6MQPM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FV9RM6MQPM');
+    </script>
   </head>
   <body>
     <main>
