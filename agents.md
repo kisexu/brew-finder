@@ -180,3 +180,14 @@ To add a website language:
 - `web_accessible_resources` was intentionally removed — SW can fetch its own resources
 - `tabs` permission is required for `tab.url` in `onUpdated`/`onActivated` listeners
 - `initPromise` pattern in service-worker.js ensures maps are loaded before first match
+
+## Cursor Cloud specific instructions
+
+Node.js and npm are preinstalled, and dependencies (`vitest`) are installed by the startup update script (`npm ci`). Standard commands are in `package.json` and the "Development Workflow" section above; notes below are only the non-obvious caveats for this environment.
+
+- **No lint step exists** — there is no ESLint/Prettier config and no `lint` npm script. "Lint" is effectively just `npm test` (Vitest). Don't expect a separate lint command.
+- **Tests/build need no network or services.** This product has no backend/DB/server. `npm test` and `npm run build:extension`/`npm run build:site` all work offline because `data/*.json` is committed. Only `npm run build:maps` needs network (it refetches the Homebrew API) and is optional.
+- **`extension/data/` is gitignored** and must exist before loading the extension in Chrome. Run `npm run build:extension` to copy committed `data/*.json` into `extension/data/`.
+- **Loading the extension in Chrome:** the `--load-extension` command-line flag does NOT reliably load the extension in this VM's Chrome (it silently no-ops). Instead load it via the UI: `chrome://extensions/` → enable "Developer mode" → "Load unpacked" → select `/workspace/extension`. Launch Chrome with a dedicated `--user-data-dir` (e.g. `/tmp/brew-chrome-profile`) to avoid "profile in use" conflicts with the already-running managed Chrome.
+- Chrome renderers occasionally hit a transient "Aw, Snap! (SIGTRAP)" crash on first navigation; just reload the tab.
+- **Matching is URL-based, not content-based:** the badge/popup/overlay match the tab URL against the bundled maps, so detection works even if a page renders imperfectly. To verify the happy path, visit `https://www.docker.com/` (shows docker* packages) and `https://example.com/` (shows the "not found" state).
