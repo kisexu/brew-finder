@@ -905,6 +905,13 @@
       "tap": "homebrew/core"
     },
     {
+      "name": "gcc@15",
+      "type": "formula",
+      "desc": "GNU compiler collection",
+      "homepage": "https://gcc.gnu.org/",
+      "tap": "homebrew/core"
+    },
+    {
       "name": "gcc@9",
       "type": "formula",
       "desc": "GNU compiler collection",
@@ -956,6 +963,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "abcl.org": [
+    {
+      "name": "abcl",
+      "type": "formula",
+      "desc": "Armed Bear Common Lisp: a full implementation of Common Lisp",
+      "homepage": "https://abcl.org/",
+      "tap": "homebrew/core"
+    }
+  ],
   "moinejf.free.fr": [
     {
       "name": "abcm2ps",
@@ -980,22 +996,6 @@
       "type": "formula",
       "desc": "Provides session management: i.e. separate programs from terminals",
       "homepage": "https://www.brain-dump.org/projects/abduco/",
-      "tap": "homebrew/core"
-    }
-  ],
-  "lvc.github.io": [
-    {
-      "name": "abi-compliance-checker",
-      "type": "formula",
-      "desc": "Tool for checking backward API/ABI compatibility of a C/C++ library",
-      "homepage": "https://lvc.github.io/abi-compliance-checker/",
-      "tap": "homebrew/core"
-    },
-    {
-      "name": "pkgdiff",
-      "type": "formula",
-      "desc": "Tool for analyzing changes in software packages (e.g. RPM, DEB, TAR.GZ)",
-      "homepage": "https://lvc.github.io/pkgdiff/",
       "tap": "homebrew/core"
     }
   ],
@@ -2054,6 +2054,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "joshrotenberg.com": [
+    {
+      "name": "adrs",
+      "type": "formula",
+      "desc": "Architectural Decision Record tool in Rust",
+      "homepage": "https://joshrotenberg.com/adrs/",
+      "tap": "homebrew/core"
+    }
+  ],
   "www.advancemame.it": [
     {
       "name": "advancecomp",
@@ -2402,13 +2411,6 @@
       "type": "formula",
       "desc": "Putative files comparison tool",
       "homepage": "https://www.nongnu.org/numdiff",
-      "tap": "homebrew/core"
-    },
-    {
-      "name": "oath-toolkit",
-      "type": "formula",
-      "desc": "Tools for one-time password authentication systems",
-      "homepage": "https://www.nongnu.org/oath-toolkit/",
       "tap": "homebrew/core"
     },
     {
@@ -4005,13 +4007,6 @@
       "tap": "homebrew/core"
     },
     {
-      "name": "greed",
-      "type": "formula",
-      "desc": "Game of consumption",
-      "homepage": "http://www.catb.org/~esr/greed/",
-      "tap": "homebrew/core"
-    },
-    {
       "name": "morse",
       "type": "formula",
       "desc": "QSO generator and morse code trainer",
@@ -4566,6 +4561,13 @@
       "tap": "homebrew/core"
     },
     {
+      "name": "chipmunk-physics",
+      "type": "formula",
+      "desc": "2D rigid body physics library written in C",
+      "homepage": "https://codeberg.org/slembcke/Chipmunk2D",
+      "tap": "homebrew/core"
+    },
+    {
       "name": "codeberg-cli",
       "type": "formula",
       "desc": "CLI for Codeberg",
@@ -4875,6 +4877,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "auth0.github.io": [
+    {
+      "name": "auth0",
+      "type": "formula",
+      "desc": "Build, manage and test your Auth0 integrations from the command-line",
+      "homepage": "https://auth0.github.io/auth0-cli",
+      "tap": "homebrew/core"
+    }
+  ],
   "authz0.hahwul.com": [
     {
       "name": "authz0",
@@ -4890,15 +4901,6 @@
       "type": "formula",
       "desc": "Effort free video editing!",
       "homepage": "https://auto-editor.com",
-      "tap": "homebrew/core"
-    }
-  ],
-  "www.xenoclast.org": [
-    {
-      "name": "autobench",
-      "type": "formula",
-      "desc": "Automatic webserver benchmark tool",
-      "homepage": "http://www.xenoclast.org/autobench/",
       "tap": "homebrew/core"
     }
   ],
@@ -4995,29 +4997,6 @@
       "type": "formula",
       "desc": "Automated text file generator",
       "homepage": "https://autogen.sourceforge.net/",
-      "tap": "homebrew/core"
-    }
-  ],
-  "www.sleuthkit.org": [
-    {
-      "name": "autopsy",
-      "type": "formula",
-      "desc": "Graphical interface to Sleuth Kit investigation tools",
-      "homepage": "https://www.sleuthkit.org/autopsy/index.php",
-      "tap": "homebrew/core"
-    },
-    {
-      "name": "mac-robber",
-      "type": "formula",
-      "desc": "Digital investigation tool",
-      "homepage": "https://www.sleuthkit.org/mac-robber/",
-      "tap": "homebrew/core"
-    },
-    {
-      "name": "sleuthkit",
-      "type": "formula",
-      "desc": "Forensic toolkit",
-      "homepage": "https://www.sleuthkit.org/",
       "tap": "homebrew/core"
     }
   ],
@@ -12419,6 +12398,29 @@
       "tap": "homebrew/core"
     }
   ],
+  "www.netwatchlabs.com": [
+    {
+      "name": "diskwatch",
+      "type": "formula",
+      "desc": "Cross-platform disk diagnostics TUI",
+      "homepage": "https://www.netwatchlabs.com/labs/diskwatch",
+      "tap": "homebrew/core"
+    },
+    {
+      "name": "netwatch",
+      "type": "formula",
+      "desc": "Cross-platform realtime network diagnostics TUI",
+      "homepage": "https://www.netwatchlabs.com/labs/netwatch",
+      "tap": "homebrew/core"
+    },
+    {
+      "name": "syswatch",
+      "type": "formula",
+      "desc": "Cross-platform system diagnostics TUI",
+      "homepage": "https://www.netwatchlabs.com/labs/syswatch",
+      "tap": "homebrew/core"
+    }
+  ],
   "www.allthingsdistributed.com": [
     {
       "name": "distill-cli",
@@ -12800,13 +12802,6 @@
       "desc": "VMware Fusion & Workstation docker-machine driver",
       "homepage": "https://www.vmware.com/products/personal-desktop-virtualization.html",
       "tap": "homebrew/core"
-    },
-    {
-      "name": "vmware-fusion",
-      "type": "cask",
-      "desc": "Create, manage, and run virtual machines",
-      "homepage": "https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion",
-      "tap": "homebrew/cask"
     }
   ],
   "lirantal.github.io": [
@@ -12917,12 +12912,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "waterlan.home.xs4all.nl": [
+  "waterlander.net": [
     {
       "name": "dos2unix",
       "type": "formula",
       "desc": "Convert text between DOS, UNIX, and Mac formats",
-      "homepage": "https://waterlan.home.xs4all.nl/dos2unix.html",
+      "homepage": "https://waterlander.net/dos2unix/",
       "tap": "homebrew/core"
     }
   ],
@@ -14494,6 +14489,13 @@
       "tap": "homebrew/core"
     },
     {
+      "name": "libart",
+      "type": "formula",
+      "desc": "Library for high-performance 2D graphics",
+      "homepage": "https://gitlab.gnome.org/Archive/libart_lgpl",
+      "tap": "homebrew/core"
+    },
+    {
       "name": "libcroco",
       "type": "formula",
       "desc": "CSS parsing and manipulation toolkit for GNOME",
@@ -14762,6 +14764,15 @@
       "type": "formula",
       "desc": "Enhanced, programmable IRC client",
       "homepage": "https://www.epicsol.org/",
+      "tap": "homebrew/core"
+    }
+  ],
+  "epics-controls.org": [
+    {
+      "name": "epics-base",
+      "type": "formula",
+      "desc": "Experimental Physics and Industrial Control System",
+      "homepage": "https://epics-controls.org/",
       "tap": "homebrew/core"
     }
   ],
@@ -15415,15 +15426,6 @@
       "type": "formula",
       "desc": "CLI for FastAPI framework",
       "homepage": "https://fastapi.tiangolo.com/",
-      "tap": "homebrew/core"
-    }
-  ],
-  "sdm.lbl.gov": [
-    {
-      "name": "fastbit",
-      "type": "formula",
-      "desc": "Open-source data processing library in NoSQL spirit",
-      "homepage": "https://sdm.lbl.gov/fastbit/",
       "tap": "homebrew/core"
     }
   ],
@@ -18973,22 +18975,6 @@
       "tap": "homebrew/core"
     }
   ],
-  "go.googlesource.com": [
-    {
-      "name": "go-boring",
-      "type": "formula",
-      "desc": "Go programming language with BoringCrypto",
-      "homepage": "https://go.googlesource.com/go/+/dev.boringcrypto/README.boringcrypto.md",
-      "tap": "homebrew/core"
-    },
-    {
-      "name": "font-go",
-      "type": "cask",
-      "desc": "",
-      "homepage": "https://go.googlesource.com/image/+/master/font/gofont/ttfs/README",
-      "tap": "homebrew/cask"
-    }
-  ],
   "go-critic.com": [
     {
       "name": "go-critic",
@@ -19641,14 +19627,14 @@
       "name": "logcli",
       "type": "formula",
       "desc": "Run LogQL queries against a Loki server",
-      "homepage": "https://grafana.com/loki",
+      "homepage": "https://grafana.com/oss/loki",
       "tap": "homebrew/core"
     },
     {
       "name": "loki",
       "type": "formula",
       "desc": "Horizontally-scalable, highly-available log aggregation system",
-      "homepage": "https://grafana.com/loki",
+      "homepage": "https://grafana.com/oss/loki",
       "tap": "homebrew/core"
     },
     {
@@ -21179,6 +21165,15 @@
       "type": "formula",
       "desc": "Logs for humans to read",
       "homepage": "https://humanlog.io",
+      "tap": "homebrew/core"
+    }
+  ],
+  "hunk.dev": [
+    {
+      "name": "hunk",
+      "type": "formula",
+      "desc": "Review-first terminal diff viewer for agent-authored changesets",
+      "homepage": "https://hunk.dev/",
       "tap": "homebrew/core"
     }
   ],
@@ -23536,12 +23531,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "kdash.cli.rs": [
+  "kdash-rs.github.io": [
     {
       "name": "kdash",
       "type": "formula",
       "desc": "Simple and fast dashboard for Kubernetes",
-      "homepage": "https://kdash.cli.rs/",
+      "homepage": "https://kdash-rs.github.io/",
       "tap": "homebrew/core"
     }
   ],
@@ -26402,13 +26397,6 @@
       "desc": "NAT port mapping protocol library",
       "homepage": "https://miniupnp.tuxfamily.org/libnatpmp.html",
       "tap": "homebrew/core"
-    },
-    {
-      "name": "miniupnpc",
-      "type": "formula",
-      "desc": "UPnP IGD client library and daemon",
-      "homepage": "https://miniupnp.tuxfamily.org",
-      "tap": "homebrew/core"
     }
   ],
   "codedocs.xyz": [
@@ -27889,6 +27877,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "www.liquidsoap.info": [
+    {
+      "name": "liquidsoap",
+      "type": "formula",
+      "desc": "Audio and video streaming language",
+      "homepage": "https://www.liquidsoap.info",
+      "tap": "homebrew/core"
+    }
+  ],
   "lisette.run": [
     {
       "name": "lisette",
@@ -27917,13 +27914,6 @@
     },
     {
       "name": "llvm",
-      "type": "formula",
-      "desc": "Next-gen compiler infrastructure",
-      "homepage": "https://llvm.org/",
-      "tap": "homebrew/core"
-    },
-    {
-      "name": "llvm@12",
       "type": "formula",
       "desc": "Next-gen compiler infrastructure",
       "homepage": "https://llvm.org/",
@@ -28643,6 +28633,22 @@
       "type": "formula",
       "desc": "Monkey's Audio lossless codec",
       "homepage": "https://www.monkeysaudio.com",
+      "tap": "homebrew/core"
+    }
+  ],
+  "www.sleuthkit.org": [
+    {
+      "name": "mac-robber",
+      "type": "formula",
+      "desc": "Digital investigation tool",
+      "homepage": "https://www.sleuthkit.org/mac-robber/",
+      "tap": "homebrew/core"
+    },
+    {
+      "name": "sleuthkit",
+      "type": "formula",
+      "desc": "Forensic toolkit",
+      "homepage": "https://www.sleuthkit.org/",
       "tap": "homebrew/core"
     }
   ],
@@ -29845,6 +29851,15 @@
       "type": "formula",
       "desc": "Sign files & verify signatures. Works with signify in OpenBSD",
       "homepage": "https://jedisct1.github.io/minisign/",
+      "tap": "homebrew/core"
+    }
+  ],
+  "miniupnp.free.fr": [
+    {
+      "name": "miniupnpc",
+      "type": "formula",
+      "desc": "UPnP IGD client library and daemon",
+      "homepage": "http://miniupnp.free.fr/",
       "tap": "homebrew/core"
     }
   ],
@@ -31551,22 +31566,6 @@
       "tap": "homebrew/core"
     }
   ],
-  "www.netwatchlabs.com": [
-    {
-      "name": "netwatch",
-      "type": "formula",
-      "desc": "Cross-platform realtime network diagnostics TUI",
-      "homepage": "https://www.netwatchlabs.com/labs/netwatch",
-      "tap": "homebrew/core"
-    },
-    {
-      "name": "syswatch",
-      "type": "formula",
-      "desc": "Cross-platform system diagnostics TUI",
-      "homepage": "https://www.netwatchlabs.com/labs/syswatch",
-      "tap": "homebrew/core"
-    }
-  ],
   "never-lang.readthedocs.io": [
     {
       "name": "never",
@@ -32277,6 +32276,15 @@
       "type": "formula",
       "desc": "OpenAPI Diff and Breaking Changes",
       "homepage": "https://www.oasdiff.com/",
+      "tap": "homebrew/core"
+    }
+  ],
+  "oath-toolkit.codeberg.page": [
+    {
+      "name": "oath-toolkit",
+      "type": "formula",
+      "desc": "Tools for one-time password authentication systems",
+      "homepage": "https://oath-toolkit.codeberg.page/",
       "tap": "homebrew/core"
     }
   ],
@@ -35004,6 +35012,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "lvc.github.io": [
+    {
+      "name": "pkgdiff",
+      "type": "formula",
+      "desc": "Tool for analyzing changes in software packages (e.g. RPM, DEB, TAR.GZ)",
+      "homepage": "https://lvc.github.io/pkgdiff/",
+      "tap": "homebrew/core"
+    }
+  ],
   "pkgx.sh": [
     {
       "name": "pkgx",
@@ -35144,12 +35161,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "openpmix.github.io": [
+  "openpmix.org": [
     {
       "name": "pmix",
       "type": "formula",
       "desc": "Process Management Interface for HPC environments",
-      "homepage": "https://openpmix.github.io/",
+      "homepage": "https://openpmix.org/",
       "tap": "homebrew/core"
     }
   ],
@@ -35843,6 +35860,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "protonpass.github.io": [
+    {
+      "name": "proton-pass-cli",
+      "type": "formula",
+      "desc": "Command-line interface for Proton Pass",
+      "homepage": "https://protonpass.github.io/pass-cli/",
+      "tap": "homebrew/core"
+    }
+  ],
   "www.cs.unm.edu": [
     {
       "name": "prover9",
@@ -36236,6 +36262,13 @@
     },
     {
       "name": "pypy3.10",
+      "type": "formula",
+      "desc": "Implementation of Python 3 in Python",
+      "homepage": "https://pypy.org/",
+      "tap": "homebrew/core"
+    },
+    {
+      "name": "pypy3.11",
       "type": "formula",
       "desc": "Implementation of Python 3 in Python",
       "homepage": "https://pypy.org/",
@@ -37917,15 +37950,6 @@
       "tap": "homebrew/core"
     }
   ],
-  "flak.tedunangst.com": [
-    {
-      "name": "reop",
-      "type": "formula",
-      "desc": "Encrypted keypair management",
-      "homepage": "https://flak.tedunangst.com/post/reop",
-      "tap": "homebrew/core"
-    }
-  ],
   "shaankhosla.github.io": [
     {
       "name": "repeater",
@@ -39230,22 +39254,6 @@
       "tap": "homebrew/core"
     }
   ],
-  "www.libsdl.org": [
-    {
-      "name": "sdl2",
-      "type": "formula",
-      "desc": "Low-level access to audio, keyboard, mouse, joystick, and graphics",
-      "homepage": "https://www.libsdl.org/",
-      "tap": "homebrew/core"
-    },
-    {
-      "name": "maelstrom",
-      "type": "cask",
-      "desc": "Multidirectional shooter game",
-      "homepage": "https://www.libsdl.org/projects/Maelstrom/index.html",
-      "tap": "homebrew/cask"
-    }
-  ],
   "www.ferzkopp.net": [
     {
       "name": "sdl2_gfx",
@@ -39519,13 +39527,6 @@
       "type": "formula",
       "desc": "Extract catalogs of sources from astronomical images",
       "homepage": "https://www.astromatic.net/software/sextractor/",
-      "tap": "homebrew/core"
-    },
-    {
-      "name": "skymaker",
-      "type": "formula",
-      "desc": "Generates fake astronomical images",
-      "homepage": "https://www.astromatic.net/software/skymaker",
       "tap": "homebrew/core"
     }
   ],
@@ -40124,6 +40125,22 @@
       "tap": "homebrew/core"
     }
   ],
+  "slint.dev": [
+    {
+      "name": "slint-compiler",
+      "type": "formula",
+      "desc": "Compiler for the Slint UI markup language",
+      "homepage": "https://slint.dev/",
+      "tap": "homebrew/core"
+    },
+    {
+      "name": "slint-cpp",
+      "type": "formula",
+      "desc": "C++ library and headers for the Slint UI toolkit",
+      "homepage": "https://slint.dev/",
+      "tap": "homebrew/core"
+    }
+  ],
   "blog.trailofbits.com": [
     {
       "name": "slither-analyzer",
@@ -40326,6 +40343,15 @@
       "type": "formula",
       "desc": "Database access library for C++",
       "homepage": "https://soci.sourceforge.net/",
+      "tap": "homebrew/core"
+    }
+  ],
+  "socktainer.github.io": [
+    {
+      "name": "socktainer",
+      "type": "formula",
+      "desc": "Docker-compatible REST API on top of Apple container",
+      "homepage": "https://socktainer.github.io",
       "tap": "homebrew/core"
     }
   ],
@@ -40726,13 +40752,6 @@
   "spidermonkey.dev": [
     {
       "name": "spidermonkey",
-      "type": "formula",
-      "desc": "JavaScript-C Engine",
-      "homepage": "https://spidermonkey.dev",
-      "tap": "homebrew/core"
-    },
-    {
-      "name": "spidermonkey@115",
       "type": "formula",
       "desc": "JavaScript-C Engine",
       "homepage": "https://spidermonkey.dev",
@@ -42632,15 +42651,6 @@
       "tap": "homebrew/core"
     }
   ],
-  "textract.readthedocs.io": [
-    {
-      "name": "textract",
-      "type": "formula",
-      "desc": "Extract text from various different types of files",
-      "homepage": "https://textract.readthedocs.io/",
-      "tap": "homebrew/core"
-    }
-  ],
   "www.texttest.org": [
     {
       "name": "texttest",
@@ -42940,6 +42950,15 @@
       "type": "formula",
       "desc": "Simple TTY terminal I/O application",
       "homepage": "https://tio.github.io",
+      "tap": "homebrew/core"
+    }
+  ],
+  "tirith.sh": [
+    {
+      "name": "tirith",
+      "type": "formula",
+      "desc": "Detect terminal injection, homograph, and pipe-to-shell attacks",
+      "homepage": "https://tirith.sh/",
       "tap": "homebrew/core"
     }
   ],
@@ -43802,12 +43821,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "www1.cs.columbia.edu": [
+  "www.cs.columbia.edu": [
     {
       "name": "udptunnel",
       "type": "formula",
       "desc": "Tunnel UDP packets over a TCP connection",
-      "homepage": "http://www1.cs.columbia.edu/~lennox/udptunnel/",
+      "homepage": "https://www.cs.columbia.edu/~lennox/udptunnel/",
       "tap": "homebrew/core"
     }
   ],
@@ -44054,6 +44073,15 @@
       "type": "formula",
       "desc": "Post-processing for scanned/photocopied books",
       "homepage": "https://www.flameeyes.com/projects/unpaper",
+      "tap": "homebrew/core"
+    }
+  ],
+  "statmath.wu.ac.at": [
+    {
+      "name": "unuran",
+      "type": "formula",
+      "desc": "UNU.RAN - Universal Non-Uniform RANdom number generator",
+      "homepage": "https://statmath.wu.ac.at/unuran/",
       "tap": "homebrew/core"
     }
   ],
@@ -44942,6 +44970,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "jaded-encoding-thaumaturgy.github.io": [
+    {
+      "name": "vsview",
+      "type": "formula",
+      "desc": "Next-generation VapourSynth previewer",
+      "homepage": "https://jaded-encoding-thaumaturgy.github.io/vs-view/",
+      "tap": "homebrew/core"
+    }
+  ],
   "vinhnx.github.io": [
     {
       "name": "vtcode",
@@ -45656,15 +45693,6 @@
       "tap": "homebrew/core"
     }
   ],
-  "refactoringtools.github.io": [
-    {
-      "name": "wrangler",
-      "type": "formula",
-      "desc": "Refactoring tool for Erlang with emacs and Eclipse integration",
-      "homepage": "https://refactoringtools.github.io/docs/wrangler/",
-      "tap": "homebrew/core"
-    }
-  ],
   "wren.io": [
     {
       "name": "wren",
@@ -46115,12 +46143,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "xrootd.slac.stanford.edu": [
+  "xrootd.org": [
     {
       "name": "xrootd",
       "type": "formula",
       "desc": "High performance, scalable, fault-tolerant access to data",
-      "homepage": "https://xrootd.slac.stanford.edu/",
+      "homepage": "https://xrootd.org/",
       "tap": "homebrew/core"
     }
   ],
@@ -47027,6 +47055,13 @@
     }
   ],
   "support.8bitdo.com": [
+    {
+      "name": "8bitdo-firmware-updater",
+      "type": "cask",
+      "desc": "Firmware updater for 8BitDo controllers",
+      "homepage": "https://support.8bitdo.com/firmware-updater.html",
+      "tap": "homebrew/cask"
+    },
     {
       "name": "8bitdo-ultimate-software",
       "type": "cask",
@@ -48026,12 +48061,12 @@
       "tap": "homebrew/cask"
     }
   ],
-  "www.ankiapp.com": [
+  "www.algoapp.ai": [
     {
       "name": "algoapp",
       "type": "cask",
       "desc": "Spaced Repetition Flashcard App",
-      "homepage": "https://www.ankiapp.com/",
+      "homepage": "https://www.algoapp.ai/",
       "tap": "homebrew/cask"
     }
   ],
@@ -48400,6 +48435,15 @@
       "type": "cask",
       "desc": "Note-taking App for Evernote",
       "homepage": "https://alternoteapp.com/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "altersend.com": [
+    {
+      "name": "altersend",
+      "type": "cask",
+      "desc": "Secure, peer-to-peer file transfer app",
+      "homepage": "https://altersend.com/",
       "tap": "homebrew/cask"
     }
   ],
@@ -49559,6 +49603,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "aside.com": [
+    {
+      "name": "aside",
+      "type": "cask",
+      "desc": "Web browser with built-in AI assistant",
+      "homepage": "https://aside.com/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "www.asix.com.tw": [
     {
       "name": "asix-ax88179",
@@ -49678,6 +49731,15 @@
       "type": "cask",
       "desc": "Japanese input method editor (IME) produced by JustSystems",
       "homepage": "https://www.justsystems.com/jp/products/atokmac/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "getatoll.app": [
+    {
+      "name": "atoll",
+      "type": "cask",
+      "desc": "Dynamic Island for the MacBook notch",
+      "homepage": "https://getatoll.app/",
       "tap": "homebrew/cask"
     }
   ],
@@ -50684,6 +50746,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "bettercmdtab.app": [
+    {
+      "name": "bettercmdtab",
+      "type": "cask",
+      "desc": "Replacement for the built-in Cmd+Tab app switcher",
+      "homepage": "https://bettercmdtab.app/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "betterdiscord.app": [
     {
       "name": "betterdiscord-installer",
@@ -51418,15 +51489,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "bluegriffon.org": [
-    {
-      "name": "bluegriffon",
-      "type": "cask",
-      "desc": "Web and EPUB editor",
-      "homepage": "http://bluegriffon.org/",
-      "tap": "homebrew/cask"
-    }
-  ],
   "zeroonetwenty.com": [
     {
       "name": "blueharvest",
@@ -51742,6 +51804,27 @@
       "desc": "Web browser focusing on privacy",
       "homepage": "https://brave.com/download-nightly/",
       "tap": "homebrew/cask"
+    },
+    {
+      "name": "brave-origin",
+      "type": "cask",
+      "desc": "Privacy-focused web browser",
+      "homepage": "https://brave.com/origin",
+      "tap": "homebrew/cask"
+    },
+    {
+      "name": "brave-origin@beta",
+      "type": "cask",
+      "desc": "Privacy-focused web browser",
+      "homepage": "https://brave.com/origin/#beta",
+      "tap": "homebrew/cask"
+    },
+    {
+      "name": "brave-origin@nightly",
+      "type": "cask",
+      "desc": "Privacy-focused web browser",
+      "homepage": "https://brave.com/origin/#nightly",
+      "tap": "homebrew/cask"
     }
   ],
   "breaktimer.app": [
@@ -51832,12 +51915,12 @@
       "tap": "homebrew/cask"
     }
   ],
-  "try-brilliant.com": [
+  "brilliant.design": [
     {
       "name": "brilliant",
       "type": "cask",
       "desc": "Design and communication tool",
-      "homepage": "https://try-brilliant.com/",
+      "homepage": "https://brilliant.design/",
       "tap": "homebrew/cask"
     }
   ],
@@ -51933,20 +52016,6 @@
       "type": "cask",
       "desc": "Web security testing toolkit",
       "homepage": "https://portswigger.net/burp/",
-      "tap": "homebrew/cask"
-    },
-    {
-      "name": "burp-suite-professional",
-      "type": "cask",
-      "desc": "Web security testing toolkit",
-      "homepage": "https://portswigger.net/burp/pro",
-      "tap": "homebrew/cask"
-    },
-    {
-      "name": "burp-suite-professional@early-adopter",
-      "type": "cask",
-      "desc": "Web security testing toolkit",
-      "homepage": "https://portswigger.net/burp/pro",
       "tap": "homebrew/cask"
     },
     {
@@ -52250,6 +52319,13 @@
       "desc": "Improved Apple device support",
       "homepage": "https://www.caldigit.com/",
       "tap": "homebrew/cask"
+    },
+    {
+      "name": "caldigit-usb-hub-support-driver",
+      "type": "cask",
+      "desc": "Apple SuperDrive, Apple Keyboard, and Improved iPhone/iPad Charging",
+      "homepage": "https://www.caldigit.com/",
+      "tap": "homebrew/cask"
     }
   ],
   "nspektor.com": [
@@ -52506,6 +52582,13 @@
       "type": "cask",
       "desc": "Get the Key and BPM of any audio, instantly",
       "homepage": "https://mixedinkey.com/live",
+      "tap": "homebrew/cask"
+    },
+    {
+      "name": "platinum-notes",
+      "type": "cask",
+      "desc": "Improve audio quality of music files",
+      "homepage": "https://mixedinkey.com/platinum-notes/",
       "tap": "homebrew/cask"
     }
   ],
@@ -53234,15 +53317,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "citra-emu.org": [
-    {
-      "name": "citra",
-      "type": "cask",
-      "desc": "Nintendo 3DS emulator",
-      "homepage": "https://citra-emu.org/",
-      "tap": "homebrew/cask"
-    }
-  ],
   "docs.citrix.com": [
     {
       "name": "citrix-workspace",
@@ -53258,6 +53332,15 @@
       "type": "cask",
       "desc": "Anti-virus and malware scanner",
       "homepage": "https://www.clamxav.com/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "clarify.ai": [
+    {
+      "name": "clarify",
+      "type": "cask",
+      "desc": "Autonomous CRM",
+      "homepage": "https://clarify.ai/",
       "tap": "homebrew/cask"
     }
   ],
@@ -54542,6 +54625,15 @@
       "type": "cask",
       "desc": "Plain-text editor for web pages, program source codes and more",
       "homepage": "https://coteditor.com/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "cotypist.app": [
+    {
+      "name": "cotypist",
+      "type": "cask",
+      "desc": "System-wide AI autocomplete",
+      "homepage": "https://cotypist.app/",
       "tap": "homebrew/cask"
     }
   ],
@@ -56090,6 +56182,15 @@
       "type": "cask",
       "desc": "Dock utility",
       "homepage": "https://hachipoo.com/dockside-app",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "getdockspace.app": [
+    {
+      "name": "dockspace",
+      "type": "cask",
+      "desc": "Widgets for your dock",
+      "homepage": "https://getdockspace.app/",
       "tap": "homebrew/cask"
     }
   ],
@@ -58114,15 +58215,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "plot.ly": [
-    {
-      "name": "falcon-sql-client",
-      "type": "cask",
-      "desc": "Free, open-source SQL client",
-      "homepage": "https://plot.ly/free-sql-client-download/",
-      "tap": "homebrew/cask"
-    }
-  ],
   "fannywidget.com": [
     {
       "name": "fanny",
@@ -58450,13 +58542,6 @@
       "type": "cask",
       "desc": "Property list utility",
       "homepage": "https://newosxbook.com/tools/simplistic.html",
-      "tap": "homebrew/cask"
-    },
-    {
-      "name": "jtool2",
-      "type": "cask",
-      "desc": "Tool to help out reverse engineering, security researchers, and tweak developers",
-      "homepage": "https://newosxbook.com/tools/jtool.html",
       "tap": "homebrew/cask"
     }
   ],
@@ -73667,6 +73752,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "go.googlesource.com": [
+    {
+      "name": "font-go",
+      "type": "cask",
+      "desc": "",
+      "homepage": "https://go.googlesource.com/image/+/master/font/gofont/ttfs/README",
+      "tap": "homebrew/cask"
+    }
+  ],
   "www.paratype.com": [
     {
       "name": "font-golos-ui",
@@ -75731,6 +75825,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "geolibre.app": [
+    {
+      "name": "geolibre",
+      "type": "cask",
+      "desc": "GIS platform",
+      "homepage": "https://geolibre.app/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "www.geomapapp.org": [
     {
       "name": "geomap",
@@ -75922,6 +76025,15 @@
       "type": "cask",
       "desc": "Git client for simultaneous branches on top of your existing workflow",
       "homepage": "https://gitbutler.com/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "gitcomet.dev": [
+    {
+      "name": "gitcomet",
+      "type": "cask",
+      "desc": "Git GUI",
+      "homepage": "https://gitcomet.dev/",
       "tap": "homebrew/cask"
     }
   ],
@@ -76124,6 +76236,15 @@
       "type": "cask",
       "desc": "",
       "homepage": "http://gmvault.org/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "lexfriedman.com": [
+    {
+      "name": "gnome",
+      "type": "cask",
+      "desc": "Menu bar GIF search and creation tool",
+      "homepage": "https://lexfriedman.com/gnome/",
       "tap": "homebrew/cask"
     }
   ],
@@ -76377,15 +76498,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "www.firma.infocert.it": [
-    {
-      "name": "gosign",
-      "type": "cask",
-      "desc": "Digital signature and time stamp app",
-      "homepage": "https://www.firma.infocert.it/prodotti/gosign/",
-      "tap": "homebrew/cask"
-    }
-  ],
   "www.goto.com": [
     {
       "name": "gotomeeting",
@@ -76593,6 +76705,22 @@
       "type": "cask",
       "desc": "Teach object orientation with Java",
       "homepage": "https://www.greenfoot.org/home",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "mutedeck.com": [
+    {
+      "name": "greensignal",
+      "type": "cask",
+      "desc": "Pre-call check for camera, microphone, speaker, and network quality",
+      "homepage": "https://mutedeck.com/tools/greensignal",
+      "tap": "homebrew/cask"
+    },
+    {
+      "name": "mutedeck",
+      "type": "cask",
+      "desc": "Toggle mute, video, record, share, and leave a meeting in a call app",
+      "homepage": "https://mutedeck.com/",
       "tap": "homebrew/cask"
     }
   ],
@@ -77875,15 +78003,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "pngmini.com": [
-    {
-      "name": "imagealpha",
-      "type": "cask",
-      "desc": "Utility to reduce the size of 24-bit PNG files",
-      "homepage": "https://pngmini.com/",
-      "tap": "homebrew/cask"
-    }
-  ],
   "imagej.net": [
     {
       "name": "imagej",
@@ -78001,6 +78120,15 @@
       "type": "cask",
       "desc": "Customizable work management platform",
       "homepage": "https://startinfinity.com/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "infocert.digital": [
+    {
+      "name": "infocert-sign",
+      "type": "cask",
+      "desc": "Digital signature and time stamp app, International Edition",
+      "homepage": "https://infocert.digital/consumer/infocert-sign-suite/",
       "tap": "homebrew/cask"
     }
   ],
@@ -78486,13 +78614,6 @@
       "type": "cask",
       "desc": "Design systems and accessibility testing",
       "homepage": "https://bjango.com/mac/pinwheel/",
-      "tap": "homebrew/cask"
-    },
-    {
-      "name": "skala-preview",
-      "type": "cask",
-      "desc": "Design preview tool",
-      "homepage": "https://bjango.com/mac/skalapreview/",
       "tap": "homebrew/cask"
     }
   ],
@@ -79325,6 +79446,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "kdeconnect.kde.org": [
+    {
+      "name": "kde-connect",
+      "type": "cask",
+      "desc": "Communicate with your handheld devices",
+      "homepage": "https://kdeconnect.kde.org/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "kdenlive.org": [
     {
       "name": "kdenlive",
@@ -79557,6 +79687,13 @@
       "type": "cask",
       "desc": "ZSA keyboard firmware flasher",
       "homepage": "https://www.zsa.io/flash",
+      "tap": "homebrew/cask"
+    },
+    {
+      "name": "navigator",
+      "type": "cask",
+      "desc": "Companion app for ZSA's Navigator trackpad",
+      "homepage": "https://www.zsa.io/voyager/navigator",
       "tap": "homebrew/cask"
     }
   ],
@@ -80309,6 +80446,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "letos.org": [
+    {
+      "name": "letos",
+      "type": "cask",
+      "desc": "Create, edit, browse SQLite databases",
+      "homepage": "https://letos.org/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "lets.fontworks.co.jp": [
     {
       "name": "lets",
@@ -80342,6 +80488,15 @@
       "type": "cask",
       "desc": "Displays all connected LG monitor information",
       "homepage": "https://www.lg.com/us/support/monitors",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "www.reiner-sct.com": [
+    {
+      "name": "libifd-cyberjack",
+      "type": "cask",
+      "desc": "Driver for REINER SCT cyberJack smart card readers",
+      "homepage": "https://www.reiner-sct.com/",
       "tap": "homebrew/cask"
     }
   ],
@@ -81532,6 +81687,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "www.libsdl.org": [
+    {
+      "name": "maelstrom",
+      "type": "cask",
+      "desc": "Multidirectional shooter game",
+      "homepage": "https://www.libsdl.org/projects/Maelstrom/index.html",
+      "tap": "homebrew/cask"
+    }
+  ],
   "maestral.app": [
     {
       "name": "maestral",
@@ -82130,6 +82294,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "meetmic.app": [
+    {
+      "name": "meetmic",
+      "type": "cask",
+      "desc": "Audio transcription tool",
+      "homepage": "https://meetmic.app/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "megasoftware.net": [
     {
       "name": "mega",
@@ -82382,6 +82555,15 @@
       "type": "cask",
       "desc": "VR development tool",
       "homepage": "https://developer.oculus.com/meta-quest-developer-hub/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "www.meta.com": [
+    {
+      "name": "meta-quest-remote-desktop",
+      "type": "cask",
+      "desc": "Remote desktop companion app for Meta Quest headsets",
+      "homepage": "https://www.meta.com/quest/",
       "tap": "homebrew/cask"
     }
   ],
@@ -83764,15 +83946,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "mutedeck.com": [
-    {
-      "name": "mutedeck",
-      "type": "cask",
-      "desc": "Toggle mute, video, record, share, and leave a meeting in a call app",
-      "homepage": "https://mutedeck.com/",
-      "tap": "homebrew/cask"
-    }
-  ],
   "muteme.com": [
     {
       "name": "muteme",
@@ -85131,6 +85304,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "onexray.com": [
+    {
+      "name": "onexrayse",
+      "type": "cask",
+      "desc": "Cross-platform Xray-core client",
+      "homepage": "https://onexray.com/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "onionshare.org": [
     {
       "name": "onionshare",
@@ -85369,6 +85551,15 @@
       "type": "cask",
       "desc": "C++ toolkit for creative coding",
       "homepage": "https://openframeworks.cc/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "tinyhumans.ai": [
+    {
+      "name": "openhuman",
+      "type": "cask",
+      "desc": "Personal AI assistant with local memory and integrations",
+      "homepage": "https://tinyhumans.ai/openhuman",
       "tap": "homebrew/cask"
     }
   ],
@@ -86168,6 +86359,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "www.palmier.io": [
+    {
+      "name": "palmier-pro",
+      "type": "cask",
+      "desc": "Video Editor built for AI",
+      "homepage": "https://www.palmier.io/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "www.pandora.com": [
     {
       "name": "pandora",
@@ -86213,12 +86413,12 @@
       "tap": "homebrew/cask"
     }
   ],
-  "paper.photos": [
+  "www.paperapp.net": [
     {
       "name": "paper",
       "type": "cask",
       "desc": "Pap.er, 4K 5K HD Wallpaper Application",
-      "homepage": "https://paper.photos/",
+      "homepage": "https://www.paperapp.net/",
       "tap": "homebrew/cask"
     }
   ],
@@ -87321,6 +87521,15 @@
       "type": "cask",
       "desc": "Utility to display the Dock in the Touch Bar",
       "homepage": "https://pock.app/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "www.pocketbard.app": [
+    {
+      "name": "pocket-bard",
+      "type": "cask",
+      "desc": "TTRPG ambient audio and sound effects",
+      "homepage": "https://www.pocketbard.app/",
       "tap": "homebrew/cask"
     }
   ],
@@ -88752,7 +88961,7 @@
   ],
   "www.quickapp.cn": [
     {
-      "name": "quick-app-ide",
+      "name": "quickapp-studio",
       "type": "cask",
       "desc": "Quickapp Development Tool",
       "homepage": "https://www.quickapp.cn/",
@@ -88804,15 +89013,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "quickwhisper.app": [
-    {
-      "name": "quickwhisper",
-      "type": "cask",
-      "desc": "Audio transcription tool",
-      "homepage": "https://quickwhisper.app/",
-      "tap": "homebrew/cask"
-    }
-  ],
   "tryquiet.org": [
     {
       "name": "quiet",
@@ -88833,10 +89033,10 @@
   ],
   "amicoapps.com": [
     {
-      "name": "quit-all",
+      "name": "quitall",
       "type": "cask",
       "desc": "Quickly quit one, some, or all apps",
-      "homepage": "https://amicoapps.com/app/quit-all/",
+      "homepage": "https://amicoapps.com/app/quitall/",
       "tap": "homebrew/cask"
     }
   ],
@@ -88918,6 +89118,15 @@
       "type": "cask",
       "desc": "Gesture-based launcher for apps, text snippets, and scripts",
       "homepage": "https://radial.appverge.net/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "radix.colinkim.dev": [
+    {
+      "name": "radix",
+      "type": "cask",
+      "desc": "Disk space analyzer",
+      "homepage": "https://radix.colinkim.dev/",
       "tap": "homebrew/cask"
     }
   ],
@@ -89243,15 +89452,6 @@
       "type": "cask",
       "desc": "File launcher",
       "homepage": "https://recentsapp.com/",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "recipeui.com": [
-    {
-      "name": "recipeui",
-      "type": "cask",
-      "desc": "API discovery, testing and sharing tool",
-      "homepage": "https://recipeui.com/",
       "tap": "homebrew/cask"
     }
   ],
@@ -91265,15 +91465,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "sia.tech": [
-    {
-      "name": "sia-ui",
-      "type": "cask",
-      "desc": "Graphical frontend for Sia",
-      "homepage": "https://sia.tech/",
-      "tap": "homebrew/cask"
-    }
-  ],
   "sidequestvr.com": [
     {
       "name": "sidequest",
@@ -91658,6 +91849,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "www.slashy.com": [
+    {
+      "name": "slashy",
+      "type": "cask",
+      "desc": "Email client for Gmail",
+      "homepage": "https://www.slashy.com/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "ohanaware.com": [
     {
       "name": "sleep-aid",
@@ -91854,6 +92054,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "snapzy.app": [
+    {
+      "name": "snapzy",
+      "type": "cask",
+      "desc": "Native screenshots, recording, annotation, and editing from the menu bar",
+      "homepage": "https://snapzy.app/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "www.snes9x.com": [
     {
       "name": "snes9x",
@@ -91869,6 +92078,15 @@
       "type": "cask",
       "desc": "Snip or pin screenshots",
       "homepage": "https://www.snipaste.com/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "snippety.app": [
+    {
+      "name": "snippety",
+      "type": "cask",
+      "desc": "Snippet manager & text expander",
+      "homepage": "https://snippety.app/",
       "tap": "homebrew/cask"
     }
   ],
@@ -92481,15 +92699,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "sqlitestudio.pl": [
-    {
-      "name": "sqlitestudio",
-      "type": "cask",
-      "desc": "Create, edit, browse SQLite databases",
-      "homepage": "https://sqlitestudio.pl/",
-      "tap": "homebrew/cask"
-    }
-  ],
   "www.macsqlclient.com": [
     {
       "name": "sqlpro-for-mssql",
@@ -93016,6 +93225,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "subtitlestudio.ai": [
+    {
+      "name": "subtitle-studio",
+      "type": "cask",
+      "desc": "Offline AI subtitle generator",
+      "homepage": "https://subtitlestudio.ai/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "www.sunsama.com": [
     {
       "name": "sunsama",
@@ -93049,6 +93267,15 @@
       "type": "cask",
       "desc": "Arc-like sidebar to save links, files and folders from any browser",
       "homepage": "https://supasidebar.com/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "supaterm.com": [
+    {
+      "name": "supaterm",
+      "type": "cask",
+      "desc": "Terminal emulator with built-in agent automation",
+      "homepage": "https://supaterm.com/",
       "tap": "homebrew/cask"
     }
   ],
@@ -94448,6 +94675,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "tikz.dev": [
+    {
+      "name": "tikz-editor",
+      "type": "cask",
+      "desc": "WYSIWYG editor for TikZ diagrams in LaTeX",
+      "homepage": "https://tikz.dev/editor/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "tikzit.github.io": [
     {
       "name": "tikzit",
@@ -95133,6 +95369,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "tunarr.com": [
+    {
+      "name": "tunarr",
+      "type": "cask",
+      "desc": "Create your own live TV channels from media on Plex, Jellyfin, Emby",
+      "homepage": "https://tunarr.com/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "tunein.com": [
     {
       "name": "tunein",
@@ -95392,6 +95637,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "www.typewhisper.com": [
+    {
+      "name": "typewhisper",
+      "type": "cask",
+      "desc": "Speech-to-text and AI text processing",
+      "homepage": "https://www.typewhisper.com/",
+      "tap": "homebrew/cask"
+    }
+  ],
   "typora.io": [
     {
       "name": "typora",
@@ -95621,6 +95875,15 @@
       "type": "cask",
       "desc": "Google Chromium, sans integration with Google",
       "homepage": "https://ungoogled-software.github.io/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "www.uniclipboard.app": [
+    {
+      "name": "uniclipboard",
+      "type": "cask",
+      "desc": "Cross-device clipboard syncing tool",
+      "homepage": "https://www.uniclipboard.app/",
       "tap": "homebrew/cask"
     }
   ],
@@ -95954,6 +96217,15 @@
       "type": "cask",
       "desc": "Delay/reverb plugin",
       "homepage": "https://valhalladsp.com/shop/reverb/valhalla-supermassive/",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "valkey-admin.valkey.io": [
+    {
+      "name": "valkey-admin",
+      "type": "cask",
+      "desc": "Administration tool for Valkey clusters and standalone instances",
+      "homepage": "https://valkey-admin.valkey.io/",
       "tap": "homebrew/cask"
     }
   ],
@@ -96387,15 +96659,6 @@
       "type": "cask",
       "desc": "Image viewer",
       "homepage": "https://getviso.app/",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "salmanarif.bitbucket.io": [
-    {
-      "name": "visual",
-      "type": "cask",
-      "desc": "Learn ARM assembly language",
-      "homepage": "https://salmanarif.bitbucket.io/visual/",
       "tap": "homebrew/cask"
     }
   ],
@@ -97463,15 +97726,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "workmanlayout.org": [
-    {
-      "name": "workman",
-      "type": "cask",
-      "desc": "Alternative English keyboard layout",
-      "homepage": "https://workmanlayout.org/",
-      "tap": "homebrew/cask"
-    }
-  ],
   "worksheetcrafter.com": [
     {
       "name": "worksheet-crafter",
@@ -97610,7 +97864,7 @@
       "name": "x-air-edit",
       "type": "cask",
       "desc": "Remote control for the Behringer X AIR series mixers",
-      "homepage": "https://www.behringer.com/series.html?category=R-BEHRINGER-XAIRSERIES",
+      "homepage": "https://www.behringer.com/en/products/0605-AAD",
       "tap": "homebrew/cask"
     },
     {
@@ -98254,15 +98508,6 @@
       "type": "cask",
       "desc": "Lua IDE",
       "homepage": "https://studio.zerobrane.com/",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "zeronet.io": [
-    {
-      "name": "zeronet",
-      "type": "cask",
-      "desc": "Decentralised websites using Bitcoin crypto and BitTorrent network",
-      "homepage": "https://zeronet.io/",
       "tap": "homebrew/cask"
     }
   ],
