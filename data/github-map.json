@@ -8,15 +8,6 @@
       "tap": "homebrew/core"
     }
   ],
-  "armedbear/abcl": [
-    {
-      "name": "abcl",
-      "type": "formula",
-      "desc": "Armed Bear Common Lisp: a full implementation of Common Lisp",
-      "homepage": "https://github.com/armedbear/abcl",
-      "tap": "homebrew/core"
-    }
-  ],
   "lvc/abi-dumper": [
     {
       "name": "abi-dumper",
@@ -104,6 +95,15 @@
       "type": "formula",
       "desc": "Tool to validate GitHub Action and Workflow YAML files",
       "homepage": "https://github.com/mpalmer/action-validator",
+      "tap": "homebrew/core"
+    }
+  ],
+  "actions/languageservices": [
+    {
+      "name": "actions-languageserver",
+      "type": "formula",
+      "desc": "Language server for GitHub Actions YAML files",
+      "homepage": "https://github.com/actions/languageservices/tree/main/languageserver",
       "tap": "homebrew/core"
     }
   ],
@@ -548,12 +548,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "njbrake/agent-of-empires": [
+  "agent-of-empires/agent-of-empires": [
     {
       "name": "aoe",
       "type": "formula",
       "desc": "Terminal session manager for AI coding agents",
-      "homepage": "https://github.com/njbrake/agent-of-empires",
+      "homepage": "https://github.com/agent-of-empires/agent-of-empires",
       "tap": "homebrew/core"
     }
   ],
@@ -842,6 +842,15 @@
       "type": "formula",
       "desc": "Cross-platform audio recording/playback CLI tool with TUI",
       "homepage": "https://github.com/chaosprint/asak",
+      "tap": "homebrew/core"
+    }
+  ],
+  "RPGHacker/asar": [
+    {
+      "name": "asar",
+      "type": "formula",
+      "desc": "SNES assembler for applying patches to ROM images or building ROMs",
+      "homepage": "https://github.com/RPGHacker/asar",
       "tap": "homebrew/core"
     }
   ],
@@ -1345,12 +1354,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "benkehoe/aws-sso-util": [
+  "61418/aws-sso-util": [
     {
       "name": "aws-sso-util",
       "type": "formula",
       "desc": "Smooth out the rough edges of AWS SSO (temporarily, until AWS makes it better)",
-      "homepage": "https://github.com/benkehoe/aws-sso-util",
+      "homepage": "https://github.com/61418/aws-sso-util",
       "tap": "homebrew/core"
     }
   ],
@@ -1807,6 +1816,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "bcoin-org/bcoin": [
+    {
+      "name": "bcoin",
+      "type": "formula",
+      "desc": "Javascript bitcoin library for node.js and browsers",
+      "homepage": "https://github.com/bcoin-org/bcoin",
+      "tap": "homebrew/core"
+    }
+  ],
   "bloomberg/bde": [
     {
       "name": "bde",
@@ -1816,12 +1834,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "steveyegge/beads": [
+  "gastownhall/beads": [
     {
       "name": "beads",
       "type": "formula",
       "desc": "Memory upgrade for your coding agent",
-      "homepage": "https://github.com/steveyegge/beads",
+      "homepage": "https://github.com/gastownhall/beads",
       "tap": "homebrew/core"
     }
   ],
@@ -2311,6 +2329,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "bomctl/bomctl": [
+    {
+      "name": "bomctl",
+      "type": "formula",
+      "desc": "Format-agnostic SBOM tooling for the stages between SBOM generation and analysis",
+      "homepage": "https://github.com/bomctl/bomctl",
+      "tap": "homebrew/core"
+    }
+  ],
   "boostorg/bcp": [
     {
       "name": "boost-bcp",
@@ -2374,12 +2401,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "Netflix/bpftop": [
+  "jfernandez/bpftop": [
     {
       "name": "bpftop",
       "type": "formula",
       "desc": "Dynamic real-time view of running eBPF programs",
-      "homepage": "https://github.com/Netflix/bpftop",
+      "homepage": "https://github.com/jfernandez/bpftop",
       "tap": "homebrew/core"
     }
   ],
@@ -2500,12 +2527,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "bcgsc/btllib": [
+  "BirolLab/btllib": [
     {
       "name": "btllib",
       "type": "formula",
       "desc": "Bioinformatics Technology Lab common code library",
-      "homepage": "https://github.com/bcgsc/btllib",
+      "homepage": "https://github.com/BirolLab/btllib",
       "tap": "homebrew/core"
     }
   ],
@@ -2704,12 +2731,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "kspalaiologos/bzip3": [
+  "iczelia/bzip3": [
     {
       "name": "bzip3",
       "type": "formula",
       "desc": "Better and stronger spiritual successor to BZip2",
-      "homepage": "https://github.com/kspalaiologos/bzip3",
+      "homepage": "https://github.com/iczelia/bzip3",
       "tap": "homebrew/core"
     }
   ],
@@ -3325,12 +3352,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "ryoppippi/ccusage": [
+  "ccusage/ccusage": [
     {
       "name": "ccusage",
       "type": "formula",
       "desc": "CLI tool for analyzing Claude Code usage from local JSONL files",
-      "homepage": "https://github.com/ryoppippi/ccusage",
+      "homepage": "https://github.com/ccusage/ccusage",
       "tap": "homebrew/core"
     }
   ],
@@ -3739,15 +3766,6 @@
       "tap": "homebrew/core"
     }
   ],
-  "slembcke/Chipmunk2D": [
-    {
-      "name": "chipmunk-physics",
-      "type": "formula",
-      "desc": "2D rigid body physics library written in C",
-      "homepage": "https://github.com/slembcke/Chipmunk2D",
-      "tap": "homebrew/core"
-    }
-  ],
   "facebook/chisel": [
     {
       "name": "chisel",
@@ -3889,6 +3907,15 @@
       "type": "formula",
       "desc": "Hash functions for strings",
       "homepage": "https://github.com/google/cityhash",
+      "tap": "homebrew/core"
+    }
+  ],
+  "civetweb/civetweb": [
+    {
+      "name": "civetweb",
+      "type": "formula",
+      "desc": "C/C++ embeddable web server with optional CGI, SSL and Lua support",
+      "homepage": "https://github.com/civetweb/civetweb",
       "tap": "homebrew/core"
     }
   ],
@@ -4340,24 +4367,6 @@
       "tap": "homebrew/core"
     }
   ],
-  "google/cmockery": [
-    {
-      "name": "cmockery",
-      "type": "formula",
-      "desc": "Unit testing and mocking library for C",
-      "homepage": "https://github.com/google/cmockery",
-      "tap": "homebrew/core"
-    }
-  ],
-  "lpabon/cmockery2": [
-    {
-      "name": "cmockery2",
-      "type": "formula",
-      "desc": "Reviving cmockery unit test framework from Google",
-      "homepage": "https://github.com/lpabon/cmockery2",
-      "tap": "homebrew/core"
-    }
-  ],
   "vector-of-bool/cmrc": [
     {
       "name": "cmrc",
@@ -4391,6 +4400,15 @@
       "type": "formula",
       "desc": "Contabo Command-Line Interface (CLI)",
       "homepage": "https://github.com/contabo/cntb",
+      "tap": "homebrew/core"
+    }
+  ],
+  "SarahWeiii/CoACD": [
+    {
+      "name": "coacd",
+      "type": "formula",
+      "desc": "Approximate convex decomposition for 3D meshes with collision-aware concavity",
+      "homepage": "https://github.com/SarahWeiii/CoACD",
       "tap": "homebrew/core"
     }
   ],
@@ -5294,6 +5312,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "ossf/cve-bin-tool": [
+    {
+      "name": "cve-bin-tool",
+      "type": "formula",
+      "desc": "Scans binaries and SBOMs for known vulnerabilities and prepares reports",
+      "homepage": "https://github.com/ossf/cve-bin-tool",
+      "tap": "homebrew/core"
+    }
+  ],
   "jarro2783/cxxopts": [
     {
       "name": "cxxopts",
@@ -5318,6 +5345,15 @@
       "type": "formula",
       "desc": "iOS app injector and modifier",
       "homepage": "https://github.com/asdfzxcvbn/pyzule-rw",
+      "tap": "homebrew/core"
+    }
+  ],
+  "CycloneDX/cyclonedx-node-npm": [
+    {
+      "name": "cyclonedx-npm",
+      "type": "formula",
+      "desc": "Creates CycloneDX Software Bill of Materials (SBOM) from npm projects",
+      "homepage": "https://github.com/CycloneDX/cyclonedx-node-npm",
       "tap": "homebrew/core"
     }
   ],
@@ -5438,12 +5474,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "foo86/dcadec": [
+  "dropbox/dbxcli": [
     {
-      "name": "dcadec",
+      "name": "dbxcli",
       "type": "formula",
-      "desc": "DTS Coherent Acoustics decoder with support for HD extensions",
-      "homepage": "https://github.com/foo86/dcadec",
+      "desc": "Command-line tool for Dropbox users and team admins",
+      "homepage": "https://github.com/dropbox/dbxcli",
       "tap": "homebrew/core"
     }
   ],
@@ -5745,12 +5781,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "bbonev/dhcpdump": [
+  "dhcpdump-org/dhcpdump": [
     {
       "name": "dhcpdump",
       "type": "formula",
       "desc": "Monitor DHCP traffic for debugging purposes",
-      "homepage": "https://github.com/bbonev/dhcpdump",
+      "homepage": "https://github.com/dhcpdump-org/dhcpdump",
       "tap": "homebrew/core"
     }
   ],
@@ -5817,12 +5853,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "oug-t/difi": [
+  "xguot/difi": [
     {
       "name": "difi",
       "type": "formula",
       "desc": "Pixel-perfect terminal diff viewer",
-      "homepage": "https://github.com/oug-t/difi",
+      "homepage": "https://github.com/xguot/difi",
       "tap": "homebrew/core"
     }
   ],
@@ -7032,6 +7068,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "swyddfa/esbonio": [
+    {
+      "name": "esbonio",
+      "type": "formula",
+      "desc": "Language server for working with Sphinx projects",
+      "homepage": "https://github.com/swyddfa/esbonio",
+      "tap": "homebrew/core"
+    }
+  ],
   "mantoni/eslint_d.js": [
     {
       "name": "eslint_d",
@@ -7507,12 +7552,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "Use-Tusk/fence": [
+  "fencesandbox/fence": [
     {
       "name": "fence",
       "type": "formula",
       "desc": "Lightweight sandbox for commands with network and filesystem restrictions",
-      "homepage": "https://github.com/Use-Tusk/fence",
+      "homepage": "https://github.com/fencesandbox/fence",
       "tap": "homebrew/core"
     }
   ],
@@ -7603,6 +7648,15 @@
       "type": "formula",
       "desc": "Run SQL-like query on local files instead of database files using the GitQL SDK",
       "homepage": "https://github.com/AmrDeveloper/FileQL",
+      "tap": "homebrew/core"
+    }
+  ],
+  "rrwick/Filtlong": [
+    {
+      "name": "filtlong",
+      "type": "formula",
+      "desc": "Quality filtering of long noisy DNA sequencing reads",
+      "homepage": "https://github.com/rrwick/Filtlong",
       "tap": "homebrew/core"
     }
   ],
@@ -8117,15 +8171,6 @@
       "tap": "homebrew/core"
     }
   ],
-  "Workiva/frugal": [
-    {
-      "name": "frugal",
-      "type": "formula",
-      "desc": "Cross language code generator for creating scalable microservices",
-      "homepage": "https://github.com/Workiva/frugal",
-      "tap": "homebrew/core"
-    }
-  ],
   "google/fruit": [
     {
       "name": "fruit",
@@ -8351,12 +8396,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "steveyegge/gastown": [
+  "gastownhall/gastown": [
     {
       "name": "gastown",
       "type": "formula",
       "desc": "Multi-agent workspace manager",
-      "homepage": "https://github.com/steveyegge/gastown",
+      "homepage": "https://github.com/gastownhall/gastown",
       "tap": "homebrew/core"
     }
   ],
@@ -8981,12 +9026,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "mlange-42/git-graph": [
+  "git-bahn/git-graph": [
     {
       "name": "git-graph",
       "type": "formula",
       "desc": "Command-line tool to show clear git graphs arranged for your branching model",
-      "homepage": "https://github.com/mlange-42/git-graph",
+      "homepage": "https://github.com/git-bahn/git-graph",
       "tap": "homebrew/core"
     }
   ],
@@ -9179,12 +9224,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "kamranahmedse/git-standup": [
+  "nilbuild/git-standup": [
     {
       "name": "git-standup",
       "type": "formula",
       "desc": "Git extension to generate reports for standup meetings",
-      "homepage": "https://github.com/kamranahmedse/git-standup",
+      "homepage": "https://github.com/nilbuild/git-standup",
       "tap": "homebrew/core"
     }
   ],
@@ -9739,15 +9784,6 @@
       "type": "formula",
       "desc": "Pure Go implementation of jq",
       "homepage": "https://github.com/itchyny/gojq",
-      "tap": "homebrew/core"
-    }
-  ],
-  "praetorian-inc/gokart": [
-    {
-      "name": "gokart",
-      "type": "formula",
-      "desc": "Static code analysis for securing Go code",
-      "homepage": "https://github.com/praetorian-inc/gokart",
       "tap": "homebrew/core"
     }
   ],
@@ -10885,12 +10921,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "dvorka/hstr": [
+  "dvorka-oss/hstr": [
     {
       "name": "hstr",
       "type": "formula",
       "desc": "Bash and zsh history suggest box",
-      "homepage": "https://github.com/dvorka/hstr",
+      "homepage": "https://github.com/dvorka-oss/hstr",
       "tap": "homebrew/core"
     }
   ],
@@ -11071,15 +11107,6 @@
       "type": "formula",
       "desc": "Command-line benchmarking tool",
       "homepage": "https://github.com/sharkdp/hyperfine",
-      "tap": "homebrew/core"
-    }
-  ],
-  "moby/hyperkit": [
-    {
-      "name": "hyperkit",
-      "type": "formula",
-      "desc": "Toolkit for embedding hypervisor capabilities in your application",
-      "homepage": "https://github.com/moby/hyperkit",
       "tap": "homebrew/core"
     }
   ],
@@ -11485,6 +11512,15 @@
       "type": "formula",
       "desc": "C utility library and persistent key/value storage engine",
       "homepage": "https://github.com/Softmotions/iowow",
+      "tap": "homebrew/core"
+    }
+  ],
+  "ip2location/IP2Location-C-Library": [
+    {
+      "name": "ip2location",
+      "type": "formula",
+      "desc": "C library and CLI to geolocate IP addresses",
+      "homepage": "https://github.com/ip2location/IP2Location-C-Library",
       "tap": "homebrew/core"
     }
   ],
@@ -11929,12 +11965,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "CertainLach/jrsonnet": [
+  "deltarocks/jrsonnet": [
     {
       "name": "jrsonnet",
       "type": "formula",
       "desc": "Rust implementation of Jsonnet language",
-      "homepage": "https://github.com/CertainLach/jrsonnet",
+      "homepage": "https://github.com/deltarocks/jrsonnet",
       "tap": "homebrew/core"
     }
   ],
@@ -12079,6 +12115,15 @@
       "type": "formula",
       "desc": "Helps you navigate your file system faster by learning your habits",
       "homepage": "https://github.com/gsamokovarov/jump",
+      "tap": "homebrew/core"
+    }
+  ],
+  "terror/just-lsp": [
+    {
+      "name": "just-lsp",
+      "type": "formula",
+      "desc": "Language server for just",
+      "homepage": "https://github.com/terror/just-lsp",
       "tap": "homebrew/core"
     }
   ],
@@ -12530,6 +12575,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "hxpe-dev/kotofetch": [
+    {
+      "name": "kotofetch",
+      "type": "formula",
+      "desc": "Small, configurable CLI that displays Japanese quotes in the terminal",
+      "homepage": "https://github.com/hxpe-dev/kotofetch",
+      "tap": "homebrew/core"
+    }
+  ],
   "sschober/kqwait": [
     {
       "name": "kqwait",
@@ -12683,6 +12737,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "applejag/kubectl-klock": [
+    {
+      "name": "kubectl-klock",
+      "type": "formula",
+      "desc": "Kubectl plugin to render watch output in a more readable fashion",
+      "homepage": "https://github.com/applejag/kubectl-klock",
+      "tap": "homebrew/core"
+    }
+  ],
   "ahmetb/kubectl-tree": [
     {
       "name": "kubectl-tree",
@@ -12737,12 +12800,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "bitnami-labs/sealed-secrets": [
+  "bitnami/sealed-secrets": [
     {
       "name": "kubeseal",
       "type": "formula",
       "desc": "Kubernetes controller and tool for one-way encrypted Secrets",
-      "homepage": "https://github.com/bitnami-labs/sealed-secrets",
+      "homepage": "https://github.com/bitnami/sealed-secrets",
       "tap": "homebrew/core"
     }
   ],
@@ -12980,15 +13043,6 @@
       "tap": "homebrew/core"
     }
   ],
-  "kjn/lbzip2": [
-    {
-      "name": "lbzip2",
-      "type": "formula",
-      "desc": "Parallel bzip2 utility",
-      "homepage": "https://github.com/kjn/lbzip2",
-      "tap": "homebrew/core"
-    }
-  ],
   "linux-test-project/lcov": [
     {
       "name": "lcov",
@@ -13157,15 +13211,6 @@
       "type": "formula",
       "desc": "Portable ARIB STD-B24 Caption Decoder/Renderer",
       "homepage": "https://github.com/xqq/libaribcaption",
-      "tap": "homebrew/core"
-    }
-  ],
-  "armon/libart": [
-    {
-      "name": "libart",
-      "type": "formula",
-      "desc": "Library for high-performance 2D graphics",
-      "homepage": "https://github.com/armon/libart",
       "tap": "homebrew/core"
     }
   ],
@@ -13959,12 +14004,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "IntelRealSense/librealsense": [
+  "realsenseai/librealsense": [
     {
       "name": "librealsense",
       "type": "formula",
       "desc": "Intel RealSense D400 series and SR300 capture",
-      "homepage": "https://github.com/IntelRealSense/librealsense",
+      "homepage": "https://github.com/realsenseai/librealsense",
       "tap": "homebrew/core"
     }
   ],
@@ -14356,6 +14401,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "mas-bandwidth/yojimbo": [
+    {
+      "name": "libyojimbo",
+      "type": "formula",
+      "desc": "Secure client/server network protocol library for multiplayer games",
+      "homepage": "https://github.com/mas-bandwidth/yojimbo",
+      "tap": "homebrew/core"
+    }
+  ],
   "MediaArea/ZenLib": [
     {
       "name": "libzen",
@@ -14491,12 +14545,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "goplus/llgo": [
+  "xgo-dev/llgo": [
     {
       "name": "llgo",
       "type": "formula",
       "desc": "Go compiler based on LLVM integrate with the C ecosystem and Python",
-      "homepage": "https://github.com/goplus/llgo",
+      "homepage": "https://github.com/xgo-dev/llgo",
       "tap": "homebrew/core"
     }
   ],
@@ -15391,12 +15445,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "googleapis/genai-toolbox": [
+  "googleapis/mcp-toolbox": [
     {
       "name": "mcp-toolbox",
       "type": "formula",
       "desc": "MCP server for databases",
-      "homepage": "https://github.com/googleapis/genai-toolbox",
+      "homepage": "https://github.com/googleapis/mcp-toolbox",
       "tap": "homebrew/core"
     }
   ],
@@ -15463,12 +15517,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "swsnr/mdcat": [
+  "BIRSAx2/mdcat": [
     {
       "name": "mdcat",
       "type": "formula",
       "desc": "Show markdown documents on text terminals",
-      "homepage": "https://github.com/swsnr/mdcat",
+      "homepage": "https://github.com/BIRSAx2/mdcat",
       "tap": "homebrew/core"
     }
   ],
@@ -15598,12 +15652,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "RedisLabs/memtier_benchmark": [
+  "redis/memtier_benchmark": [
     {
       "name": "memtier_benchmark",
       "type": "formula",
       "desc": "Redis and Memcache traffic generation and benchmarking tool",
-      "homepage": "https://github.com/RedisLabs/memtier_benchmark",
+      "homepage": "https://github.com/redis/memtier_benchmark",
       "tap": "homebrew/core"
     }
   ],
@@ -15679,12 +15733,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "zyedidia/micro": [
+  "micro-editor/micro": [
     {
       "name": "micro",
       "type": "formula",
       "desc": "Modern and intuitive terminal-based text editor",
-      "homepage": "https://github.com/zyedidia/micro",
+      "homepage": "https://github.com/micro-editor/micro",
       "tap": "homebrew/core"
     }
   ],
@@ -15757,6 +15811,15 @@
       "type": "formula",
       "desc": "AI coding agent with cross-session memory",
       "homepage": "https://github.com/XiaomiMiMo/MiMo-Code",
+      "tap": "homebrew/core"
+    }
+  ],
+  "lh3/minibwa": [
+    {
+      "name": "minibwa",
+      "type": "formula",
+      "desc": "Successor of BWA-MEM for short-read alignment",
+      "homepage": "https://github.com/lh3/minibwa",
       "tap": "homebrew/core"
     }
   ],
@@ -15928,6 +15991,15 @@
       "type": "formula",
       "desc": "Create BitTorrent metainfo files",
       "homepage": "https://github.com/pobrn/mktorrent/wiki",
+      "tap": "homebrew/core"
+    }
+  ],
+  "akpw/mktxp": [
+    {
+      "name": "mktxp",
+      "type": "formula",
+      "desc": "Prometheus Exporter for Mikrotik RouterOS devices",
+      "homepage": "https://github.com/akpw/mktxp",
       "tap": "homebrew/core"
     }
   ],
@@ -16208,12 +16280,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "pvolok/mprocs": [
+  "pvolok/dekit": [
     {
       "name": "mprocs",
       "type": "formula",
       "desc": "Run multiple commands in parallel",
-      "homepage": "https://github.com/pvolok/mprocs",
+      "homepage": "https://github.com/pvolok/dekit",
       "tap": "homebrew/core"
     }
   ],
@@ -16235,6 +16307,24 @@
       "tap": "homebrew/core"
     }
   ],
+  "Chlumsky/msdf-atlas-gen": [
+    {
+      "name": "msdf-atlas-gen",
+      "type": "formula",
+      "desc": "Generator of multi-channel signed distance field atlases from fonts",
+      "homepage": "https://github.com/Chlumsky/msdf-atlas-gen",
+      "tap": "homebrew/core"
+    }
+  ],
+  "Chlumsky/msdfgen": [
+    {
+      "name": "msdfgen",
+      "type": "formula",
+      "desc": "Multi-channel signed distance field generator",
+      "homepage": "https://github.com/Chlumsky/msdfgen",
+      "tap": "homebrew/core"
+    }
+  ],
   "microsoft/edit": [
     {
       "name": "msedit",
@@ -16250,6 +16340,15 @@
       "type": "formula",
       "desc": "Command-line tools for converting between MessagePack and JSON",
       "homepage": "https://github.com/ludocode/msgpack-tools",
+      "tap": "homebrew/core"
+    }
+  ],
+  "kenn-io/msgvault": [
+    {
+      "name": "msgvault",
+      "type": "formula",
+      "desc": "Archive a lifetime of email and chat with offline search and analytics",
+      "homepage": "https://github.com/kenn-io/msgvault",
       "tap": "homebrew/core"
     }
   ],
@@ -16576,12 +16675,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "hanshuaikang/Nping": [
+  "hanshuaikang/NBping": [
     {
       "name": "nbping",
       "type": "formula",
       "desc": "Ping Tool in Rust with Real-Time Data and Visualizations",
-      "homepage": "https://github.com/hanshuaikang/Nping",
+      "homepage": "https://github.com/hanshuaikang/NBping",
       "tap": "homebrew/core"
     }
   ],
@@ -16738,6 +16837,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "mas-bandwidth/netcode": [
+    {
+      "name": "netcode",
+      "type": "formula",
+      "desc": "Secure client/server protocol for multiplayer games built on top of UDP",
+      "homepage": "https://github.com/mas-bandwidth/netcode",
+      "tap": "homebrew/core"
+    }
+  ],
   "deggja/netfetch": [
     {
       "name": "netfetch",
@@ -16864,12 +16972,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "jcupitt/nip4": [
+  "libvips/nip4": [
     {
       "name": "nip4",
       "type": "formula",
       "desc": "Image processing spreadsheet",
-      "homepage": "https://github.com/jcupitt/nip4",
+      "homepage": "https://github.com/libvips/nip4",
       "tap": "homebrew/core"
     }
   ],
@@ -17152,6 +17260,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "lichray/nvi2": [
+    {
+      "name": "nvi2",
+      "type": "formula",
+      "desc": "Multibyte fork of the nvi editor for BSD",
+      "homepage": "https://github.com/lichray/nvi2",
+      "tap": "homebrew/core"
+    }
+  ],
   "lucc/nvimpager": [
     {
       "name": "nvimpager",
@@ -17224,12 +17341,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "cloudentity/oauth2c": [
+  "SecureAuthCorp/oauth2c": [
     {
       "name": "oauth2c",
       "type": "formula",
       "desc": "User-friendly CLI for OAuth2",
-      "homepage": "https://github.com/cloudentity/oauth2c",
+      "homepage": "https://github.com/SecureAuthCorp/oauth2c",
       "tap": "homebrew/core"
     }
   ],
@@ -17710,6 +17827,15 @@
       "type": "formula",
       "desc": "Universal skills loader for AI coding agents",
       "homepage": "https://github.com/numman-ali/openskills",
+      "tap": "homebrew/core"
+    }
+  ],
+  "openturns/openturns": [
+    {
+      "name": "openturns",
+      "type": "formula",
+      "desc": "Probabilistic modelling and uncertainty quantification library",
+      "homepage": "https://github.com/openturns/openturns",
       "tap": "homebrew/core"
     }
   ],
@@ -18370,6 +18496,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "bscan/PerlNavigator": [
+    {
+      "name": "perlnavigator",
+      "type": "formula",
+      "desc": "Perl language server",
+      "homepage": "https://github.com/bscan/PerlNavigator",
+      "tap": "homebrew/core"
+    }
+  ],
   "buildinspace/peru": [
     {
       "name": "peru",
@@ -18568,12 +18703,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "AJenbo/phpantom_lsp": [
+  "PHPantom-dev/phpantom_lsp": [
     {
       "name": "phpantom-lsp",
       "type": "formula",
       "desc": "Fast PHP language server written in Rust",
-      "homepage": "https://github.com/AJenbo/phpantom_lsp",
+      "homepage": "https://github.com/PHPantom-dev/phpantom_lsp",
       "tap": "homebrew/core"
     }
   ],
@@ -18709,6 +18844,15 @@
       "type": "formula",
       "desc": "Rename your files using your favorite text editor",
       "homepage": "https://github.com/marcusbuffett/pipe-rename",
+      "tap": "homebrew/core"
+    }
+  ],
+  "crocuda/pipelight": [
+    {
+      "name": "pipelight",
+      "type": "formula",
+      "desc": "Self-hosted, lightweight CI/CD pipelines for small projects via CLI",
+      "homepage": "https://github.com/crocuda/pipelight",
       "tap": "homebrew/core"
     }
   ],
@@ -19385,15 +19529,6 @@
       "tap": "homebrew/core"
     }
   ],
-  "protocolbuffers/protobuf": [
-    {
-      "name": "protobuf@3",
-      "type": "formula",
-      "desc": "Protocol buffers (Google's data interchange format)",
-      "homepage": "https://github.com/protocolbuffers/protobuf/",
-      "tap": "homebrew/core"
-    }
-  ],
   "pseudomuto/protoc-gen-doc": [
     {
       "name": "protoc-gen-doc",
@@ -20006,12 +20141,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "Unity-Technologies/qstat": [
+  "rocketsciencegg/qstat": [
     {
       "name": "qstat",
       "type": "formula",
       "desc": "Query Quake servers from the command-line",
-      "homepage": "https://github.com/Unity-Technologies/qstat",
+      "homepage": "https://github.com/rocketsciencegg/qstat",
       "tap": "homebrew/core"
     }
   ],
@@ -20048,15 +20183,6 @@
       "type": "formula",
       "desc": "C++17 Asynchronous Low Latency Logging Library",
       "homepage": "https://github.com/odygrd/quill",
-      "tap": "homebrew/core"
-    }
-  ],
-  "informalsystems/quint": [
-    {
-      "name": "quint",
-      "type": "formula",
-      "desc": "Core tool for the Quint specification language",
-      "homepage": "https://github.com/informalsystems/quint",
       "tap": "homebrew/core"
     }
   ],
@@ -20139,6 +20265,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "rancher/machine": [
+    {
+      "name": "rancher-machine",
+      "type": "formula",
+      "desc": "Machine management for a container-centric world",
+      "homepage": "https://github.com/rancher/machine",
+      "tap": "homebrew/core"
+    }
+  ],
   "biojppm/rapidyaml": [
     {
       "name": "rapidyaml",
@@ -20208,6 +20343,24 @@
       "type": "formula",
       "desc": "Risk Analysis and Vulnerability Enumeration for CI/CD",
       "homepage": "https://github.com/CycodeLabs/raven",
+      "tap": "homebrew/core"
+    }
+  ],
+  "granawkins/rawdog": [
+    {
+      "name": "rawdog",
+      "type": "formula",
+      "desc": "CLI tool to generate and run code with llms",
+      "homepage": "https://github.com/granawkins/rawdog",
+      "tap": "homebrew/core"
+    }
+  ],
+  "AcademySoftwareFoundation/rawtoaces": [
+    {
+      "name": "rawtoaces",
+      "type": "formula",
+      "desc": "Utility for converting camera RAW image files to ACES",
+      "homepage": "https://github.com/AcademySoftwareFoundation/rawtoaces",
       "tap": "homebrew/core"
     }
   ],
@@ -20298,15 +20451,6 @@
       "type": "formula",
       "desc": "Safely sets global and per-project environment variables",
       "homepage": "https://github.com/rbenv/rbenv-vars",
-      "tap": "homebrew/core"
-    }
-  ],
-  "rakitzis/rc": [
-    {
-      "name": "rc",
-      "type": "formula",
-      "desc": "Implementation of the AT&T Plan 9 shell",
-      "homepage": "https://github.com/rakitzis/rc",
       "tap": "homebrew/core"
     }
   ],
@@ -20472,12 +20616,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "jonls/redshift": [
+  "sharpbracket/redshift": [
     {
       "name": "redshift",
       "type": "formula",
       "desc": "Adjust color temperature of your screen according to your surroundings",
-      "homepage": "https://github.com/jonls/redshift",
+      "homepage": "https://github.com/sharpbracket/redshift",
       "tap": "homebrew/core"
     }
   ],
@@ -20523,6 +20667,15 @@
       "type": "formula",
       "desc": "Generic CLI tool to automate versioning and package publishing related tasks",
       "homepage": "https://github.com/release-it/release-it",
+      "tap": "homebrew/core"
+    }
+  ],
+  "mas-bandwidth/reliable": [
+    {
+      "name": "reliable",
+      "type": "formula",
+      "desc": "Simple packet acknowledgement system for UDP-based protocols",
+      "homepage": "https://github.com/mas-bandwidth/reliable",
       "tap": "homebrew/core"
     }
   ],
@@ -21399,6 +21552,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "COMBINE-lab/salmon": [
+    {
+      "name": "salmon",
+      "type": "formula",
+      "desc": "Transcript-level quantification from RNA-seq reads",
+      "homepage": "https://github.com/COMBINE-lab/salmon",
+      "tap": "homebrew/core"
+    }
+  ],
   "Versent/saml2aws": [
     {
       "name": "saml2aws",
@@ -21504,6 +21666,15 @@
       "type": "formula",
       "desc": "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts",
       "homepage": "https://github.com/microsoft/sbom-tool",
+      "tap": "homebrew/core"
+    }
+  ],
+  "CycloneDX/sbom-utility": [
+    {
+      "name": "sbom-utility",
+      "type": "formula",
+      "desc": "Tool to validate, analyze, query and edit Software Bills of Materials (SBOMs)",
+      "homepage": "https://github.com/CycloneDX/sbom-utility",
       "tap": "homebrew/core"
     }
   ],
@@ -21787,12 +21958,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "bee-san/Search-That-Hash": [
+  "Jayy001/Search-That-Hash": [
     {
       "name": "search-that-hash",
       "type": "formula",
       "desc": "Searches Hash APIs to crack your hash quickly",
-      "homepage": "https://github.com/bee-san/Search-That-Hash",
+      "homepage": "https://github.com/Jayy001/Search-That-Hash",
       "tap": "homebrew/core"
     }
   ],
@@ -21865,6 +22036,15 @@
       "type": "formula",
       "desc": "Service orchestration and management tool",
       "homepage": "https://github.com/hashicorp/serf",
+      "tap": "homebrew/core"
+    }
+  ],
+  "mas-bandwidth/serialize": [
+    {
+      "name": "serialize",
+      "type": "formula",
+      "desc": "Single-header bitpacking serializer for C++ aimed at game networking",
+      "homepage": "https://github.com/mas-bandwidth/serialize",
       "tap": "homebrew/core"
     }
   ],
@@ -22336,12 +22516,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "containers/skopeo": [
+  "podman-container-tools/skopeo": [
     {
       "name": "skopeo",
       "type": "formula",
       "desc": "Work with remote images registries",
-      "homepage": "https://github.com/containers/skopeo",
+      "homepage": "https://github.com/podman-container-tools/skopeo",
       "tap": "homebrew/core"
     }
   ],
@@ -22444,12 +22624,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "benlinton/slugify": [
+  "JabberLabs/slugify": [
     {
       "name": "slugify",
       "type": "formula",
       "desc": "Convert filenames and directories to a web friendly format",
-      "homepage": "https://github.com/benlinton/slugify",
+      "homepage": "https://github.com/JabberLabs/slugify",
       "tap": "homebrew/core"
     }
   ],
@@ -22813,12 +22993,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "martinmoene/span-lite": [
+  "nonstd-lite/span-lite": [
     {
       "name": "span-lite",
       "type": "formula",
       "desc": "C++20-like span for C++98, C++11 and later in a single-file header-only library",
-      "homepage": "https://github.com/martinmoene/span-lite",
+      "homepage": "https://github.com/nonstd-lite/span-lite",
       "tap": "homebrew/core"
     }
   ],
@@ -23020,12 +23200,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "volatiletech/sqlboiler": [
+  "aarondl/sqlboiler": [
     {
       "name": "sqlboiler",
       "type": "formula",
       "desc": "Generate a Go ORM tailored to your database schema",
-      "homepage": "https://github.com/volatiletech/sqlboiler",
+      "homepage": "https://github.com/aarondl/sqlboiler",
       "tap": "homebrew/core"
     }
   ],
@@ -23056,12 +23236,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "launchbadge/sqlx": [
+  "transact-rs/sqlx": [
     {
       "name": "sqlx-cli",
       "type": "formula",
       "desc": "Command-line utility for SQLx, the Rust SQL toolkit",
-      "homepage": "https://github.com/launchbadge/sqlx",
+      "homepage": "https://github.com/transact-rs/sqlx",
       "tap": "homebrew/core"
     }
   ],
@@ -23074,12 +23254,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "mercury2269/sqsmover": [
+  "smaskalik/sqsmover": [
     {
       "name": "sqsmover",
       "type": "formula",
       "desc": "AWS SQS Message mover",
-      "homepage": "https://github.com/mercury2269/sqsmover",
+      "homepage": "https://github.com/smaskalik/sqsmover",
       "tap": "homebrew/core"
     }
   ],
@@ -23796,6 +23976,15 @@
       "type": "formula",
       "desc": "Manage Talos Linux configurations the GitOps way",
       "homepage": "https://github.com/cozystack/talm",
+      "tap": "homebrew/core"
+    }
+  ],
+  "hzqtc/taproom": [
+    {
+      "name": "taproom",
+      "type": "formula",
+      "desc": "Interactive TUI for Homebrew",
+      "homepage": "https://github.com/hzqtc/taproom",
       "tap": "homebrew/core"
     }
   ],
@@ -24760,6 +24949,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "tmuxpack/tpack": [
+    {
+      "name": "tpack",
+      "type": "formula",
+      "desc": "Drop-in replacement for tmux-plugin-manager (tpm) with a TUI",
+      "homepage": "https://github.com/tmuxpack/tpack",
+      "tap": "homebrew/core"
+    }
+  ],
   "jesvedberg/tpix": [
     {
       "name": "tpix",
@@ -24901,6 +25099,15 @@
       "type": "formula",
       "desc": "Convert images to computer generated art using Delaunay triangulation",
       "homepage": "https://github.com/esimov/triangle",
+      "tap": "homebrew/core"
+    }
+  ],
+  "FelixKrueger/TrimGalore": [
+    {
+      "name": "trim-galore",
+      "type": "formula",
+      "desc": "Quality and adapter trimming for FastQ sequencing reads",
+      "homepage": "https://github.com/FelixKrueger/TrimGalore",
       "tap": "homebrew/core"
     }
   ],
@@ -25048,6 +25255,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "bibanon/tubeup": [
+    {
+      "name": "tubeup",
+      "type": "formula",
+      "desc": "Use yt-dlp to download video/metadata and upload to the Internet Archive",
+      "homepage": "https://github.com/bibanon/tubeup",
+      "tap": "homebrew/core"
+    }
+  ],
   "riquito/tuc": [
     {
       "name": "tuc",
@@ -25099,6 +25315,15 @@
       "type": "formula",
       "desc": "Interactive SQL shell for Turso",
       "homepage": "https://github.com/tursodatabase/turso",
+      "tap": "homebrew/core"
+    }
+  ],
+  "webstonehq/tuxedo": [
+    {
+      "name": "tuxedo",
+      "type": "formula",
+      "desc": "Fast, keyboard-driven terminal UI for todo.txt",
+      "homepage": "https://github.com/webstonehq/tuxedo",
       "tap": "homebrew/core"
     }
   ],
@@ -25234,15 +25459,6 @@
       "type": "formula",
       "desc": "Language Server for typos-cli",
       "homepage": "https://github.com/tekumara/typos-lsp",
-      "tap": "homebrew/core"
-    }
-  ],
-  "astrale-sharp/typstfmt": [
-    {
-      "name": "typstfmt",
-      "type": "formula",
-      "desc": "Formatter for typst",
-      "homepage": "https://github.com/astrale-sharp/typstfmt",
       "tap": "homebrew/core"
     }
   ],
@@ -25705,6 +25921,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "dpiparo/vdt": [
+    {
+      "name": "vdt",
+      "type": "formula",
+      "desc": "Math library of fast, approximate and vectorisable trascendental functions",
+      "homepage": "https://github.com/dpiparo/vdt",
+      "tap": "homebrew/core"
+    }
+  ],
   "root-project/veccore": [
     {
       "name": "veccore",
@@ -25849,12 +26074,12 @@
       "tap": "homebrew/core"
     }
   ],
-  "jcupitt/vipsdisp": [
+  "libvips/vipsdisp": [
     {
       "name": "vipsdisp",
       "type": "formula",
       "desc": "Viewer for large images",
-      "homepage": "https://github.com/jcupitt/vipsdisp",
+      "homepage": "https://github.com/libvips/vipsdisp",
       "tap": "homebrew/core"
     }
   ],
@@ -26112,7 +26337,7 @@
   ],
   "vultr/vultr-cli": [
     {
-      "name": "vultr",
+      "name": "vultr-cli",
       "type": "formula",
       "desc": "Command-line tool for Vultr services",
       "homepage": "https://github.com/vultr/vultr-cli",
@@ -26852,7 +27077,7 @@
     {
       "name": "xcodes",
       "type": "formula",
-      "desc": "Best command-line tool to install and switch between multiple versions of Xcode",
+      "desc": "Command-line tool to install and switch between multiple versions of Xcode",
       "homepage": "https://github.com/XcodesOrg/xcodes",
       "tap": "homebrew/core"
     }
@@ -27530,6 +27755,15 @@
       "tap": "homebrew/core"
     }
   ],
+  "z-shell/zsh-navigation-tools": [
+    {
+      "name": "zsh-navigation-tools",
+      "type": "formula",
+      "desc": "Zsh curses-based tools, e.g. multi-word history searcher",
+      "homepage": "https://github.com/z-shell/zsh-navigation-tools",
+      "tap": "homebrew/core"
+    }
+  ],
   "zsh-users/zsh-syntax-highlighting": [
     {
       "name": "zsh-syntax-highlighting",
@@ -27804,6 +28038,15 @@
       "type": "cask",
       "desc": "App for recording the screen and installing apps in iOS and Android",
       "homepage": "https://github.com/mortenjust/androidtool-mac",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "epilande/Annotate": [
+    {
+      "name": "annotate",
+      "type": "cask",
+      "desc": "Keyboard-driven screen annotation tool",
+      "homepage": "https://github.com/epilande/Annotate/",
       "tap": "homebrew/cask"
     }
   ],
@@ -28093,6 +28336,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "SecondSonConsulting/Baseline": [
+    {
+      "name": "baseline",
+      "type": "cask",
+      "desc": "Automate onboardings by installing apps and running scripts",
+      "homepage": "https://github.com/SecondSonConsulting/Baseline",
+      "tap": "homebrew/cask"
+    }
+  ],
   "actuallymentor/battery": [
     {
       "name": "battery",
@@ -28126,15 +28378,6 @@
       "type": "cask",
       "desc": "Utility to scan for iBeacon-compatible devices",
       "homepage": "https://github.com/mlwelles/BeaconScanner/",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "beardedspice/beardedspice": [
-    {
-      "name": "beardedspice",
-      "type": "cask",
-      "desc": "Control web-based media players with media keys",
-      "homepage": "https://github.com/beardedspice/beardedspice/",
       "tap": "homebrew/cask"
     }
   ],
@@ -28777,15 +29020,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "dokterdok/Continuity-Activation-Tool": [
-    {
-      "name": "continuity-activation-tool",
-      "type": "cask",
-      "desc": "Enable continuity features on compatible hardware",
-      "homepage": "https://github.com/dokterdok/Continuity-Activation-Tool/",
-      "tap": "homebrew/cask"
-    }
-  ],
   "contour-terminal/contour": [
     {
       "name": "contour",
@@ -29038,15 +29272,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "CoreNion/DeviceInfo": [
-    {
-      "name": "deviceinfo",
-      "type": "cask",
-      "desc": "Display device information",
-      "homepage": "https://github.com/CoreNion/DeviceInfo/",
-      "tap": "homebrew/cask"
-    }
-  ],
   "diasurgical/devilutionX": [
     {
       "name": "devilutionx",
@@ -29074,15 +29299,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "jjgod/mac-dictionary-kit": [
-    {
-      "name": "dictunifier",
-      "type": "cask",
-      "desc": "Dictionary conversion tool",
-      "homepage": "https://github.com/jjgod/mac-dictionary-kit/",
-      "tap": "homebrew/cask"
-    }
-  ],
   "hneemann/Digital": [
     {
       "name": "digital",
@@ -29098,15 +29314,6 @@
       "type": "cask",
       "desc": "Utility to fix a common scroll wheel problem",
       "homepage": "https://github.com/emreyolcu/discrete-scroll",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "aburgh/Disk-Arbitrator": [
-    {
-      "name": "disk-arbitrator",
-      "type": "cask",
-      "desc": "",
-      "homepage": "https://github.com/aburgh/Disk-Arbitrator",
       "tap": "homebrew/cask"
     }
   ],
@@ -29395,15 +29602,6 @@
       "type": "cask",
       "desc": "TI Nspire calculator emulator",
       "homepage": "https://github.com/nspire-emus/firebird",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "Mortennn/FiScript": [
-    {
-      "name": "fiscript",
-      "type": "cask",
-      "desc": "",
-      "homepage": "https://github.com/Mortennn/FiScript",
       "tap": "homebrew/cask"
     }
   ],
@@ -30301,6 +30499,15 @@
       "type": "cask",
       "desc": "",
       "homepage": "https://github.com/steinbergmedia/bravura",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "googlefonts/caacupe": [
+    {
+      "name": "font-caacupe-one",
+      "type": "cask",
+      "desc": "",
+      "homepage": "https://github.com/googlefonts/caacupe",
       "tap": "homebrew/cask"
     }
   ],
@@ -31549,15 +31756,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "MagicformDesign/montenegrin-gothic-one": [
-    {
-      "name": "font-montenegrin-gothic-one",
-      "type": "cask",
-      "desc": "",
-      "homepage": "https://github.com/MagicformDesign/montenegrin-gothic-one",
-      "tap": "homebrew/cask"
-    }
-  ],
   "yuru7/moralerspace": [
     {
       "name": "font-moralerspace",
@@ -31918,6 +32116,15 @@
       "tap": "homebrew/cask"
     }
   ],
+  "sursly/scoutie": [
+    {
+      "name": "font-scoutie-sans",
+      "type": "cask",
+      "desc": "",
+      "homepage": "https://github.com/sursly/scoutie",
+      "tap": "homebrew/cask"
+    }
+  ],
   "microsoft/Selawik": [
     {
       "name": "font-selawik",
@@ -32162,22 +32369,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "JuliaGarciaLopez/Yuyu-Font": [
-    {
-      "name": "font-yuyu",
-      "type": "cask",
-      "desc": "",
-      "homepage": "https://github.com/JuliaGarciaLopez/Yuyu-Font",
-      "tap": "homebrew/cask"
-    },
-    {
-      "name": "font-yuyu-short",
-      "type": "cask",
-      "desc": "",
-      "homepage": "https://github.com/JuliaGarciaLopez/Yuyu-Font",
-      "tap": "homebrew/cask"
-    }
-  ],
   "zed-industries/zed-fonts": [
     {
       "name": "font-zed-mono",
@@ -32230,24 +32421,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "matthewgonzalez/fontplop": [
-    {
-      "name": "fontplop",
-      "type": "cask",
-      "desc": "Open Source Webfont Converter",
-      "homepage": "https://github.com/matthewgonzalez/fontplop",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "EugeneDae/Force-Paste": [
-    {
-      "name": "force-paste",
-      "type": "cask",
-      "desc": "",
-      "homepage": "https://github.com/EugeneDae/Force-Paste",
-      "tap": "homebrew/cask"
-    }
-  ],
   "Free-GPGMail/Free-GPGMail": [
     {
       "name": "free-gpgmail",
@@ -32290,15 +32463,6 @@
       "type": "cask",
       "desc": "GUI for the Neovim text editor",
       "homepage": "https://github.com/yatli/fvim",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "alexkim205/g-desktop-suite": [
-    {
-      "name": "g-desktop-suite",
-      "type": "cask",
-      "desc": "",
-      "homepage": "https://github.com/alexkim205/g-desktop-suite",
       "tap": "homebrew/cask"
     }
   ],
@@ -32383,15 +32547,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "onmyway133/GifCapture": [
-    {
-      "name": "gifcapture",
-      "type": "cask",
-      "desc": "",
-      "homepage": "https://github.com/onmyway133/GifCapture",
-      "tap": "homebrew/cask"
-    }
-  ],
   "jlord/git-it-electron": [
     {
       "name": "git-it",
@@ -32407,15 +32562,6 @@
       "type": "cask",
       "desc": "Git Client",
       "homepage": "https://github.com/gitahead/gitahead",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "Nightonke/Gitee": [
-    {
-      "name": "gitee",
-      "type": "cask",
-      "desc": "Status bar application for GitHub",
-      "homepage": "https://github.com/Nightonke/Gitee",
       "tap": "homebrew/cask"
     }
   ],
@@ -32536,48 +32682,12 @@
       "tap": "homebrew/cask"
     }
   ],
-  "codecentric/gopass-ui": [
-    {
-      "name": "gopass-ui",
-      "type": "cask",
-      "desc": "Password manager for teams",
-      "homepage": "https://github.com/codecentric/gopass-ui",
-      "tap": "homebrew/cask"
-    }
-  ],
   "gopher64/gopher64": [
     {
       "name": "gopher64",
       "type": "cask",
       "desc": "N64 emulator",
       "homepage": "https://github.com/gopher64/gopher64",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "skevy/graphiql-app": [
-    {
-      "name": "graphiql",
-      "type": "cask",
-      "desc": "Light, Electron-based Wrapper around GraphiQL",
-      "homepage": "https://github.com/skevy/graphiql-app",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "andev-software/graphql-ide": [
-    {
-      "name": "graphql-ide",
-      "type": "cask",
-      "desc": "IDE for exploring GraphQL APIs",
-      "homepage": "https://github.com/andev-software/graphql-ide",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "prisma/graphql-playground": [
-    {
-      "name": "graphql-playground",
-      "type": "cask",
-      "desc": "GraphQL IDE for better development workflows",
-      "homepage": "https://github.com/prisma/graphql-playground",
       "tap": "homebrew/cask"
     }
   ],
@@ -32686,15 +32796,6 @@
       "type": "cask",
       "desc": "AI agent orchestrator for parallel coding across projects",
       "homepage": "https://github.com/morapelker/hive",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "puffnfresh/Honer.app": [
-    {
-      "name": "honer",
-      "type": "cask",
-      "desc": "Utility that draws a border around the focused window",
-      "homepage": "https://github.com/puffnfresh/Honer.app",
       "tap": "homebrew/cask"
     }
   ],
@@ -32858,6 +32959,13 @@
       "desc": "Open-source edition of IntelliJ IDEA",
       "homepage": "https://github.com/JetBrains/intellij-community",
       "tap": "homebrew/cask"
+    },
+    {
+      "name": "pycharm-oss",
+      "type": "cask",
+      "desc": "Open-source edition of PyCharm",
+      "homepage": "https://github.com/JetBrains/intellij-community",
+      "tap": "homebrew/cask"
     }
   ],
   "intiface/intiface-central": [
@@ -32938,6 +33046,15 @@
       "type": "cask",
       "desc": "Monitor for displaying process traffic on status bar",
       "homepage": "https://github.com/foamzou/ITraffic-monitor-for-mac",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "nickustinov/itsypad-macos": [
+    {
+      "name": "itsypad",
+      "type": "cask",
+      "desc": "Tiny, fast scratchpad and clipboard manager",
+      "homepage": "https://github.com/nickustinov/itsypad-macos",
       "tap": "homebrew/cask"
     }
   ],
@@ -33371,12 +33488,12 @@
       "tap": "homebrew/cask"
     }
   ],
-  "ggml-org/LlamaBarn": [
+  "ggml-org/Llama-macOS": [
     {
-      "name": "llamabarn",
+      "name": "llama-app",
       "type": "cask",
       "desc": "Menu bar app for running local LLMs",
-      "homepage": "https://github.com/ggml-org/LlamaBarn",
+      "homepage": "https://github.com/ggml-org/Llama-macOS",
       "tap": "homebrew/cask"
     }
   ],
@@ -33539,6 +33656,15 @@
       "type": "cask",
       "desc": "Analysis tool for security research and malware triage",
       "homepage": "https://github.com/Brandon7CC/mac-monitor",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "iliyami/MacSai": [
+    {
+      "name": "mac-sai",
+      "type": "cask",
+      "desc": "System cleaner, optimiser, and malware scanner",
+      "homepage": "https://github.com/iliyami/MacSai",
       "tap": "homebrew/cask"
     }
   ],
@@ -33881,15 +34007,6 @@
       "type": "cask",
       "desc": "Minimal installer for conda specific to conda-forge",
       "homepage": "https://github.com/conda-forge/miniforge",
-      "tap": "homebrew/cask"
-    }
-  ],
-  "minishift/minishift": [
-    {
-      "name": "minishift",
-      "type": "cask",
-      "desc": "",
-      "homepage": "https://github.com/minishift/minishift",
       "tap": "homebrew/cask"
     }
   ],
@@ -34692,6 +34809,15 @@
       "type": "cask",
       "desc": "Utility that shows the current network latency in the menu bar",
       "homepage": "https://github.com/kalleboo/PingMenu",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "macadmins/pique": [
+    {
+      "name": "pique",
+      "type": "cask",
+      "desc": "Quick Look extension for syntax-highlighted file previews",
+      "homepage": "https://github.com/macadmins/pique",
       "tap": "homebrew/cask"
     }
   ],
@@ -36181,12 +36307,12 @@
       "tap": "homebrew/cask"
     }
   ],
-  "tldraw/tldraw-desktop": [
+  "tldraw/tldraw-offline": [
     {
       "name": "tldraw",
       "type": "cask",
       "desc": "Editor for .tldr files",
-      "homepage": "https://github.com/tldraw/tldraw-desktop",
+      "homepage": "https://github.com/tldraw/tldraw-offline",
       "tap": "homebrew/cask"
     }
   ],
@@ -36223,6 +36349,15 @@
       "type": "cask",
       "desc": "Pomodoro desktop timer",
       "homepage": "https://github.com/tomighty/tomighty-osx",
+      "tap": "homebrew/cask"
+    }
+  ],
+  "stacklok/toolhive-studio": [
+    {
+      "name": "toolhive-studio",
+      "type": "cask",
+      "desc": "Desktop application to install, manage, and run MCP servers",
+      "homepage": "https://github.com/stacklok/toolhive-studio",
       "tap": "homebrew/cask"
     }
   ],
@@ -36665,15 +36800,6 @@
       "tap": "homebrew/cask"
     }
   ],
-  "trazyn/weweChat": [
-    {
-      "name": "wewechat",
-      "type": "cask",
-      "desc": "Unofficial WeChat client",
-      "homepage": "https://github.com/trazyn/weweChat",
-      "tap": "homebrew/cask"
-    }
-  ],
   "1000ch/whale": [
     {
       "name": "whale",
@@ -36696,7 +36822,7 @@
     {
       "name": "whichspace",
       "type": "cask",
-      "desc": "Active space menu bar icon",
+      "desc": "Menu bar utility for viewing and switching Spaces",
       "homepage": "https://github.com/gechr/WhichSpace",
       "tap": "homebrew/cask"
     }
