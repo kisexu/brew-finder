@@ -79,8 +79,7 @@ jobs:
           mkdir -p .build release
           BASE_VERSION="$(node -p "require('./package.json').version")"
           gh release list --limit 100 --json tagName,isDraft,createdAt > .build/releases.json
-          LAST_BUILD_NUMBER="$(jq -r --arg prefix "v${BASE_VERSION}-data." '[.[] | select(.isDraft == false and (.tagName | startswith($prefix))) | .tagName | capture("-data\\.(?<number>[0-9]+)$").number | tonumber] | max // 0' .build/releases.json)"
-          BUILD_NUMBER="$(( LAST_BUILD_NUMBER + 1 ))"
+          BUILD_NUMBER="$(node scripts/release-history.js next-build .build/releases.json "$BASE_VERSION")"
           RELEASE_DATE="$(TZ=Asia/Shanghai date +%F)"
           VERSION="$(node scripts/release-version.js --build-number "$BUILD_NUMBER" --date "$RELEASE_DATE" --dry-run)"
           TAG="v${BASE_VERSION}-data.${BUILD_NUMBER}"
@@ -93,7 +92,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          LATEST_TAG="$(jq -r '[.[] | select(.isDraft == false and (.tagName | test("^v[0-9]+\\.[0-9]+\\.[0-9]+-data\\.[0-9]+$"))] | sort_by(.createdAt) | last | .tagName // ""' .build/releases.json)"
+          LATEST_TAG="$(node scripts/release-history.js latest-tag .build/releases.json)"
           if [[ -n "$LATEST_TAG" ]]; then
             mkdir -p .build/baseline
             gh release download "$LATEST_TAG" --pattern 'build-metadata-*.json' --dir .build/baseline
