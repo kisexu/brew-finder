@@ -1,4 +1,5 @@
 node_modules/
 .superpowers/
-extension/data/
+/data/
+/extension/data/
 dist/
