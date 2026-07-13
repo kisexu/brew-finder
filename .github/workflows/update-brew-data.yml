@@ -1,28 +1,63 @@
-name: Update Brew Data
+name: Build Brew Data
 
 on:
   workflow_dispatch:
+    inputs:
+      source_sha:
+        description: "Exact develop commit SHA to release (defaults to current develop)"
+        required: false
+        default: "develop"
+        type: string
   schedule:
-    - cron: "0 2 * * *"
+    # Friday 10:17 Asia/Shanghai. Avoid the busy top of the hour.
+    - cron: "17 2 * * 5"
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 concurrency:
-  group: update-brew-data
+  group: build-brew-data
   cancel-in-progress: false
 
 jobs:
-  update-data:
-    name: Fetch, clean, and build extension data
+  resolve-source:
+    name: Resolve immutable source commit
     runs-on: ubuntu-latest
-
+    outputs:
+      source_sha: ${{ steps.source.outputs.sha }}
     steps:
-      - name: Checkout develop
+      - name: Checkout requested develop revision
         uses: actions/checkout@v7
         with:
-          ref: develop
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.source_sha || 'develop' }}
+          fetch-depth: 0
+
+      - name: Confirm source belongs to develop
+        run: |
+          git fetch --no-tags origin develop
+          if ! git merge-base --is-ancestor HEAD FETCH_HEAD; then
+            echo "Requested source is not part of develop history" >&2
+            exit 1
+          fi
+
+      - name: Record source SHA
+        id: source
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  build:
+    name: Test, build, validate, and package
+    needs: resolve-source
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      tag: ${{ steps.version.outputs.tag }}
+      release_date: ${{ steps.version.outputs.release_date }}
+      artifact_name: ${{ steps.version.outputs.artifact_name }}
+    steps:
+      - name: Checkout fixed source SHA
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ needs.resolve-source.outputs.source_sha }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v6
@@ -33,27 +68,123 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Fetch and clean Homebrew package maps
-        run: npm run build:maps
-
-      - name: Build extension data bundle
-        run: npm run build:extension
-
       - name: Run tests
         run: npm test
 
-      - name: Create update pull request
-        uses: peter-evans/create-pull-request@v8
-        with:
-          base: develop
-          branch: chore/update-brew-data
-          delete-branch: true
-          title: "chore: update Homebrew package maps"
-          commit-message: "chore: update Homebrew package maps"
-          body: |
-            Automated Homebrew package map update.
+      - name: Choose the next data build version
+        id: version
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p .build release
+          BASE_VERSION="$(node -p "require('./package.json').version")"
+          gh release list --limit 100 --json tagName,isDraft,createdAt > .build/releases.json
+          LAST_BUILD_NUMBER="$(jq -r --arg prefix "v${BASE_VERSION}-data." '[.[] | select(.isDraft == false and (.tagName | startswith($prefix))) | .tagName | capture("-data\\.(?<number>[0-9]+)$").number | tonumber] | max // 0' .build/releases.json)"
+          BUILD_NUMBER="$(( LAST_BUILD_NUMBER + 1 ))"
+          RELEASE_DATE="$(TZ=Asia/Shanghai date +%F)"
+          VERSION="$(node scripts/release-version.js --build-number "$BUILD_NUMBER" --date "$RELEASE_DATE" --dry-run)"
+          TAG="v${BASE_VERSION}-data.${BUILD_NUMBER}"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "release_date=$RELEASE_DATE" >> "$GITHUB_OUTPUT"
+          echo "artifact_name=brew-finder-${VERSION}" >> "$GITHUB_OUTPUT"
 
-            This workflow ran:
-            - `npm run build:maps`
-            - `npm run build:extension`
-            - `npm test`
+      - name: Download previous successful build metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          LATEST_TAG="$(jq -r '[.[] | select(.isDraft == false and (.tagName | test("^v[0-9]+\\.[0-9]+\\.[0-9]+-data\\.[0-9]+$"))] | sort_by(.createdAt) | last | .tagName // ""' .build/releases.json)"
+          if [[ -n "$LATEST_TAG" ]]; then
+            mkdir -p .build/baseline
+            gh release download "$LATEST_TAG" --pattern 'build-metadata-*.json' --dir .build/baseline
+          fi
+
+      - name: Fetch, archive, and validate Homebrew data
+        run: |
+          BUILD_TIME="$(date -u +%Y-%m-%dT%H:%M:%S.000Z)"
+          ARGS=(--input-dir .build/inputs --build-time "$BUILD_TIME")
+          BASELINE="$(find .build/baseline -name 'build-metadata-*.json' -print -quit 2>/dev/null || true)"
+          if [[ -n "$BASELINE" ]]; then
+            ARGS+=(--baseline-metadata "$BASELINE")
+          fi
+          node scripts/build-maps.js "${ARGS[@]}"
+
+      - name: Build extension bundle and set release version
+        run: |
+          npm run build:extension
+          BUILD_NUMBER="${{ steps.version.outputs.version }}"
+          BUILD_NUMBER="${BUILD_NUMBER##*.}"
+          VERSION="$(node scripts/release-version.js --build-number "$BUILD_NUMBER" --date "${{ steps.version.outputs.release_date }}")"
+          test "$VERSION" = "${{ steps.version.outputs.version }}"
+
+      - name: Package and verify exact extension ZIP
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+          SOURCE_SHA: ${{ needs.resolve-source.outputs.source_sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          cmp data/domain-map.json extension/data/domain-map.json
+          cmp data/github-map.json extension/data/github-map.json
+          cmp data/metadata.json extension/data/metadata.json
+          ZIP_NAME="brew-finder-${VERSION}.zip"
+          (cd extension && zip -q -r "../release/${ZIP_NAME}" .)
+          PACKAGED_VERSION="$(unzip -p "release/${ZIP_NAME}" manifest.json | jq -r .version)"
+          test "$PACKAGED_VERSION" = "$VERSION"
+          ZIP_SHA256="$(sha256sum "release/${ZIP_NAME}" | cut -d ' ' -f1)"
+          printf '%s  %s\n' "$ZIP_SHA256" "$ZIP_NAME" > "release/${ZIP_NAME}.sha256"
+          jq \
+            --arg sourceSha "$SOURCE_SHA" \
+            --arg workflowRun "$RUN_URL" \
+            --arg nodeVersion "$(node --version)" \
+            --arg extensionVersion "$VERSION" \
+            --arg versionName "$(jq -r .version_name extension/manifest.json)" \
+            --arg zipSha256 "$ZIP_SHA256" \
+            '. + {
+              sourceSha: $sourceSha,
+              workflowRun: $workflowRun,
+              nodeVersion: $nodeVersion,
+              extensionVersion: $extensionVersion,
+              versionName: $versionName,
+              zipSha256: $zipSha256
+            }' data/metadata.json > "release/build-metadata-${VERSION}.json"
+          gzip -c .build/inputs/formula.json > "release/formula-${VERSION}.json.gz"
+          gzip -c .build/inputs/cask.json > "release/cask-${VERSION}.json.gz"
+
+      - name: Upload short-lived build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.version.outputs.artifact_name }}
+          path: release/
+          if-no-files-found: error
+          retention-days: 10
+
+  release:
+    name: Create manual GitHub Release
+    if: github.event_name == 'workflow_dispatch'
+    needs: [resolve-source, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download validated build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.build.outputs.artifact_name }}
+          path: release
+
+      - name: Create immutable-versioned GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.build.outputs.tag }}
+          VERSION: ${{ needs.build.outputs.version }}
+          RELEASE_DATE: ${{ needs.build.outputs.release_date }}
+          SOURCE_SHA: ${{ needs.resolve-source.outputs.source_sha }}
+        run: |
+          gh release create "$TAG" \
+            "release/brew-finder-${VERSION}.zip" \
+            "release/brew-finder-${VERSION}.zip.sha256" \
+            "release/build-metadata-${VERSION}.json" \
+            --repo "$GITHUB_REPOSITORY" \
+            --target "$SOURCE_SHA" \
+            --title "Brew Finder ${VERSION}" \
+            --notes "Homebrew data build for ${RELEASE_DATE}. Source: ${SOURCE_SHA}."
