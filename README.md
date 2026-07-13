@@ -6,6 +6,10 @@ Languages: English | [简体中文](README.zh-CN.md)
 
 A Chrome extension that automatically detects whether the software website you are visiting has a matching Homebrew package and lets you quickly copy the `brew install` command.
 
+
+[![chrome web store link](docs/assets/chrome-web-store.png "chrome web store")](https://chromewebstore.google.com/detail/kjcbapmmfbemenipkkbiblaifanjljbo "Available in the Chrome Web Store")
+
+
 ## Features & Highlights
 
 - **Automatic discovery** — When you visit a relevant site, the extension automatically checks for packages related to that domain and alerts you through the badge or page overlay.

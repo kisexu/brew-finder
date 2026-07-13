@@ -6,6 +6,10 @@
 
 一款 Chrome 浏览器插件，自动检测当前访问的软件网站是否有对应的 Homebrew 包，并快捷复制 `brew install` 安装命令。
 
+
+[![chrome web store link](docs/assets/chrome-web-store.png "chrome web store")](https://chromewebstore.google.com/detail/kjcbapmmfbemenipkkbiblaifanjljbo "Available in the Chrome Web Store")
+
+
 ## 功能 & 特性
 
 - **自动发现** — 当你访问相关站点的时候，扩展会自动检查该域名下相关的包，通过徽标或浮窗的提示你
