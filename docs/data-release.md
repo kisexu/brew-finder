@@ -39,6 +39,6 @@ npm run build:maps -- \
 
 ZIP 从 `extension/` 目录内部创建，因此 `manifest.json` 位于压缩包根目录。手动发布会将 Release/tag 指向构建时记录的不可变源码 SHA。
 
-## 暂不包含的发布步骤
+## 本地 Chrome Web Store 发布
 
-当前 workflow 不上传 Chrome Web Store。待数据构建稳定后，再单独增加 Chrome Web Store API V2、Service Account + GitHub OIDC，以及受人工审批保护的 GitHub Environment 发布 job。
+现有 workflow 不上传 Chrome Web Store，保持不变。一键更新并送审的 `npm run cws:auto`，以及独立的本地 build/dry-run、status、upload 和 submit 命令见 [本地发布指南](local-cws-release.md)。本地入口使用仓库外服务账号 JSON，不依赖 GitHub，不创建 Release，也不启用定时任务。

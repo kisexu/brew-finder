@@ -11,9 +11,16 @@
     "build:site": "node scripts/build-site.js",
     "build": "npm run build:maps && npm run build:extension",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "cws:build": "node scripts/cws-release.js build",
+    "cws:dry-run": "node scripts/cws-release.js dry-run",
+    "cws:status": "node scripts/cws-release.js status",
+    "cws:upload": "node scripts/cws-release.js upload",
+    "cws:submit": "node scripts/cws-release.js submit",
+    "cws:auto": "node --env-file=.env.cws scripts/cws-release.js auto"
   },
   "devDependencies": {
+    "google-auth-library": "^11.3.4",
     "vitest": "^3.1.0"
   }
 }
