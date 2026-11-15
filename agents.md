@@ -173,7 +173,24 @@ To add a website language:
 - **Testing**: vitest, TDD for data pipeline and utils
 - **Style**: dark theme (#1a1a2e background), Chinese UI strings
 - **Commits**: conventional commits (`feat:`, `fix:`, `chore:`, `docs:`)
-- **Branching**: `main` = docs only, `develop` = all code
+- **Branching**: `develop` = daily integration, `main` = stable/release
+
+### Branching Workflow
+
+- Start feature, fix, documentation, and chore branches from the latest `develop`.
+- Merge short-lived branches into `develop` with **Squash and merge**, then delete them.
+- Release through a `develop` → `main` pull request using **Create a merge commit**. Never squash or rebase this pull request; preserving the ancestry between the two long-lived branches prevents already-released commits from reappearing in later pull requests.
+- Do not add commits to `develop` while a release pull request is being merged. Immediately after the release merge, fast-forward `develop` to `main` and push it:
+
+  ```bash
+  git fetch origin --prune
+  git switch develop
+  git merge --ff-only origin/main
+  git push origin develop
+  ```
+
+- Create urgent production hotfix branches from `main`. After merging a hotfix into `main`, merge `main` back into `develop` so the fix is retained in future releases.
+- Do not routinely merge `main` back into `develop`; the post-release fast-forward and hotfix synchronization are the only expected cases.
 
 ## Important Notes
 
