@@ -3,3 +3,6 @@ node_modules/
 /data/
 /extension/data/
 dist/
+.alma-snapshots
+/.build/
+/.env.cws
